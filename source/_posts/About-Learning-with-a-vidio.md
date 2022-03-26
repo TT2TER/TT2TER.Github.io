@@ -56,7 +56,7 @@ date: 2022-03-27 01:40:01
 
 # 插播
 F1沙特站汉密尔顿排位赛没进Q2，历史时刻！
-![车迷的欢庆](https://wx4.sinaimg.cn/mw1024/005vz52Fgy1h0nssj68f6j31c00u07cu.jpg)
-![老汉开慢车](https://wx3.sinaimg.cn/mw1024/3e6141c4ly1h0nst6w8t3j21hc0u0ap3.jpg "老汉开慢车")
+![车迷的惊叹](https://s3.bmp.ovh/imgs/2022/03/c435f76e9aa58d8b.jpg)
+![老汉开慢车](https://s3.bmp.ovh/imgs/2022/03/7c416edbc99864e6.jpg)
 
 
