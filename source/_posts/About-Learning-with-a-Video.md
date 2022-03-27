@@ -1,7 +1,7 @@
 ---
-title: About-Learning-with-a-Vidio
+title: About-Learning-with-a-Video
 tags:
-  - vidio
+  - video
   - F1
 categories:
   - [idea]
