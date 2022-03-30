@@ -4,6 +4,46 @@
   
   
   <entry>
+    <title>a-network-problem-solve</title>
+    <link href="/post/a-network-problem-solve.html"/>
+    <url>/post/a-network-problem-solve.html</url>
+    
+    <content type="html"><![CDATA[<p>最近电脑的网络频繁出现各种问题，用一个晚上的时间大概解决掉了</p><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ol><li>首先是各几天就无法连接ipv6，表现为获取不到ipv6地址</li><li>其次是出现ipv4速度远低于应该达到的速度(校园网超量限速情况下)，且校园网认证时链接认证服务器时间指数级增加。</li><li>本地服务无法被同局域网内其他设备连接，包括各种webUI，以及远程桌面</li></ol><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol><li>给学校网络管理中心打电话，重启了交换机，还不行，反馈。查找别的原因，好了（具体原因打算之后再问）P.S 重启交换机的时候整层断网哈哈哈哈</li><li>问题2和3 是慢慢显现的，而且不断重启会随机修复部分问题。在多次绝望重启之后，我想起了前两天装的网络监控软件[portmaster](<a href="https://safing.io/portmaster/#downloads">https://safing.io/portmaster/#downloads</a>. This stupid one should be blame. 它权限很大，根据把他推荐给我的舍友说，能阻止奇怪的出站流量如2和3描述。至于网速减缓，删掉他之后就再也没出现过这样的问题。</li></ol><h1 id="问题反思"><a href="#问题反思" class="headerlink" title="问题反思"></a>问题反思</h1><p>这次寻找问题根源花了很长时间，两个不同因素同时导致了多个网络连接问题，尤其是2和3因为没有经验，百度也没有相关资料，排查了半天<br>portmaster这个软件最开始下载下来是想监控流量的，显然他的流量监控功能做的很好。但碍于技术和语言门槛，其实我不是很会使用，导致上述一系列问题。<br>另外，这个开源软件内嵌广告功能，以后见到类似的要规避。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Problems</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>network</tag>
+      
+      <tag>portmaster</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>TODOlist</title>
+    <link href="/post/TODOlist.html"/>
+    <url>/post/TODOlist.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul><li>LaTeX 语法学习</li></ul><h2 id="可以在底部评论区给我推荐有意思的东西！！"><a href="#可以在底部评论区给我推荐有意思的东西！！" class="headerlink" title="可以在底部评论区给我推荐有意思的东西！！"></a>可以在底部评论区给我推荐有意思的东西！！</h2>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>About-Learning-with-a-Video</title>
     <link href="/post/About-Learning-with-a-Video.html"/>
     <url>/post/About-Learning-with-a-Video.html</url>
