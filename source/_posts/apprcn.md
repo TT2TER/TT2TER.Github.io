@@ -1,5 +1,5 @@
 ---
-title: \[网站分享\]\"反\"斗软件
+title: 【网站分享】"反"斗软件
 tags: share
 categories: share
 excerpt: 一个带有rss订阅的软件推荐网站，内含各种商业软件限免信息
