@@ -930,9 +930,15 @@ links:
   items:
     - {
       title: "WYK的博客",
-      intro: "",
+      intro: "BF",
       link: "https://colt45-0121.github.io",
-      avatar: "/img/Link-wyk.webp"
+      avatar: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.puchedu.cn%2Fuploads%2F1%2F26%2F3940407976%2F3052527292.jpg&refer=http%3A%2F%2Fimg.puchedu.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652253818&t=6fbf5811e443c3a4022c34e697300864"
+    }
+    - {
+      title: "朱桂潮学长的博客",
+      intro: "主要关于ML&DL",
+      link: "http://www.cabinz.tech",
+      avatar: ""
     }
 
   # 当成员头像加载失败时，替换为指定图片
@@ -943,7 +949,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：马火星的秘密小屋</li><li>简介：可能有一些学习心得和日常</li><li>链接：https://blog.mayu8633.tk/</li><li>图片：图床链接</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：马火星的秘密小屋</li><li>简介：可能有一些学习心得和日常</li><li>链接：https://blog.mayu8633.tk/</li><li>图片：图床链接</li></ul>同时请将我加入你的友链'
 
   # 评论插件
   # Comment plugin
