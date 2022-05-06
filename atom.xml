@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-05-03T16:08:01.079Z</updated>
+  <updated>2022-05-06T08:08:23.019Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>feed-me!</title>
+    <link href="http://tt2ter.github.io/post/feed-me.html"/>
+    <id>http://tt2ter.github.io/post/feed-me.html</id>
+    <published>2022-05-06T07:52:47.000Z</published>
+    <updated>2022-05-06T08:08:23.019Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="欢迎订阅下面的Feed，您可以及时跟踪我的更新："><a href="#欢迎订阅下面的Feed，您可以及时跟踪我的更新：" class="headerlink" title="欢迎订阅下面的Feed，您可以及时跟踪我的更新："></a>欢迎订阅下面的Feed，您可以及时跟踪我的更新：</h1><p>这里↓是我的RSS链接<a class="nav-link" href="/atom.xml"><i class="iconfont icon-rss-fill"></i></a></p><p>此外在我的博客关于界面和导航栏也能找到这个链接哦</p><p><img src="https://s2.loli.net/2022/05/06/Ug6nte4wXzlIp9C.png" alt="feed me!"></p>]]></content>
+    
+    
+    <summary type="html">今天开始开通RSS订阅啦</summary>
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://tt2ter.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub</title>
