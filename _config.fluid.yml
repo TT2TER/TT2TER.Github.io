@@ -328,6 +328,7 @@ navbar:
   }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: '', link: '/atom.xml', icon: 'iconfont icon-rss-fill' }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -604,7 +605,7 @@ post:
   # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
-    content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！'
+    content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> '
 
   # 文章底部上一篇下一篇功能
   # Link to previous/next post
@@ -888,6 +889,7 @@ about:
     - { class: "iconfont icon-github-fill", link: "https://github.com/TT2TER", tip: "GitHub" }
     #- { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
     - { class: "iconfont icon-wechat-fill", qrcode: "/img/Wechat.jpg" }
+    - { class: "iconfont icon-rss", link: "/atom.xml", tip: "RSS订阅" }
 
 
 #---------------------------
