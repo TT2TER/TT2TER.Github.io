@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-05-07T16:19:38.057Z</updated>
+  <updated>2022-05-07T16:26:40.636Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -17,16 +17,16 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>get-news-efficiently</title>
+    <title>如何高效率获取信息</title>
     <link href="http://tt2ter.github.io/post/220507get-news-efficiently.html"/>
     <id>http://tt2ter.github.io/post/220507get-news-efficiently.html</id>
     <published>2022-05-07T16:19:38.000Z</published>
-    <updated>2022-05-07T16:19:38.057Z</updated>
+    <updated>2022-05-07T16:26:40.636Z</updated>
     
     <content type="html"><![CDATA[<h1 id="如何聚合信息"><a href="#如何聚合信息" class="headerlink" title="如何聚合信息"></a>如何聚合信息</h1><ol><li>利用RSS订阅：RSS订阅可以自动帮你拉取你感兴趣的消息源的更新</li></ol><p>消息源：各个网站提供（如我的博客就提供官方的RSS订阅源）</p><p>可使用类似<a href="https://rsshub.app/">RSShub</a>的服务生成订阅链接</p><p>RSS阅读客户端：</p><p>未采用自建的RSS服务器或本地订阅，使用<a href="https://www.inoreader.com/all_articles">Inoreader</a>免费账户订阅，150个源足够了</p><p>唯一缺点是需要翻墙，优点是多端同步</p><p>我订阅了各个媒体的新闻源（不同立场不同视角）以及其他如技术博客等</p><ol start="2"><li>每天定时查阅，如饭点查阅，快速浏览题目……</li><li>将有保存价值的分作两类保存</li></ol><p>第一类是需要做大量笔记保留的，用软件自带的分享功能保存在OneNote（无需翻墙）中，方便批注</p><p>第二类就比较随意了，可以将想要少量摘记的文章，有趣的想保存的，以后可能会用到的，想稍后再读的统统利用分享发到自己的Pocket上（无需翻墙）</p><ol start="4"><li>每晚check自己的Pocket</li></ol><p>善用tag标签和搜索</p><p>利用pocket的<a href="https://getpocket.com/export">导出功能</a>可以导出HTML文件<br><img src="https://s2.loli.net/2022/05/07/Yv3hBmTi5reZqVw.png" alt="导出的HTML可以直接插入到博客的Markdown语法中"></p><p>便于将导出的HTML直接插入到博客中，分享有用链接</p><p>每天记得清空Pocket</p><ol start="5"><li>每周check自己的OneNote并归档</li></ol><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>pocket 和 Inoreader 都有浏览器插件（官方或第三方），同时有手机端</p>]]></content>
     
     
-    <summary type="html">想总结一个高效的新机聚合流程</summary>
+    <summary type="html">想总结一个高效的信息聚合流程</summary>
     
     
     
@@ -38,11 +38,11 @@
   </entry>
   
   <entry>
-    <title>picture-server</title>
+    <title>我的博客图床</title>
     <link href="http://tt2ter.github.io/post/220508picture-server.html"/>
     <id>http://tt2ter.github.io/post/220508picture-server.html</id>
     <published>2022-05-07T16:18:46.000Z</published>
-    <updated>2022-05-07T16:18:46.011Z</updated>
+    <updated>2022-05-07T16:27:23.634Z</updated>
     
     <content type="html"><![CDATA[<h1 id="我目前博客图床解决方案"><a href="#我目前博客图床解决方案" class="headerlink" title="我目前博客图床解决方案"></a>我目前博客图床解决方案</h1><h2 id="PicGo-SM-MS"><a href="#PicGo-SM-MS" class="headerlink" title="PicGo + SM.MS"></a>PicGo + SM.MS</h2><p>先说说<a href="https://picgo.github.io/PicGo-Doc/en/guide/#picgo-is-here">PicGo</a>, 一开始选它是因为它能和Typora结合，自动将本地图片上传并将Markdown文件中链接改为图床链接，可惜没用几天Typora收费了……</p><p>但奈何PicGo太好用，就自行研究了一下</p><p>形成了如下工作流程（一些快捷键自行在对应软件设置）</p><ul><li><strong>笔电截图快捷键&#x2F;PrScr</strong> Win自带的“截图和草图”功能，可以画批注，带自动复制图片到剪贴板功能</li><li>后台开启PicGo情况下 <strong>Ctrl+Shift+P</strong> 自动将剪贴板上图片上传到默认图床（可选，推荐SM.MS）并将图床链接以Markdown语法（可选默认语法，如HTML)复制到剪贴板</li><li>在所需要的位置 <strong>Ctrl+V</strong> 打法，插入图片</li></ul><p>选用SM.MS 第一是因为它比较成熟；第二是因为国内外均可访问；第三是其他图床方案如七牛云需要自己配置服务器域名，且域名必须在国内备案，很麻烦</p><p>具体配置请参见PicGo官方文档</p>]]></content>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>feed-me!</title>
-    <link href="http://tt2ter.github.io/post/feed-me.html"/>
-    <id>http://tt2ter.github.io/post/feed-me.html</id>
+    <link href="http://tt2ter.github.io/post/220506feed-me.html"/>
+    <id>http://tt2ter.github.io/post/220506feed-me.html</id>
     <published>2022-05-06T07:52:47.000Z</published>
     <updated>2022-05-06T08:08:23.019Z</updated>
     
@@ -79,8 +79,8 @@
   
   <entry>
     <title>校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub</title>
-    <link href="http://tt2ter.github.io/post/freeipv6vps.html"/>
-    <id>http://tt2ter.github.io/post/freeipv6vps.html</id>
+    <link href="http://tt2ter.github.io/post/220503freeipv6vps.html"/>
+    <id>http://tt2ter.github.io/post/220503freeipv6vps.html</id>
     <published>2022-05-03T15:59:22.000Z</published>
     <updated>2022-05-03T16:08:01.079Z</updated>
     
@@ -100,8 +100,8 @@
   
   <entry>
     <title>0507UPD|每日有趣文章</title>
-    <link href="http://tt2ter.github.io/post/Links.html"/>
-    <id>http://tt2ter.github.io/post/Links.html</id>
+    <link href="http://tt2ter.github.io/post/0507UPDLinks.html"/>
+    <id>http://tt2ter.github.io/post/0507UPDLinks.html</id>
     <published>2022-04-16T16:14:23.000Z</published>
     <updated>2022-05-07T14:03:59.436Z</updated>
     
@@ -123,8 +123,8 @@
   
   <entry>
     <title>【网站分享】&quot;反&quot;斗软件</title>
-    <link href="http://tt2ter.github.io/post/apprcn.html"/>
-    <id>http://tt2ter.github.io/post/apprcn.html</id>
+    <link href="http://tt2ter.github.io/post/220417apprcn.html"/>
+    <id>http://tt2ter.github.io/post/220417apprcn.html</id>
     <published>2022-04-16T16:13:09.000Z</published>
     <updated>2022-04-16T16:58:02.476Z</updated>
     
@@ -144,10 +144,10 @@
   
   <entry>
     <title>How to Search English Words</title>
-    <link href="http://tt2ter.github.io/post/how-to-search-English-words.html"/>
-    <id>http://tt2ter.github.io/post/how-to-search-English-words.html</id>
+    <link href="http://tt2ter.github.io/post/220426how-to-search-English-words.html"/>
+    <id>http://tt2ter.github.io/post/220426how-to-search-English-words.html</id>
     <published>2022-04-05T16:35:03.000Z</published>
-    <updated>2022-04-05T16:37:41.192Z</updated>
+    <updated>2022-05-07T16:35:44.134Z</updated>
     
     <content type="html"><![CDATA[<h1 id="检索单词方法"><a href="#检索单词方法" class="headerlink" title="检索单词方法"></a>检索单词方法</h1><ol><li>Googling “<your vocabulary> + camb” to get the definition in the Cambridge English Dictionary</li><li>Googling “<your vocabulary> + youglish” to see pronunciations in English from ytb.</li><li>Googling “<your vocabulary> + vs” to see the difference between words.</li><li>You can also deepen your memory through pictures.</li></ol>]]></content>
     
@@ -155,6 +155,8 @@
     <summary type="html">一个好的查单词的方法</summary>
     
     
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
     
     <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
@@ -167,8 +169,8 @@
   
   <entry>
     <title>每日小短句</title>
-    <link href="http://tt2ter.github.io/post/Aphorisms.html"/>
-    <id>http://tt2ter.github.io/post/Aphorisms.html</id>
+    <link href="http://tt2ter.github.io/post/0413UPDAphorisms.html"/>
+    <id>http://tt2ter.github.io/post/0413UPDAphorisms.html</id>
     <published>2022-04-05T12:26:31.000Z</published>
     <updated>2022-04-16T16:57:11.800Z</updated>
     
@@ -186,8 +188,8 @@
   
   <entry>
     <title>a-network-problem-solve</title>
-    <link href="http://tt2ter.github.io/post/a-network-problem-solve.html"/>
-    <id>http://tt2ter.github.io/post/a-network-problem-solve.html</id>
+    <link href="http://tt2ter.github.io/post/220330a-network-problem-solve.html"/>
+    <id>http://tt2ter.github.io/post/220330a-network-problem-solve.html</id>
     <published>2022-03-30T14:16:45.000Z</published>
     <updated>2022-05-07T16:19:01.136Z</updated>
     
@@ -224,8 +226,8 @@
   
   <entry>
     <title>About-Learning-with-a-Video</title>
-    <link href="http://tt2ter.github.io/post/About-Learning-with-a-Video.html"/>
-    <id>http://tt2ter.github.io/post/About-Learning-with-a-Video.html</id>
+    <link href="http://tt2ter.github.io/post/220327About-Learning-with-a-Video.html"/>
+    <id>http://tt2ter.github.io/post/220327About-Learning-with-a-Video.html</id>
     <published>2022-03-26T17:40:01.000Z</published>
     <updated>2022-03-27T03:19:20.439Z</updated>
     
@@ -249,8 +251,8 @@
   
   <entry>
     <title>我的建站过程</title>
-    <link href="http://tt2ter.github.io/post/hello-myblog.html"/>
-    <id>http://tt2ter.github.io/post/hello-myblog.html</id>
+    <link href="http://tt2ter.github.io/post/220326hello-myblog.html"/>
+    <id>http://tt2ter.github.io/post/220326hello-myblog.html</id>
     <published>2022-03-26T03:38:54.698Z</published>
     <updated>2022-03-26T03:38:54.698Z</updated>
     
@@ -297,8 +299,8 @@
   
   <entry>
     <title>code with vscode</title>
-    <link href="http://tt2ter.github.io/post/codewithvscode.html"/>
-    <id>http://tt2ter.github.io/post/codewithvscode.html</id>
+    <link href="http://tt2ter.github.io/post/220325codewithvscode.html"/>
+    <id>http://tt2ter.github.io/post/220325codewithvscode.html</id>
     <published>2022-03-24T16:00:07.000Z</published>
     <updated>2022-03-26T03:38:54.697Z</updated>
     
@@ -318,8 +320,8 @@
   
   <entry>
     <title>测试firstblog</title>
-    <link href="http://tt2ter.github.io/post/firstblog.html"/>
-    <id>http://tt2ter.github.io/post/firstblog.html</id>
+    <link href="http://tt2ter.github.io/post/220324firstblog.html"/>
+    <id>http://tt2ter.github.io/post/220324firstblog.html</id>
     <published>2022-03-24T15:53:02.000Z</published>
     <updated>2022-03-26T03:38:54.698Z</updated>
     
