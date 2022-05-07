@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-05-06T08:08:23.019Z</updated>
+  <updated>2022-05-07T16:19:38.057Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>get-news-efficiently</title>
+    <link href="http://tt2ter.github.io/post/220507get-news-efficiently.html"/>
+    <id>http://tt2ter.github.io/post/220507get-news-efficiently.html</id>
+    <published>2022-05-07T16:19:38.000Z</published>
+    <updated>2022-05-07T16:19:38.057Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何聚合信息"><a href="#如何聚合信息" class="headerlink" title="如何聚合信息"></a>如何聚合信息</h1><ol><li>利用RSS订阅：RSS订阅可以自动帮你拉取你感兴趣的消息源的更新</li></ol><p>消息源：各个网站提供（如我的博客就提供官方的RSS订阅源）</p><p>可使用类似<a href="https://rsshub.app/">RSShub</a>的服务生成订阅链接</p><p>RSS阅读客户端：</p><p>未采用自建的RSS服务器或本地订阅，使用<a href="https://www.inoreader.com/all_articles">Inoreader</a>免费账户订阅，150个源足够了</p><p>唯一缺点是需要翻墙，优点是多端同步</p><p>我订阅了各个媒体的新闻源（不同立场不同视角）以及其他如技术博客等</p><ol start="2"><li>每天定时查阅，如饭点查阅，快速浏览题目……</li><li>将有保存价值的分作两类保存</li></ol><p>第一类是需要做大量笔记保留的，用软件自带的分享功能保存在OneNote（无需翻墙）中，方便批注</p><p>第二类就比较随意了，可以将想要少量摘记的文章，有趣的想保存的，以后可能会用到的，想稍后再读的统统利用分享发到自己的Pocket上（无需翻墙）</p><ol start="4"><li>每晚check自己的Pocket</li></ol><p>善用tag标签和搜索</p><p>利用pocket的<a href="https://getpocket.com/export">导出功能</a>可以导出HTML文件<br><img src="https://s2.loli.net/2022/05/07/Yv3hBmTi5reZqVw.png" alt="导出的HTML可以直接插入到博客的Markdown语法中"></p><p>便于将导出的HTML直接插入到博客中，分享有用链接</p><p>每天记得清空Pocket</p><ol start="5"><li>每周check自己的OneNote并归档</li></ol><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>pocket 和 Inoreader 都有浏览器插件（官方或第三方），同时有手机端</p>]]></content>
+    
+    
+    <summary type="html">想总结一个高效的新机聚合流程</summary>
+    
+    
+    
+    <category term="idea" scheme="http://tt2ter.github.io/categories/idea/"/>
+    
+    
+    <category term="information" scheme="http://tt2ter.github.io/tags/information/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>picture-server</title>
+    <link href="http://tt2ter.github.io/post/220508picture-server.html"/>
+    <id>http://tt2ter.github.io/post/220508picture-server.html</id>
+    <published>2022-05-07T16:18:46.000Z</published>
+    <updated>2022-05-07T16:18:46.011Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="我目前博客图床解决方案"><a href="#我目前博客图床解决方案" class="headerlink" title="我目前博客图床解决方案"></a>我目前博客图床解决方案</h1><h2 id="PicGo-SM-MS"><a href="#PicGo-SM-MS" class="headerlink" title="PicGo + SM.MS"></a>PicGo + SM.MS</h2><p>先说说<a href="https://picgo.github.io/PicGo-Doc/en/guide/#picgo-is-here">PicGo</a>, 一开始选它是因为它能和Typora结合，自动将本地图片上传并将Markdown文件中链接改为图床链接，可惜没用几天Typora收费了……</p><p>但奈何PicGo太好用，就自行研究了一下</p><p>形成了如下工作流程（一些快捷键自行在对应软件设置）</p><ul><li><strong>笔电截图快捷键&#x2F;PrScr</strong> Win自带的“截图和草图”功能，可以画批注，带自动复制图片到剪贴板功能</li><li>后台开启PicGo情况下 <strong>Ctrl+Shift+P</strong> 自动将剪贴板上图片上传到默认图床（可选，推荐SM.MS）并将图床链接以Markdown语法（可选默认语法，如HTML)复制到剪贴板</li><li>在所需要的位置 <strong>Ctrl+V</strong> 打法，插入图片</li></ul><p>选用SM.MS 第一是因为它比较成熟；第二是因为国内外均可访问；第三是其他图床方案如七牛云需要自己配置服务器域名，且域名必须在国内备案，很麻烦</p><p>具体配置请参见PicGo官方文档</p>]]></content>
+    
+    
+    <summary type="html">图床解决方案</summary>
+    
+    
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="blog" scheme="http://tt2ter.github.io/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>feed-me!</title>
@@ -57,11 +99,11 @@
   </entry>
   
   <entry>
-    <title>每日有趣文章</title>
+    <title>0507UPD|每日有趣文章</title>
     <link href="http://tt2ter.github.io/post/Links.html"/>
     <id>http://tt2ter.github.io/post/Links.html</id>
     <published>2022-04-16T16:14:23.000Z</published>
-    <updated>2022-05-07T13:25:25.571Z</updated>
+    <updated>2022-05-07T14:03:59.436Z</updated>
     
     <content type="html"><![CDATA[<h1 id="只记录有趣文章"><a href="#只记录有趣文章" class="headerlink" title="只记录有趣文章"></a>只记录有趣文章</h1><h2 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h2><h3 id="05"><a href="#05" class="headerlink" title="05"></a>05</h3><h4 id="07"><a href="#07" class="headerlink" title="07"></a>07</h4><li><a href="https://mp.weixin.qq.com/s/RU2x8aPUx3pHvk8DRCiPbA" time_added="1651926767" tags="">被操纵的P值：科学论文中的数学胡扯丨展卷</a></li><b>联想到最近做数模和好朋友的问卷研究</b><li><a href="http://www.ruanyifeng.com/blog/2022/04/weekly-issue-202.html" time_added="1651924696" tags="inoreader,技术">科技爱好者周刊（第 202 期）：三个有启发的学习方法</a></li><li><a href="https://www.science.org/doi/10.1126/scirobotics.abm5954" time_added="1651923955" tags="">Swarm of micro flying robots in the wild</a></li><b>无人集群，看起来很惊艳，就是我的英文水平和数学水平制约了我，让我读不懂它</b><li><a href="https://daily.zhihu.com/story/9748335" time_added="1651921139" tags="b乎,inoreader,技术">怎么提高读书的效率呢？</a></li><b>输入：马上去做和减少负反馈（阻力）；输出：笔记/感受</b><h3 id="04"><a href="#04" class="headerlink" title="04"></a>04</h3><h4 id="17"><a href="#17" class="headerlink" title="17"></a>17</h4><ul><li>之前一直关注的<a href="https://www.pinballfx.com/">3D弹球游戏</a>发售了，下下来玩了玩，随后搜了搜弹球的发展和规则。<br><a href="https://zhuanlan.zhihu.com/p/53821221">XP自带的《三维弹球》，有着怎样深厚的历史背景？ - 游研社的文章 - 知乎</a></li></ul>]]></content>
     
@@ -147,7 +189,7 @@
     <link href="http://tt2ter.github.io/post/a-network-problem-solve.html"/>
     <id>http://tt2ter.github.io/post/a-network-problem-solve.html</id>
     <published>2022-03-30T14:16:45.000Z</published>
-    <updated>2022-03-30T14:16:45.083Z</updated>
+    <updated>2022-05-07T16:19:01.136Z</updated>
     
     <content type="html"><![CDATA[<p>最近电脑的网络频繁出现各种问题，用一个晚上的时间大概解决掉了</p><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ol><li>首先是各几天就无法连接ipv6，表现为获取不到ipv6地址</li><li>其次是出现ipv4速度远低于应该达到的速度(校园网超量限速情况下)，且校园网认证时链接认证服务器时间指数级增加。</li><li>本地服务无法被同局域网内其他设备连接，包括各种webUI，以及远程桌面</li></ol><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol><li>给学校网络管理中心打电话，重启了交换机，还不行，反馈。查找别的原因，好了（具体原因打算之后再问）P.S 重启交换机的时候整层断网哈哈哈哈</li><li>问题2和3 是慢慢显现的，而且不断重启会随机修复部分问题。在多次绝望重启之后，我想起了前两天装的网络监控软件[portmaster](<a href="https://safing.io/portmaster/#downloads">https://safing.io/portmaster/#downloads</a>. This stupid one should be blame. 它权限很大，根据把他推荐给我的舍友说，能阻止奇怪的出站流量如2和3描述。至于网速减缓，删掉他之后就再也没出现过这样的问题。</li></ol><h1 id="问题反思"><a href="#问题反思" class="headerlink" title="问题反思"></a>问题反思</h1><p>这次寻找问题根源花了很长时间，两个不同因素同时导致了多个网络连接问题，尤其是2和3因为没有经验，百度也没有相关资料，排查了半天<br>portmaster这个软件最开始下载下来是想监控流量的，显然他的流量监控功能做的很好。但碍于技术和语言门槛，其实我不是很会使用，导致上述一系列问题。<br>另外，这个开源软件内嵌广告功能，以后见到类似的要规避。</p>]]></content>
     
@@ -160,8 +202,6 @@
     
     
     <category term="network" scheme="http://tt2ter.github.io/tags/network/"/>
-    
-    <category term="portmaster" scheme="http://tt2ter.github.io/tags/portmaster/"/>
     
   </entry>
   
@@ -234,8 +274,8 @@
   
   <entry>
     <title>Reason-to-Learn-English</title>
-    <link href="http://tt2ter.github.io/post/Reason-to-Learn-English.html"/>
-    <id>http://tt2ter.github.io/post/Reason-to-Learn-English.html</id>
+    <link href="http://tt2ter.github.io/post/220326Reason-to-Learn-English.html"/>
+    <id>http://tt2ter.github.io/post/220326Reason-to-Learn-English.html</id>
     <published>2022-03-25T17:13:51.000Z</published>
     <updated>2022-03-26T03:38:54.697Z</updated>
     
