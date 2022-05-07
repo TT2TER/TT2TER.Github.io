@@ -1,5 +1,5 @@
 ---
-title: 每日小短句
+title: 0413UPD|每日小短句
 categories: Diary
 excerpt: 一些看到的带来思考的句子
 sticky: 100

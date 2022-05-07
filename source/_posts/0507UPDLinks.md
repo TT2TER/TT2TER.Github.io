@@ -1,5 +1,5 @@
 ---
-title: 每日有趣文章
+title: 0507UPD|每日有趣文章
 date: 2022-04-17 00:14:23
 tags: share
 sticky: 100

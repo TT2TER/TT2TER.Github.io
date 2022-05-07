@@ -2,7 +2,6 @@
 title: a-network-problem-solve
 tags:
   - network
-  - portmaster
 categories:
   - Problems
 excerpt: 最近电脑的网络频繁出现各种问题，用一个晚上的时间大概解决掉了
