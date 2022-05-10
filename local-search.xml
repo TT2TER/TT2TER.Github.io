@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>220511ssh-connect-to-ssh.github</title>
+    <link href="/post/220511ssh-connect-to-ssh-github.html"/>
+    <url>/post/220511ssh-connect-to-ssh-github.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="报错：ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#报错：ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="报错：ssh: connect to host github.com port 22: Connection timed out"></a>报错：ssh: connect to host github.com port 22: Connection timed out</h1><p>解决<br>according to:<a href="https://gist.github.com/laispace/666dd7b27e9116faece6">这里</a></p><p>ssh访问</p><p>需要修改~&#x2F;.ssh&#x2F;config文件, 没有的话新建一个. 同样仅为github.com设置代理:(在linux or macos下)</p><figure class="highlight crmsh"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs crmsh">Host github.com<br>    <span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>    ProxyCommand nc -v -x <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">10808</span> %h %p<br></code></pre></td></tr></table></figure><p>但是win没有nc命令，所以</p><p>如果是在Windows下, 则需要修改用户目录下.ssh\config, 其中内容类似于:</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">Host github.com<br>    <span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>    ProxyCommand connect -S <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">10809</span> %h %p<br></code></pre></td></tr></table></figure><p>这里-S表示使用socks5代理, 如果是http代理则为-H. connect工具git自带, 在\mingw64\bin\下面.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+      <category>Problems</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>FILM 索尼克2</title>
     <link href="/post/220511sonic2.html"/>
     <url>/post/220511sonic2.html</url>
