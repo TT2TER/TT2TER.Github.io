@@ -5,7 +5,7 @@ tags:
 - English
 categories:
 - [学习过程, 英语学习]
-- [教程]
+- [idea]
 excerpt: 一个好的查单词的方法
 ---
 # 检索单词方法
