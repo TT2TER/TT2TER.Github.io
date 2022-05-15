@@ -36,4 +36,4 @@ Host github.com
 这里-S表示使用socks5代理, 如果是http代理则为-H. connect工具git自带, 在\mingw64\bin\下面.
 
 # SSH原理
-[博客链接](https://blog.csdn.net/m0_50945504/article/details/119117874)
+[博客链接](https://www.jianshu.com/p/33461b619d53)
