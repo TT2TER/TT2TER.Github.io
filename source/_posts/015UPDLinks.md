@@ -1,5 +1,5 @@
 ---
-title: 0507UPD|每日有趣文章
+title: 0515UPD|每日有趣文章
 date: 2022-04-17 00:14:23
 tags: share
 sticky: 100
@@ -11,6 +11,9 @@ excerpt: 刷到的有趣文章
 # 只记录有趣文章
 ## 2022
 ### 05
+#### 17
+<li><a href="https://csdiy.wiki/"  tags="">一本计算机的自学指南</br><a href=/post/TODOlist.html  tags="">我的TODOlist</a></li><b>中有好兄弟给我推荐这个链接，虽然我大概率不会学CS，但分享出来共同进步</b>
+
 #### 07
 <li><a href="https://mp.weixin.qq.com/s/RU2x8aPUx3pHvk8DRCiPbA" time_added="1651926767" tags="">被操纵的P值：科学论文中的数学胡扯丨展卷</a></li><b>联想到最近做数模和好朋友的问卷研究</b>
 <li><a href="http://www.ruanyifeng.com/blog/2022/04/weekly-issue-202.html" time_added="1651924696" tags="inoreader,技术">科技爱好者周刊（第 202 期）：三个有启发的学习方法</a></li>
