@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-05-17T13:13:26.730Z</updated>
+  <updated>2022-05-17T13:14:43.410Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://tt2ter.github.io/post/TheWayToNAS.html"/>
     <id>http://tt2ter.github.io/post/TheWayToNAS.html</id>
     <published>2022-05-17T13:12:54.000Z</published>
-    <updated>2022-05-17T13:13:26.730Z</updated>
+    <updated>2022-05-17T13:14:43.410Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言：nas真的是需求吗"><a href="#前言：nas真的是需求吗" class="headerlink" title="前言：nas真的是需求吗"></a>前言：nas真的是需求吗</h1><li><a href="/post/"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：机器和配件购买"><a href="#第一部分：机器和配件购买" class="headerlink" title="第一部分：机器和配件购买"></a>第一部分：机器和配件购买</h1><li><a href="/post/"  tags="">我是如何选择nas的</li><h1 id="第二部分：安装！"><a href="#第二部分：安装！" class="headerlink" title="第二部分：安装！"></a>第二部分：安装！</h1>]]></content>
     
@@ -35,7 +35,7 @@
     <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     
-    <category term="-nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
     
   </entry>
   
