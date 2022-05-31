@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-05-31T13:14:42.288Z</updated>
+  <updated>2022-05-31T14:02:35.532Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://tt2ter.github.io/post/220531fixcdn.html"/>
     <id>http://tt2ter.github.io/post/220531fixcdn.html</id>
     <published>2022-05-31T13:10:15.000Z</published>
-    <updated>2022-05-31T13:14:42.288Z</updated>
+    <updated>2022-05-31T14:02:35.532Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="问题再现："><a href="#问题再现：" class="headerlink" title="问题再现："></a>问题再现：</h1><p>不仅加载慢还奇丑无比</p><p><img src="https://s2.loli.net/2022/05/31/3J1SesFtEGfQjAM.png"><br><img src="https://s2.loli.net/2022/05/31/UMO1izhyj4YlIsV.png"><br><img src="https://s2.loli.net/2022/05/31/OEZzSlrkLmysYM4.png"></p><p>修复后正常效果：<br><img src="https://s2.loli.net/2022/05/31/j8S5Ls2FtNHMcv7.png"></p><h1 id="修复-cdn-jsdelivr-net-无法访问的问题"><a href="#修复-cdn-jsdelivr-net-无法访问的问题" class="headerlink" title="修复 cdn.jsdelivr.net 无法访问的问题"></a>修复 cdn.jsdelivr.net 无法访问的问题</h1><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p><a href="https://github.com/PipecraftNet/hexo-filter-jsdelivr-auto-fallback">自动更换CDN项目</a></p><p>但实测插件写的有问题，但是他是拿Java写的我还不会改</p><h2 id="方案二-最终方案"><a href="#方案二-最终方案" class="headerlink" title="方案二(最终方案)"></a>方案二(最终方案)</h2><p>直接替换掉CDN结点<br>找一个合适的国内外都能访问的cdn站点替换掉cdn.jsdelivr.net<br><img src="https://s2.loli.net/2022/05/31/ZBingmKQtXPshLT.png"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="问题再现："><a href="#问题再现：" class="headerlink" title="问题再现："></a>问题再现：</h1><p>不仅加载慢还奇丑无比</p><p><img src="https://s2.loli.net/2022/05/31/3J1SesFtEGfQjAM.png"><br><img src="https://s2.loli.net/2022/05/31/UMO1izhyj4YlIsV.png"><br><img src="https://s2.loli.net/2022/05/31/OEZzSlrkLmysYM4.png"></p><p>修复后正常效果：<br><img src="https://s2.loli.net/2022/05/31/j8S5Ls2FtNHMcv7.png"></p><h1 id="修复-cdn-jsdelivr-net-无法访问的问题"><a href="#修复-cdn-jsdelivr-net-无法访问的问题" class="headerlink" title="修复 cdn.jsdelivr.net 无法访问的问题"></a>修复 cdn.jsdelivr.net 无法访问的问题</h1><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p><a href="https://github.com/PipecraftNet/hexo-filter-jsdelivr-auto-fallback">自动更换CDN项目</a></p><p>但实测插件写的有问题，但是他是拿Java写的我还不会改</p><h2 id="方案二-最终方案"><a href="#方案二-最终方案" class="headerlink" title="方案二(最终方案)"></a>方案二(最终方案)</h2><p>直接替换掉CDN结点</p><p>找一个合适的国内外都能访问的cdn站点替换掉cdn.jsdelivr.net<br><img src="https://s2.loli.net/2022/05/31/ZBingmKQtXPshLT.png"></p><p>一开始替换成了上图的cdn以为能用，实际上文件结构不同<br><img src="https://s2.loli.net/2022/05/31/ZQDHFML54zl1gyk.png"><br>导致网站评论插件等加载不出来，如下图报错</p><p><img src="https://s2.loli.net/2022/05/31/WGYyg9vlXFOBtHw.png"><br><a href="ttps://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/X-Content-Type-Options">报错消息头信息</a></p><p>于是替换了主题作者提供的替换cdn</p><p>说实话真的不想用这个国内什么爆米兔的cdn，但，emm不想再测其他的了</p>]]></content>
     
     
     <summary type="html">解决了因国内无法访问cdn.jsdelivr.net导致的博客无法顺利加载问题</summary>
@@ -346,9 +346,9 @@
     
     
     
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
-    
     <category term="idea" scheme="http://tt2ter.github.io/categories/idea/"/>
+    
+    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     <category term="英语学习" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
     
