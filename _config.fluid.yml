@@ -775,7 +775,11 @@ waline:
   meta: ['nick', 'mail', 'link']
   requiredMeta: ['nick']
   lang: 'zh-CN'
-  emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  emoji: [
+    '//unpkg.com/@waline/emojis@1.0.1/bilibili',
+    '//unpkg.com/@waline/emojis@1.0.1/weibo',
+    '//unpkg.com/@waline/emojis@1.0.1/tw-emoji',
+]
   dark: 'html[data-user-color-scheme="dark"]'
   avatar: 'retro'
   avatarCDN: 'https://seccdn.libravatar.org/avatar/'
