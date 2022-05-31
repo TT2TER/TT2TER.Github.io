@@ -39,6 +39,13 @@ code:
   # Enable copy code button
   copy_btn: true
 
+
+  # 代码语言
+  # Code language
+  language:
+    enable: true
+    default: "TEXT"
+  
   # 代码高亮
   # Code highlight
   highlight:
@@ -93,8 +100,13 @@ fun_features:
     # If true, loop animation
     loop: false
 
+    # 在指定页面开启，不填则在所有页面开启
+    # Enable in specified page, all pages by default
+    # Options: home | post | tag | category | about | links | page | 404
+    scope: []
+
   # 为文章内容中的标题添加锚图标
-  # Add an an icon to the title on the post page
+  # Add an anchor icon to the title on the post page
   anchorjs:
     enable: true
     element: h1,h2,h3,h4,h5,h6
@@ -142,6 +154,11 @@ color:
   # Color of navigation bar text
   navbar_text_color: "#fff"
   navbar_text_color_dark: "#d0d0d0"
+
+  # 副标题字体色
+  # Color of navigation bar text
+  subtitle_color: "#fff"
+  subtitle_color_dark: "#d0d0d0"
 
   # 全局字体色
   # Color of global text
@@ -831,7 +848,7 @@ category:
   banner_img: /img/Beijing.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  subtitle:
+  subtitle: '各找各妈'
 
   # 分类的排序字段，前面带减号是倒序，不带减号是正序
   # Sort field for categories, with a minus sign is reverse order
@@ -986,44 +1003,42 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  anchor: https://www.unpkg.com/anchor-js@4/
+  anchor: https://lib.baomitu.com/anchor-js/4.3.1/
 
-  github_markdown: https://www.unpkg.com/github-markdown-css@4/
+  github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
 
-  jquery: https://www.unpkg.com/jquery@3/dist/
+  jquery: https://lib.baomitu.com/jquery/3.6.0/
 
-  bootstrap: https://www.unpkg.com/bootstrap@4/dist/
+  bootstrap: https://lib.baomitu.com/twitter-bootstrap/4.6.1/
 
-  highlightjs: https://www.unpkg.com/highlight.js@10/
+  prismjs: https://lib.baomitu.com/prism/1.26.0/
 
-  prismjs: https://www.unpkg.com/prismjs@1/
+  tocbot: https://lib.baomitu.com/tocbot/4.18.0/
 
-  tocbot: https://www.unpkg.com/tocbot@4/dist/
+  typed: https://lib.baomitu.com/typed.js/2.0.12/
 
-  typed: https://www.unpkg.com/typed.js@2/lib/
+  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
 
-  fancybox: https://www.unpkg.com/@fancyapps/fancybox@3/dist/
+  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
 
-  nprogress: https://www.unpkg.com/nprogress@0/
+  mathjax: https://lib.baomitu.com/mathjax/3.2.0/
 
-  mathjax: https://www.unpkg.com/mathjax@3/es5/
-
-  katex: https://www.unpkg.com/katex@0/dist/
+  katex: https://lib.baomitu.com/KaTeX/0.15.2/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://www.unpkg.com/clipboard@2/dist/
+  clipboard: https://lib.baomitu.com/clipboard.js/2.0.10/
 
-  mermaid: https://www.unpkg.com/mermaid@8/dist/
+  mermaid: https://lib.baomitu.com/mermaid/8.13.10/
 
-  valine: https://www.unpkg.com/valine@1/dist/
+  valine: https://lib.baomitu.com/valine/1.4.16/
 
-  waline: https://www.unpkg.com/@waline/client@1/dist/
+  waline: https://lib.baomitu.com/waline/2.3.2/
 
-  gitalk: https://www.unpkg.com/gitalk@1/dist/
+  gitalk: https://lib.baomitu.com/gitalk/1.7.2/
 
-  disqusjs: https://www.unpkg.com/disqusjs@1/dist/
+  disqusjs: https://lib.baomitu.com/disqusjs/1.3.0/
 
-  twikoo: https://www.unpkg.com/twikoo@1/dist/
+  twikoo: https://lib.baomitu.com/twikoo/1.4.17/
 
-  hint: https://www.unpkg.com/hint.css@2/
+  hint: https://lib.baomitu.com/hint.css/2.7.0/
