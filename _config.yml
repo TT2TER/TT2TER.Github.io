@@ -100,6 +100,7 @@ ignore:
 theme: fluid
 plugins:
     hexo-generator-feed
+    hexo-filter-jsdelivr-auto-fallback
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -122,3 +123,8 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+  #修复 cdn.jsdelivr.net 无法访问的问题[https://github.com/PipecraftNet/hexo-filter-jsdelivr-auto-fallback]
+jsdelivr_auto_fallback:
+  enable: false
+  add_defer: true
