@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>一次家宽的网络题记述</title>
+    <link href="/post/220629networkProblem.html"/>
+    <url>/post/220629networkProblem.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="搬回家后网络架构"><a href="#搬回家后网络架构" class="headerlink" title="搬回家后网络架构"></a>搬回家后网络架构</h1><h2 id="两种可选方案"><a href="#两种可选方案" class="headerlink" title="两种可选方案"></a>两种可选方案</h2><h3 id="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"><a href="#nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫" class="headerlink" title="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"></a>nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫</h3><p>好处是客厅电视和手机与nas在一个网段，可以很轻松联通</p><p>坏处是机器放在客厅扰民，电脑需要连接wifi才可以登陆nas管理界面</p><h3 id="nas也接光猫"><a href="#nas也接光猫" class="headerlink" title="nas也接光猫"></a>nas也接光猫</h3><p>成本：在弱电箱增加了一个非常小的交换机（为了将储藏间墙里的网线连到光猫上</p><p>好处是nas可以放在储物间了，不扰民</p><p>坏处是客厅电视和手机没法连到nas了</p><h1 id="网络速度的问题"><a href="#网络速度的问题" class="headerlink" title="网络速度的问题"></a>网络速度的问题</h1><h2 id="百兆网到千兆网"><a href="#百兆网到千兆网" class="headerlink" title="百兆网到千兆网"></a>百兆网到千兆网</h2><p>一开始百兆的上传，导致我nas pt有上传的时候不限速相当于家里断网了，延迟极高。</p><p>后来限速效果也不显著</p><p>就升级到了千兆</p><p>千兆之后就好了很多，白天限速晚上放开</p><h1 id="第一次群体性网络问题"><a href="#第一次群体性网络问题" class="headerlink" title="第一次群体性网络问题"></a>第一次群体性网络问题</h1><p>首先是一天的上午，设置了nas的DDNS解析，上午还能用，下午睡醒了就发现上午解析好的域名打不开了。</p><p>一通折腾，一开始没有意识到是DNS的问题（后来问了问别人意识到了</p><p>在此期间我重启了一次我的电脑，重启完了发现，我的电脑同样解析不了代理服务器的地址了，包括所有纯IPV6域名也解析不了了。只有电脑有这个问题，内网其它设备都能用。电脑不论是有线连光猫还是无限&#x2F;无线连路由，都这样的问题。于是我认为是我电脑出现了问题。</p><p>尝试了给电脑换各种DNS服务器，都不管用。给路由器换也不管用。</p><p>遂放弃。</p><p>第二天上午又尝试了奇奇怪怪的方法，包括Windows网络重置，清除浏览器浏览记录等，都不管用。</p><p>下午睡醒之后，再一看，hjh，手机和nas的ipv6都掉了，一看是光猫没分配到IPV6。</p><p>自己折腾了一下还是没用，就打电话给移动，移动给后台不知道干了点啥，最后让我重启光猫。</p><p>重启之后，上述问题在半小时的系统重启，服务恢复之后都解决掉了。emm，DDNS解析也能正常使用了。</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>拖拖拉拉写了两天，本来以为就这么写完了就行了。没想到因为在找问题的时候我发现DOCKER里的端口是IPV4的，我需要给他映射在IPV6上，于是装了个包管理器，emmm，nas的管理界面就完蛋了。</p><p>表象是我的账号密码无法登陆，总显示账密错误。</p><p>尝试通过REset来重置管理员用户名密码，发现，reset完了连图形界面也看不见了。（但是qb等web端还是能连接上。</p><p>现在正在解决中……未完待续！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Problems</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>network</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何修复因为国内无法访问cdn.jsdelivr.net导致网页加载出错情况</title>
     <link href="/post/220531fixcdn.html"/>
     <url>/post/220531fixcdn.html</url>

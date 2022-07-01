@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-05-31T14:02:35.532Z</updated>
+  <updated>2022-07-01T08:51:27.383Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次家宽的网络题记述</title>
+    <link href="http://tt2ter.github.io/post/220629networkProblem.html"/>
+    <id>http://tt2ter.github.io/post/220629networkProblem.html</id>
+    <published>2022-07-01T08:51:27.000Z</published>
+    <updated>2022-07-01T08:51:27.383Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="搬回家后网络架构"><a href="#搬回家后网络架构" class="headerlink" title="搬回家后网络架构"></a>搬回家后网络架构</h1><h2 id="两种可选方案"><a href="#两种可选方案" class="headerlink" title="两种可选方案"></a>两种可选方案</h2><h3 id="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"><a href="#nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫" class="headerlink" title="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"></a>nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫</h3><p>好处是客厅电视和手机与nas在一个网段，可以很轻松联通</p><p>坏处是机器放在客厅扰民，电脑需要连接wifi才可以登陆nas管理界面</p><h3 id="nas也接光猫"><a href="#nas也接光猫" class="headerlink" title="nas也接光猫"></a>nas也接光猫</h3><p>成本：在弱电箱增加了一个非常小的交换机（为了将储藏间墙里的网线连到光猫上</p><p>好处是nas可以放在储物间了，不扰民</p><p>坏处是客厅电视和手机没法连到nas了</p><h1 id="网络速度的问题"><a href="#网络速度的问题" class="headerlink" title="网络速度的问题"></a>网络速度的问题</h1><h2 id="百兆网到千兆网"><a href="#百兆网到千兆网" class="headerlink" title="百兆网到千兆网"></a>百兆网到千兆网</h2><p>一开始百兆的上传，导致我nas pt有上传的时候不限速相当于家里断网了，延迟极高。</p><p>后来限速效果也不显著</p><p>就升级到了千兆</p><p>千兆之后就好了很多，白天限速晚上放开</p><h1 id="第一次群体性网络问题"><a href="#第一次群体性网络问题" class="headerlink" title="第一次群体性网络问题"></a>第一次群体性网络问题</h1><p>首先是一天的上午，设置了nas的DDNS解析，上午还能用，下午睡醒了就发现上午解析好的域名打不开了。</p><p>一通折腾，一开始没有意识到是DNS的问题（后来问了问别人意识到了</p><p>在此期间我重启了一次我的电脑，重启完了发现，我的电脑同样解析不了代理服务器的地址了，包括所有纯IPV6域名也解析不了了。只有电脑有这个问题，内网其它设备都能用。电脑不论是有线连光猫还是无限&#x2F;无线连路由，都这样的问题。于是我认为是我电脑出现了问题。</p><p>尝试了给电脑换各种DNS服务器，都不管用。给路由器换也不管用。</p><p>遂放弃。</p><p>第二天上午又尝试了奇奇怪怪的方法，包括Windows网络重置，清除浏览器浏览记录等，都不管用。</p><p>下午睡醒之后，再一看，hjh，手机和nas的ipv6都掉了，一看是光猫没分配到IPV6。</p><p>自己折腾了一下还是没用，就打电话给移动，移动给后台不知道干了点啥，最后让我重启光猫。</p><p>重启之后，上述问题在半小时的系统重启，服务恢复之后都解决掉了。emm，DDNS解析也能正常使用了。</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>拖拖拉拉写了两天，本来以为就这么写完了就行了。没想到因为在找问题的时候我发现DOCKER里的端口是IPV4的，我需要给他映射在IPV6上，于是装了个包管理器，emmm，nas的管理界面就完蛋了。</p><p>表象是我的账号密码无法登陆，总显示账密错误。</p><p>尝试通过REset来重置管理员用户名密码，发现，reset完了连图形界面也看不见了。（但是qb等web端还是能连接上。</p><p>现在正在解决中……未完待续！</p>]]></content>
+    
+    
+    <summary type="html">记把nas搬回家之后网络环境搭建以及半个月左右出现的问题</summary>
+    
+    
+    
+    <category term="Problems" scheme="http://tt2ter.github.io/categories/Problems/"/>
+    
+    
+    <category term="network" scheme="http://tt2ter.github.io/tags/network/"/>
+    
+  </entry>
   
   <entry>
     <title>如何修复因为国内无法访问cdn.jsdelivr.net导致网页加载出错情况</title>
@@ -436,31 +457,6 @@
     <category term="video" scheme="http://tt2ter.github.io/tags/video/"/>
     
     <category term="F1" scheme="http://tt2ter.github.io/tags/F1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的建站过程</title>
-    <link href="http://tt2ter.github.io/post/220326hello-myblog.html"/>
-    <id>http://tt2ter.github.io/post/220326hello-myblog.html</id>
-    <published>2022-03-26T03:38:54.698Z</published>
-    <updated>2022-05-17T17:15:08.039Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="我的建站过程"><a href="#我的建站过程" class="headerlink" title="我的建站过程"></a>我的建站过程</h1><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>有了个服务器，看到朋友建了一个博客，萌生想法</p><h2 id="各处搜罗找到了hexo"><a href="#各处搜罗找到了hexo" class="headerlink" title="各处搜罗找到了hexo"></a>各处搜罗找到了hexo</h2><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>本意是要好看炫酷，兼顾速度<br>第一个找到的 <a href="https://github.com/auroral-ui/hexo-theme-aurora">aurora</a> 主题在我的电脑上有点bug<br>后来看到了 <a href="https://emc2.tk/">E&#x3D;mc²的博客</a>很帅气，便确定了建站主题<br><a href="https://github.com/fluid-dev/hexo-theme-fluid">fluid</a></p><h5 id="主题的首页图像"><a href="#主题的首页图像" class="headerlink" title="主题的首页图像"></a>主题的首页图像</h5><p>这是我在刷知乎的时候看到的一个网站<br><a href="https://anvaka.github.io/city-roads/">Draw all roads in a city：可以把全球主要城市的路网导出图片，用作插图</a><br>改用北京传统的皇家配色</p><p>修改主题配置，得到了博客的半成品</p><p>添加域名</p><p>上传源码</p><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>字体选用了自己喜欢的，但弊端是用户要在线加载<br>导致加载会卡顿</p><h2 id="一些TIPS"><a href="#一些TIPS" class="headerlink" title="一些TIPS"></a>一些TIPS</h2><h4 id="要跟着官方文档来，不要着急，善用百度谷歌"><a href="#要跟着官方文档来，不要着急，善用百度谷歌" class="headerlink" title="要跟着官方文档来，不要着急，善用百度谷歌"></a>要跟着官方文档来，不要着急，善用百度谷歌</h4><h4 id="注意图床等能否国内访问"><a href="#注意图床等能否国内访问" class="headerlink" title="注意图床等能否国内访问"></a>注意图床等能否国内访问</h4><h1 id="hexo自带欢迎页"><a href="#hexo自带欢迎页" class="headerlink" title="hexo自带欢迎页"></a>hexo自带欢迎页</h1><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    <summary type="html">以及Hexo欢迎页</summary>
-    
-    
-    
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="http://tt2ter.github.io/tags/Hexo/"/>
-    
-    <category term="font" scheme="http://tt2ter.github.io/tags/font/"/>
-    
-    <category term="image" scheme="http://tt2ter.github.io/tags/image/"/>
     
   </entry>
   

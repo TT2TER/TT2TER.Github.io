@@ -16,22 +16,22 @@
   <meta name="author" content="TT2TER">
   <meta name="keywords" content="c">
   
-    <meta name="description" content="这是一个测试博客">
+    <meta name="description" content="记把nas搬回家之后网络环境搭建以及半个月左右出现的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试firstblog">
-<meta property="og:url" content="http://tt2ter.github.io/post/220324firstblog.html">
+<meta property="og:title" content="一次家宽的网络题记述">
+<meta property="og:url" content="http://tt2ter.github.io/post/220629networkProblem.html">
 <meta property="og:site_name" content="马火星的迷你小屋">
-<meta property="og:description" content="这是一个测试博客">
+<meta property="og:description" content="记把nas搬回家之后网络环境搭建以及半个月左右出现的问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-24T15:53:02.000Z">
-<meta property="article:modified_time" content="2022-03-26T03:38:54.698Z">
+<meta property="article:published_time" content="2022-07-01T08:51:27.000Z">
+<meta property="article:modified_time" content="2022-07-01T08:51:27.383Z">
 <meta property="article:author" content="TT2TER">
-<meta property="article:tag" content="Test">
+<meta property="article:tag" content="network">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>测试firstblog - 马火星的迷你小屋</title>
+  <title>一次家宽的网络题记述 - 马火星的迷你小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -227,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="测试firstblog"></span>
+            <span id="subtitle" data-typed-text="一次家宽的网络题记述"></span>
           
         </div>
 
@@ -243,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-24 23:53" pubdate>
-          2022年3月24日 晚上
+        <time datetime="2022-07-01 16:51" pubdate>
+          2022年7月1日 下午
         </time>
       </span>
     
@@ -256,7 +256,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          26 字
+          902 字
         
       </span>
     
@@ -268,7 +268,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -314,21 +314,41 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">测试firstblog</h1>
+            <h1 style="display: none">一次家宽的网络题记述</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：3 个月前
+                    本文最后更新于：几秒前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="这是一个测试博客"><a href="#这是一个测试博客" class="headerlink" title="这是一个测试博客"></a>这是一个测试博客</h1><p>放上我的github<a target="_blank" rel="noopener" href="https://github.com/TT2TER">主页</a></p>
-<p>自动更新测试</p>
+              <h1 id="搬回家后网络架构"><a href="#搬回家后网络架构" class="headerlink" title="搬回家后网络架构"></a>搬回家后网络架构</h1><h2 id="两种可选方案"><a href="#两种可选方案" class="headerlink" title="两种可选方案"></a>两种可选方案</h2><h3 id="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"><a href="#nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫" class="headerlink" title="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"></a>nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫</h3><p>好处是客厅电视和手机与nas在一个网段，可以很轻松联通</p>
+<p>坏处是机器放在客厅扰民，电脑需要连接wifi才可以登陆nas管理界面</p>
+<h3 id="nas也接光猫"><a href="#nas也接光猫" class="headerlink" title="nas也接光猫"></a>nas也接光猫</h3><p>成本：在弱电箱增加了一个非常小的交换机（为了将储藏间墙里的网线连到光猫上</p>
+<p>好处是nas可以放在储物间了，不扰民</p>
+<p>坏处是客厅电视和手机没法连到nas了</p>
+<h1 id="网络速度的问题"><a href="#网络速度的问题" class="headerlink" title="网络速度的问题"></a>网络速度的问题</h1><h2 id="百兆网到千兆网"><a href="#百兆网到千兆网" class="headerlink" title="百兆网到千兆网"></a>百兆网到千兆网</h2><p>一开始百兆的上传，导致我nas pt有上传的时候不限速相当于家里断网了，延迟极高。</p>
+<p>后来限速效果也不显著</p>
+<p>就升级到了千兆</p>
+<p>千兆之后就好了很多，白天限速晚上放开</p>
+<h1 id="第一次群体性网络问题"><a href="#第一次群体性网络问题" class="headerlink" title="第一次群体性网络问题"></a>第一次群体性网络问题</h1><p>首先是一天的上午，设置了nas的DDNS解析，上午还能用，下午睡醒了就发现上午解析好的域名打不开了。</p>
+<p>一通折腾，一开始没有意识到是DNS的问题（后来问了问别人意识到了</p>
+<p>在此期间我重启了一次我的电脑，重启完了发现，我的电脑同样解析不了代理服务器的地址了，包括所有纯IPV6域名也解析不了了。只有电脑有这个问题，内网其它设备都能用。电脑不论是有线连光猫还是无限&#x2F;无线连路由，都这样的问题。于是我认为是我电脑出现了问题。</p>
+<p>尝试了给电脑换各种DNS服务器，都不管用。给路由器换也不管用。</p>
+<p>遂放弃。</p>
+<p>第二天上午又尝试了奇奇怪怪的方法，包括Windows网络重置，清除浏览器浏览记录等，都不管用。</p>
+<p>下午睡醒之后，再一看，hjh，手机和nas的ipv6都掉了，一看是光猫没分配到IPV6。</p>
+<p>自己折腾了一下还是没用，就打电话给移动，移动给后台不知道干了点啥，最后让我重启光猫。</p>
+<p>重启之后，上述问题在半小时的系统重启，服务恢复之后都解决掉了。emm，DDNS解析也能正常使用了。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>拖拖拉拉写了两天，本来以为就这么写完了就行了。没想到因为在找问题的时候我发现DOCKER里的端口是IPV4的，我需要给他映射在IPV6上，于是装了个包管理器，emmm，nas的管理界面就完蛋了。</p>
+<p>表象是我的账号密码无法登陆，总显示账密错误。</p>
+<p>尝试通过REset来重置管理员用户名密码，发现，reset完了连图形界面也看不见了。（但是qb等web端还是能连接上。</p>
+<p>现在正在解决中……未完待续！</p>
 
               
             </div>
@@ -336,11 +356,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Problems/" class="category-chain-item">Problems</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Test/">#Test</a>
+        <a href="/tags/network/">#network</a>
       
     </div>
   
@@ -352,8 +393,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>测试firstblog</div>
-      <div>http://tt2ter.github.io/post/220324firstblog.html</div>
+      <div>一次家宽的网络题记述</div>
+      <div>http://tt2ter.github.io/post/220629networkProblem.html</div>
     </div>
     <div class="license-meta">
       
@@ -365,7 +406,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月24日</div>
+          <div>2022年7月1日</div>
         </div>
       
       
@@ -395,15 +436,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/220325codewithvscode.html" title="code with vscode">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">code with vscode</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/post/220531fixcdn.html" title="如何修复因为国内无法访问cdn.jsdelivr.net导致网页加载出错情况">
+                        <span class="hidden-mobile">如何修复因为国内无法访问cdn.jsdelivr.net导致网页加载出错情况</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
