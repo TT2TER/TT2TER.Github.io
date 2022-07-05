@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-07-01T08:51:27.383Z</updated>
+  <updated>2022-07-05T05:39:16.106Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初次安装nas系统</title>
+    <link href="http://tt2ter.github.io/post/220518install.html"/>
+    <id>http://tt2ter.github.io/post/220518install.html</id>
+    <published>2022-07-04T12:51:10.000Z</published>
+    <updated>2022-07-05T05:39:16.106Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="过程简述"><a href="#过程简述" class="headerlink" title="过程简述"></a>过程简述</h1><h2 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h2><p>插到了ups上，dp充电头有些松动</p><h2 id="局域网连接初始化硬盘"><a href="#局域网连接初始化硬盘" class="headerlink" title="局域网连接初始化硬盘"></a>局域网连接初始化硬盘</h2><p>两个8t简单卷，初始化慢慢的</p><h2 id="第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网"><a href="#第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网" class="headerlink" title="第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网"></a>第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网</h2><p>当时想到的解决方案有：</p><ol><li>用ssh登陆设置脚本认证</li><li>用pc共享网络</li><li>找个无线网卡连接无线网</li></ol><p>最后先用了方法2，先把机器装好再说，之后打算用方案1</p><h2 id="安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）"><a href="#安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）" class="headerlink" title="安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）"></a>安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）</h2><p>更新完系统重启的时候很慢，得有10分钟，不知道是因为更新还是每次重启都会这么慢。</p><p>配置hdmi界面后，有了奇奇怪怪的需求。我控制nas的输入设备是之前的旧的蓝牙键盘，我突然想到之前买键盘的时候如果买的是多模的，就可以无缝切换电脑和nas了。</p><h2 id="配置好了微力同步，同步速率很快"><a href="#配置好了微力同步，同步速率很快" class="headerlink" title="配置好了微力同步，同步速率很快"></a>配置好了微力同步，同步速率很快</h2><h2 id="安装了浏览器，能够在局域网内手动登陆校园网"><a href="#安装了浏览器，能够在局域网内手动登陆校园网" class="headerlink" title="安装了浏览器，能够在局域网内手动登陆校园网"></a>安装了浏览器，能够在局域网内手动登陆校园网</h2><h2 id="用nas的虚拟交换机让电脑也能继续用有线"><a href="#用nas的虚拟交换机让电脑也能继续用有线" class="headerlink" title="用nas的虚拟交换机让电脑也能继续用有线"></a>用nas的虚拟交换机让电脑也能继续用有线</h2><h2 id="发现学校没有公网ipv6"><a href="#发现学校没有公网ipv6" class="headerlink" title="发现学校没有公网ipv6??"></a>发现学校没有公网ipv6??</h2><h2 id="qb套件下载"><a href="#qb套件下载" class="headerlink" title="qb套件下载"></a>qb套件下载</h2><p>发现连不上tracker,放弃</p><p>换用Docker</p><h2 id="Docker折腾"><a href="#Docker折腾" class="headerlink" title="Docker折腾"></a>Docker折腾</h2><p>换的时候ssh连接密码不对，三秒重置</p><p>然后之前的虚拟交换机寄了，好多功能自动关闭了</p><p>数据应该没问题</p><p>emm重新登陆发现初始密码就是之前输的，难道是输错了？</p><p><a href="https://post.smzdm.com/p/az3k85gr/">找了一个人的教程，安装docker，他说自带的不好用（不够折腾）</a></p><p>这个人博客的命令运行不了</p><p>评论区的中文版能用</p><p><a href="https://post.smzdm.com/p/a6dw97xo/">后续Docker管理界面教程做的比较好</a></p><p>但是qb docker根本不能用好吧，要不就是连不上tracker,要不就是webui上不去，而且现有办法都不行</p><p>最后尝试transmission根本打不开，乐</p><p>然后用威联通自带的下载中心，能连，说明网络不是问题（但不支持仅ipv6)</p><p>最后下了个很旧的套件版本，凑活能用，大部分站点都能连上tracker，有的要将https改为http，另外有的根本没法连（纯ipv6下）</p><p>后来更新到4.3.9又可以了</p><h3 id="关于qb的下载问题"><a href="#关于qb的下载问题" class="headerlink" title="关于qb的下载问题"></a>关于qb的下载问题</h3><p>之前因为峰值速度和连接性的问题，qb总是卡死，有时候系统卡死，在配置了最大连接数等东西之后解决了这个问题。</p><p>配置重点是最大连接数和全局上传窗口上限符合系统承受能力，我的分别是800 500</p><p>每个的不限制</p><p>上传窗口策略是固定窗口数</p><h2 id="smb挂载"><a href="#smb挂载" class="headerlink" title="smb挂载"></a>smb挂载</h2><p>很简单，本地浏览速度可以</p><h2 id="smtp消息提醒"><a href="#smtp消息提醒" class="headerlink" title="smtp消息提醒"></a>smtp消息提醒</h2><h2 id="一些有意思的docker"><a href="#一些有意思的docker" class="headerlink" title="一些有意思的docker"></a>一些有意思的docker</h2><p>音乐服务器……<br>DDns</p><p><em>portainer</em></p><p>docker run -d –restart&#x3D;always –name&#x3D;”portainer” -p 9000:9000 -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;share&#x2F;Docker&#x2F;portainer_data:&#x2F;data 6053537&#x2F;portainer-ce<br><a href="https://hub.docker.com/r/6053537/portainer-ce">汉化版</a></p><p><em>ddns-go</em><br>docker run -d –name ddns-go –restart&#x3D;always –net&#x3D;host -v &#x2F;share&#x2F;Docker&#x2F;ddns-go:&#x2F;root jeessy&#x2F;ddns-go</p>]]></content>
+    
+    
+    <summary type="html">nas初始化安装过程记录</summary>
+    
+    
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    
+    
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    
+    <category term="TheWayToNAS" scheme="http://tt2ter.github.io/tags/TheWayToNAS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>局域网高码率推流</title>
+    <link href="http://tt2ter.github.io/post/220703rtmp.html"/>
+    <id>http://tt2ter.github.io/post/220703rtmp.html</id>
+    <published>2022-07-03T03:41:21.000Z</published>
+    <updated>2022-07-03T03:41:21.407Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="用到的软件"><a href="#用到的软件" class="headerlink" title="用到的软件"></a>用到的软件</h1><p>OBS</p><p><a href="https://github.com/superconvert/smart_rtmpd">一个好用的推流服务器</a></p>]]></content>
+    
+    
+    <summary type="html">简单回顾一下学期中的局域网推流</summary>
+    
+    
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Film" scheme="http://tt2ter.github.io/tags/Film/"/>
+    
+  </entry>
   
   <entry>
     <title>一次家宽的网络题记述</title>
@@ -415,48 +461,6 @@
     
     
     <category term="network" scheme="http://tt2ter.github.io/tags/network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TODOlist</title>
-    <link href="http://tt2ter.github.io/post/TODOlist.html"/>
-    <id>http://tt2ter.github.io/post/TODOlist.html</id>
-    <published>2022-03-30T14:16:19.000Z</published>
-    <updated>2022-05-16T17:07:18.848Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul><li>LaTeX 语法学习 [20%]</li><li>直观理解数学分析</li><li>nas<ul><li>私人网络图书馆</li><li>同步服务器</li><li>视频服务和音乐服务</li><li>学习Docker</li></ul></li></ul><h1 id="DONE"><a href="#DONE" class="headerlink" title="DONE"></a>DONE</h1><ul><li>英语学习方法</li></ul><h2 id="可以在底部评论区给我推荐有意思的东西！！"><a href="#可以在底部评论区给我推荐有意思的东西！！" class="headerlink" title="可以在底部评论区给我推荐有意思的东西！！"></a>可以在底部评论区给我推荐有意思的东西！！</h2>]]></content>
-    
-    
-    <summary type="html">这是一个计划单</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>About-Learning-with-a-Video</title>
-    <link href="http://tt2ter.github.io/post/220327About-Learning-with-a-Video.html"/>
-    <id>http://tt2ter.github.io/post/220327About-Learning-with-a-Video.html</id>
-    <published>2022-03-26T17:40:01.000Z</published>
-    <updated>2022-03-27T03:19:20.439Z</updated>
-    
-    <content type="html"><![CDATA[<p>通过MOOC上<a href="https://www.icourse163.org/learn/DUT-1205986804?tid=1467039500#/learn/announce">课程</a>学习autoCAD操作，感到很烦躁<br>延伸讨论到视频和文字获取信息成本上<br>下面简要阐述我的观点</p><p>先说结论</p><h1 id="对于观看者来说，视频的观看成本很高"><a href="#对于观看者来说，视频的观看成本很高" class="headerlink" title="对于观看者来说，视频的观看成本很高"></a>对于观看者来说，视频的观看成本很高</h1><p>为了让读者更好的带入我现在的感觉，我简单表述一下我看视频学习的场景</p><h2 id="情景"><a href="#情景" class="headerlink" title="情景"></a>情景</h2><p>手机看mooc，电脑操控AutoCAD</p><p>视频里的老师讲述操作be like:”先点这个，再点这个，然后点这个……” with正常说话的语速</p><p>然后我很怀疑她有没有备课</p><p>经常讲一半推翻前面的东西，这就很烦</p><p>因为讨论的是视频效果，视频内容的架空暂且不提</p><h2 id="观看成本从何而来–对比文章"><a href="#观看成本从何而来–对比文章" class="headerlink" title="观看成本从何而来–对比文章"></a>观看成本从何而来–对比文章</h2><ol><li>视频拖动或倍速成本较高，不能<strong>跟随观看者节奏</strong>调整–文章自由调整</li><li>视频内容难以复制，对查询相关内容产生壁垒–文章自由复制</li><li>视频内容若和文字不匹配，或解说不清晰，会造成观看者困惑或者效率低下</li><li>视频内容密度变化大，受到语速画面内容等影响。视频制作者若没有意识。不能调整节奏，会造成一段时间内信息密度过大过小，导致来回回放<h2 id="视频有优势嘛？"><a href="#视频有优势嘛？" class="headerlink" title="视频有优势嘛？"></a>视频有优势嘛？</h2>有，可视化<br>内容直观</li></ol><p>休闲娱乐类产出视频更合适</p><h1 id="我期望的（技术相关）视频是什么样"><a href="#我期望的（技术相关）视频是什么样" class="headerlink" title="我期望的（技术相关）视频是什么样?"></a>我期望的（技术相关）视频是什么样?</h1><p>既然我选择牺牲一定时间成本观看视频</p><p>我希望至少跟着视频顺下来能对整个过程有宏观把握<br>不需要来回回放</p><p>视频制作要尊重观看者，至少要准备文案，关键位置把握节奏</p><p>能达到牺牲一定时间能换来观看一遍视频<strong>不用查相关资料</strong>学会内容</p><p>那便是极好的</p><h1 id="最后，我很多年没有这么不爽过了"><a href="#最后，我很多年没有这么不爽过了" class="headerlink" title="最后，我很多年没有这么不爽过了"></a>最后，我很多年没有这么不爽过了</h1><p>越看越着急，越难受<br>自己怎么弄都不行的感觉</p><h1 id="插播"><a href="#插播" class="headerlink" title="插播"></a>插播</h1><p>F1沙特站汉密尔顿排位赛没进Q2，历史时刻！<br><img src="https://s3.bmp.ovh/imgs/2022/03/c435f76e9aa58d8b.jpg" alt="车迷的惊叹"><br><img src="https://s3.bmp.ovh/imgs/2022/03/7c416edbc99864e6.jpg" alt="老汉开慢车"></p>]]></content>
-    
-    
-    <summary type="html">就视频和文章获取信息成本进行讨论</summary>
-    
-    
-    
-    <category term="Diary" scheme="http://tt2ter.github.io/categories/Diary/"/>
-    
-    <category term="idea" scheme="http://tt2ter.github.io/categories/idea/"/>
-    
-    
-    <category term="video" scheme="http://tt2ter.github.io/tags/video/"/>
-    
-    <category term="F1" scheme="http://tt2ter.github.io/tags/F1/"/>
     
   </entry>
   
