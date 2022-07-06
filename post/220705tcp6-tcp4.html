@@ -24,7 +24,7 @@
 <meta property="og:description" content="在之前折腾ddns时发现bridge下的服务无法通过ipv6从外网访问到，解决">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-05T10:54:31.000Z">
-<meta property="article:modified_time" content="2022-07-06T09:46:45.924Z">
+<meta property="article:modified_time" content="2022-07-06T15:57:38.040Z">
 <meta property="article:author" content="TT2TER">
 <meta property="article:tag" content="network">
 <meta property="article:tag" content="nas">
@@ -257,7 +257,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1k 字
+          933 字
         
       </span>
     
@@ -321,7 +321,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2 小时前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -349,7 +349,7 @@
 <li>emmm据说威联通的rc.local会被重启抹掉……</li>
 <li>并且威联通官方的脚本是系统级的，会在安装的app依赖前启动……</li>
 </ul>
-<h1 id="最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面"><a href="#最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面" class="headerlink" title="最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面"></a>最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># start socat v6tov4 no conect to Entware</span><br>	<span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">20080</span> &amp;<br>	<span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9001</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span> &amp;<br>  <span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9090</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9091</span> &amp;<br></code></pre></td></tr></table></figure>
+<h1 id="最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面"><a href="#最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面" class="headerlink" title="最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面"></a>最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># start socat v6tov4 no conect to Entware</span><br>	<span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">20080</span> &amp;<br>	<span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9001</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span> &amp;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>一开始还写错了，因为这里用户还未登陆，所以命令要加上&#x2F;opt&#x2F;bin路径？？</li>
 </ul>
