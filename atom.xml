@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-07-05T05:39:16.106Z</updated>
+  <updated>2022-07-06T09:46:45.924Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IPV6访问NAS中Docker的服务</title>
+    <link href="http://tt2ter.github.io/post/220705tcp6-tcp4.html"/>
+    <id>http://tt2ter.github.io/post/220705tcp6-tcp4.html</id>
+    <published>2022-07-05T10:54:31.000Z</published>
+    <updated>2022-07-06T09:46:45.924Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h1><p><a href="https://blog.17lai.site/posts/462f1e5c/">通过IPV6访问Qnap NAS中Docker的服务</a></p><h1 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h1><ul><li><p>包管理器要安装qnapclub上的版本</p></li><li><p>socat一般只能前台运行，所以可以借助nohup<a href="http://linux.51yip.com/search/socat">参考：文章最后</a></p></li><li><p><a href="https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html">nohup</a></p></li><li><p>在参考博客中采用的方法是命令行尾加&amp;<a href="https://www.cnblogs.com/hf8051/p/5334343.html">命令行尾&amp;作用</a></p></li><li><p>实际上，nohup和&amp;分别会被Ctrlc和关闭窗口杀掉，但二者结合就都免疫了<a href="https://wsgzao.github.io/post/nohup/">附：nohup 结合 &amp; 用法以及如何精准查找进程并 kill 后台任务实践</a></p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nohup</span> socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0.0.1:20080</span> &amp;<br></code></pre></td></tr></table></figure></li></ul><p>参考了<a href="https://ghostinto.top/archives/27.html">这篇</a>博客</p><ul><li>当然，nas上没有nohup.而且有的<a href="https://blog.csdn.net/lengye7/article/details/80270379">coreutils</a>中没有nohup，<a href="https://blog.jeyfang.com/archives/52">安装nohup：Nas-QNAP-系列02-关于自定义脚本开机运行及nohup</a><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">opkg <span class="hljs-keyword">install</span> coreutils-nohup<br></code></pre></td></tr></table></figure></li><li>又想到万一以后重启了，还得让socat自启动<a href="https://blog.csdn.net/qq_45691577/article/details/123962036">nohup后台自启动</a></li><li>emmm绕回到bash脚本了……</li><li>emmm据说威联通的rc.local会被重启抹掉……</li><li>并且威联通官方的脚本是系统级的，会在安装的app依赖前启动……</li></ul><h1 id="最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面"><a href="#最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面" class="headerlink" title="最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面"></a>最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># start socat v6tov4 no conect to Entware</span><br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">20080</span> &amp;<br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9001</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span> &amp;<br>  <span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9090</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9091</span> &amp;<br></code></pre></td></tr></table></figure><ul><li>一开始还写错了，因为这里用户还未登陆，所以命令要加上&#x2F;opt&#x2F;bin路径？？</li></ul><li><a href="/post/220705bashshell"  tags="">新开一博客记录脚本学习</li><h1 id="最后用重定向把端口号藏起来"><a href="#最后用重定向把端口号藏起来" class="headerlink" title="最后用重定向把端口号藏起来"></a>最后用重定向把端口号藏起来</h1><p><a href="https://blog.csdn.net/qq_40672635/article/details/124818111">使用Cloudflare给域名添加跳转&#x2F;301重定向</a></p><p><a href="https://www.geekyes.com/124.htm">利用url重定向, 链接不带端口, 纯域名访问web页面</a></p><p>一定在dns里随便加一个解析记录，才能走cf代理</p>]]></content>
+    
+    
+    <summary type="html">在之前折腾ddns时发现bridge下的服务无法通过ipv6从外网访问到，解决</summary>
+    
+    
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="network" scheme="http://tt2ter.github.io/tags/network/"/>
+    
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    
+  </entry>
   
   <entry>
     <title>初次安装nas系统</title>
@@ -440,27 +463,6 @@
     
     <category term="Diary" scheme="http://tt2ter.github.io/categories/Diary/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>a-network-problem-solve</title>
-    <link href="http://tt2ter.github.io/post/220330a-network-problem-solve.html"/>
-    <id>http://tt2ter.github.io/post/220330a-network-problem-solve.html</id>
-    <published>2022-03-30T14:16:45.000Z</published>
-    <updated>2022-05-07T16:19:01.136Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近电脑的网络频繁出现各种问题，用一个晚上的时间大概解决掉了</p><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><ol><li>首先是各几天就无法连接ipv6，表现为获取不到ipv6地址</li><li>其次是出现ipv4速度远低于应该达到的速度(校园网超量限速情况下)，且校园网认证时链接认证服务器时间指数级增加。</li><li>本地服务无法被同局域网内其他设备连接，包括各种webUI，以及远程桌面</li></ol><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol><li>给学校网络管理中心打电话，重启了交换机，还不行，反馈。查找别的原因，好了（具体原因打算之后再问）P.S 重启交换机的时候整层断网哈哈哈哈</li><li>问题2和3 是慢慢显现的，而且不断重启会随机修复部分问题。在多次绝望重启之后，我想起了前两天装的网络监控软件[portmaster](<a href="https://safing.io/portmaster/#downloads">https://safing.io/portmaster/#downloads</a>. This stupid one should be blame. 它权限很大，根据把他推荐给我的舍友说，能阻止奇怪的出站流量如2和3描述。至于网速减缓，删掉他之后就再也没出现过这样的问题。</li></ol><h1 id="问题反思"><a href="#问题反思" class="headerlink" title="问题反思"></a>问题反思</h1><p>这次寻找问题根源花了很长时间，两个不同因素同时导致了多个网络连接问题，尤其是2和3因为没有经验，百度也没有相关资料，排查了半天<br>portmaster这个软件最开始下载下来是想监控流量的，显然他的流量监控功能做的很好。但碍于技术和语言门槛，其实我不是很会使用，导致上述一系列问题。<br>另外，这个开源软件内嵌广告功能，以后见到类似的要规避。</p>]]></content>
-    
-    
-    <summary type="html">最近电脑的网络频繁出现各种问题，用一个晚上的时间大概解决掉了</summary>
-    
-    
-    
-    <category term="Problems" scheme="http://tt2ter.github.io/categories/Problems/"/>
-    
-    
-    <category term="network" scheme="http://tt2ter.github.io/tags/network/"/>
     
   </entry>
   
