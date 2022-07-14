@@ -1,13 +1,15 @@
 ---
-title: 220518install
-tags: 
-- nas
-- TheWayToNAS
+title: 初次安装nas系统
+tags:
+  - nas
+  - TheWayToNAS
 categories:
   - - 教程
   - - 学习过程
 excerpt: nas初始化安装过程记录
+date: 2022-07-04 20:51:10
 ---
+
 # 过程简述
 ## 电源
 插到了ups上，dp充电头有些松动
@@ -65,6 +67,32 @@ emm重新登陆发现初始密码就是之前输的，难道是输错了？
 
 最后下了个很旧的套件版本，凑活能用，大部分站点都能连上tracker，有的要将https改为http，另外有的根本没法连（纯ipv6下）
 
+后来更新到4.3.9又可以了
+
+### 关于qb的下载问题
+之前因为峰值速度和连接性的问题，qb总是卡死，有时候系统卡死，在配置了最大连接数等东西之后解决了这个问题。
+
+配置重点是最大连接数和全局上传窗口上限符合系统承受能力，我的分别是800 500
+
+每个的不限制
+
+上传窗口策略是固定窗口数
+
+
 ## smb挂载
 
 很简单，本地浏览速度可以
+
+## smtp消息提醒
+
+## 一些有意思的docker
+音乐服务器……
+DDns
+
+*portainer*
+
+docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /share/Docker/portainer_data:/data 6053537/portainer-ce
+[汉化版](https://hub.docker.com/r/6053537/portainer-ce)
+
+*ddns-go*
+docker run -d --name ddns-go --restart=always --net=host -v /share/Docker/ddns-go:/root jeessy/ddns-go

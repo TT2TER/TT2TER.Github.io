@@ -1,5 +1,5 @@
 ---
-title: 一次家宽的网络题记述
+title: 一次家宽的网络问题记述
 tags: network
 categories: Problems
 excerpt: 记把nas搬回家之后网络环境搭建以及半个月左右出现的问题
