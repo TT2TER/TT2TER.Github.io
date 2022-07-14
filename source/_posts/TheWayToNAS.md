@@ -29,7 +29,7 @@ sticky: 101
 <li><a href="/post/220629networkProblem"  tags="">一次家宽的网络题记述</li>
 
 ## 系统错误
-<li><a href="/post/220703nassystemfix"  tags="">一次家宽的网络题记述</li>
+<li><a href="/post/220703nassystemfix"  tags="">网络好了，nas炸了！</li>
 
 # 第四部分：浴火重生！
 ## 一些记录补写在了前面
