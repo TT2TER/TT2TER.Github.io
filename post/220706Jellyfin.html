@@ -16,23 +16,22 @@
   <meta name="author" content="TT2TER">
   <meta name="keywords" content="c">
   
-    <meta name="description" content="这是个文档当做一个目录吧，记录一下完整的折腾nas的过程">
+    <meta name="description" content="影视系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="更新！TheWayToNAS">
-<meta property="og:url" content="http://tt2ter.github.io/post/TheWayToNAS.html">
+<meta property="og:title" content="威联通nasJellyfin硬件转码+硬链接后刮削">
+<meta property="og:url" content="http://tt2ter.github.io/post/220706Jellyfin.html">
 <meta property="og:site_name" content="马火星的迷你小屋">
-<meta property="og:description" content="这是个文档当做一个目录吧，记录一下完整的折腾nas的过程">
+<meta property="og:description" content="影视系统">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-17T13:12:54.000Z">
-<meta property="article:modified_time" content="2022-07-14T16:48:52.400Z">
+<meta property="article:published_time" content="2022-07-14T16:24:32.000Z">
+<meta property="article:modified_time" content="2022-07-14T16:24:32.960Z">
 <meta property="article:author" content="TT2TER">
 <meta property="article:tag" content="nas">
-<meta property="article:tag" content="TheWayToNAS">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>更新！TheWayToNAS - 马火星的迷你小屋</title>
+  <title>威联通nasJellyfin硬件转码+硬链接后刮削 - 马火星的迷你小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="更新！TheWayToNAS"></span>
+            <span id="subtitle" data-typed-text="威联通nasJellyfin硬件转码+硬链接后刮削"></span>
           
         </div>
 
@@ -244,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-17 21:12" pubdate>
-          2022年5月17日 晚上
+        <time datetime="2022-07-15 00:24" pubdate>
+          2022年7月15日 凌晨
         </time>
       </span>
     
@@ -257,7 +256,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          690 字
+          531 字
         
       </span>
     
@@ -269,7 +268,7 @@
         
         
           <!-- compatible with older versions-->
-          3 分钟
+          2 分钟
         
       </span>
     
@@ -315,49 +314,32 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">更新！TheWayToNAS</h1>
+            <h1 style="display: none">威联通nasJellyfin硬件转码+硬链接后刮削</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 分钟前
+                    本文最后更新于：25 分钟前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="前言：我不需要？"><a href="#前言：我不需要？" class="headerlink" title="前言：我不需要？"></a>前言：我不需要？</h1><li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li>
+              <h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3gw6g47/">对应版本,打包驱动版</a></p>
+<p><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apv8gg72/">安装教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a859320l/">配置介绍</a></p>
+<h2 id="解码器赋权"><a href="#解码器赋权" class="headerlink" title="解码器赋权"></a>解码器赋权</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo chmod <span class="hljs-number">777</span> <span class="hljs-regexp">/dev/</span>dri/renderD128<br></code></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run --name jellyfin -d \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>config:/config \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>cache:/cache \<br> --volume <span class="hljs-regexp">/share:/</span>video \<br> --net=host \<br> --restart=always \<br> --device <span class="hljs-regexp">/dev/</span>dri<span class="hljs-regexp">/renderD128:/</span>dev<span class="hljs-regexp">/dri/</span>renderD128 \<br> nyanmisaka/jellyfin<br></code></pre></td></tr></table></figure>
 
-<h1 id="第一部分：海鲜市场淘好货！"><a href="#第一部分：海鲜市场淘好货！" class="headerlink" title="第一部分：海鲜市场淘好货！"></a>第一部分：海鲜市场淘好货！</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li>
+<p>哎这个镜像是真的大啊，下载的好慢啊！</p>
+<h2 id="按照上面链接教程设置解码即可！"><a href="#按照上面链接教程设置解码即可！" class="headerlink" title="按照上面链接教程设置解码即可！"></a>按照上面链接教程设置解码即可！</h2><h1 id="刮削"><a href="#刮削" class="headerlink" title="刮削"></a>刮削</h1><p>首先建议先设置硬链接，方便同时做种刮削</p>
+<li><a href="/post/220714hlink"  tags="">硬链接教程</li>
 
-<h1 id="第二部分：焕然一新！"><a href="#第二部分：焕然一新！" class="headerlink" title="第二部分：焕然一新！"></a>第二部分：焕然一新！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li>
-
-<h2 id="第一次安装"><a href="#第一次安装" class="headerlink" title="第一次安装"></a>第一次安装</h2><li><a href="/post/220518install"  tags="">一些安装记录</li>
-
-<h1 id="第三部分：BUG！"><a href="#第三部分：BUG！" class="headerlink" title="第三部分：BUG！"></a>第三部分：BUG！</h1><h2 id="网络环境错误"><a href="#网络环境错误" class="headerlink" title="网络环境错误"></a>网络环境错误</h2><li><a href="/post/220629networkProblem"  tags="">一次家宽的网络题记述</li>
-
-<h2 id="系统错误"><a href="#系统错误" class="headerlink" title="系统错误"></a>系统错误</h2><li><a href="/post/220703nassystemfix"  tags="">一次家宽的网络题记述</li>
-
-<h1 id="第四部分：浴火重生！"><a href="#第四部分：浴火重生！" class="headerlink" title="第四部分：浴火重生！"></a>第四部分：浴火重生！</h1><h2 id="一些记录补写在了前面"><a href="#一些记录补写在了前面" class="headerlink" title="一些记录补写在了前面"></a>一些记录补写在了前面</h2><li><a href="/post/220518install"  tags="">一些安装记录（at第一次安装</li>
-
-<h2 id="设置qb-tr-转种"><a href="#设置qb-tr-转种" class="headerlink" title="设置qb+tr+转种"></a>设置qb+tr+转种</h2><li><a href="/post/220705setting-qb-tr-IYUUplus"  tags="">IYUU是个好东西</li>
-
-<h2 id="IPV6访问NAS中Docker的服务"><a href="#IPV6访问NAS中Docker的服务" class="headerlink" title="IPV6访问NAS中Docker的服务"></a>IPV6访问NAS中Docker的服务</h2><li><a href="/post/220705tcp6-tcp4"  tags="">折腾半天发现，emm，威联通系统自带反向代理</li>
-
-<h2 id="硬件转码-刮削"><a href="#硬件转码-刮削" class="headerlink" title="硬件转码+刮削"></a>硬件转码+刮削</h2><li><a href="/post/220706Jellyfin"  tags="">Jellyfin！还可以和朋友实时观看！</li>
-
-<h1 id="第五部分：锦上添花！"><a href="#第五部分：锦上添花！" class="headerlink" title="第五部分：锦上添花！"></a>第五部分：锦上添花！</h1><li><a href="/post/220714NASandZSH"  tags="">bash难看？换！</li>
-
-<h1 id="后记：寓教于乐"><a href="#后记：寓教于乐" class="headerlink" title="后记：寓教于乐"></a>后记：寓教于乐</h1><p>后记就直接写在这里了，nas到手快两个月了，这篇目录拖拖拉拉快写完了。其实也没有整什么好东西，就是一些基本的功能。</p>
-<p>重装nas是一个转折点，重装过程中不得不使用的ssh终端命令，让我从畏手畏脚不敢操作中成长。在这之后我慢慢更深的接触了终端操作。这和之前在vps上的感觉是不一样的。毕竟有更多元切实的需求。</p>
-<p>这台nas还是有一些问题，比如网卡经常掉线。威联通官方打算下一个版本更新给解决了，等待+不保有任何期待</p>
-<p>随着功能的完善，能在线和朋友远程看同一部电影；能够几乎自动化的完成从浏览站点、下载种子、自动辅种、自动硬链接后手动刮削，最后呈现在各个客户端的海报墙上，还是很有意思的。同时，也在不断更新家中的硬件设备，电视串流解码能力不行，买了个电视盒子。家里网口不够用，买了几个交换机……</p>
-<p>来日方长；</p>
-<p>希望不会把它挂在海鲜市场，如果一定要卖，我希望nas市场依旧火爆，也许还能回本，甚至小赚一笔吧</p>
-<p>结贴！</p>
-<p>2022&#x2F;07&#x2F;15 0:48</p>
+<h1 id="同步观看SYNCplay"><a href="#同步观看SYNCplay" class="headerlink" title="同步观看SYNCplay"></a>同步观看SYNCplay</h1><p>这个功能能够让两人同步观影。注意不能通过反向代理连接服务器，只可公网直连或者局域网连接。</p>
+<p>使用方法，播放视频时右上角三个人头的图标，创建或加入，可以自行调同步方式和参数，建议最小延迟不要太小，否则会不时卡顿。</p>
+<h1 id="电视端TODO-https-post-smzdm-com-p-a99vlpmp"><a href="#电视端TODO-https-post-smzdm-com-p-a99vlpmp" class="headerlink" title="电视端TODO:https://post.smzdm.com/p/a99vlpmp/"></a>电视端TODO:<a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a99vlpmp/">https://post.smzdm.com/p/a99vlpmp/</a></h1><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>看到了一个大佬的<a target="_blank" rel="noopener" href="https://leishi.io/blog/posts/2021-12/home-nas-media-center/#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E7%AE%80%E4%BB%8B">自动化流程</a></p>
 
               
             </div>
@@ -382,16 +364,6 @@
       </span>
     
   
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/" class="category-chain-item">学习过程</a>
-  
-  
-
-      </span>
-    
-  
 </span>
 
     </div>
@@ -401,8 +373,6 @@
       <i class="iconfont icon-tags"></i>
       
         <a href="/tags/nas/">#nas</a>
-      
-        <a href="/tags/TheWayToNAS/">#TheWayToNAS</a>
       
     </div>
   
@@ -414,8 +384,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>更新！TheWayToNAS</div>
-      <div>http://tt2ter.github.io/post/TheWayToNAS.html</div>
+      <div>威联通nasJellyfin硬件转码+硬链接后刮削</div>
+      <div>http://tt2ter.github.io/post/220706Jellyfin.html</div>
     </div>
     <div class="license-meta">
       
@@ -427,7 +397,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月17日</div>
+          <div>2022年7月15日</div>
         </div>
       
       
@@ -457,9 +427,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/220518nasPlan.html" title="我想拿nas干点啥？以及我的后路">
+                      <a href="/post/220709visual-2.html" title="视觉组-第二节-经典检测网络">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">我想拿nas干点啥？以及我的后路</span>
+                        <span class="hidden-mobile">视觉组-第二节-经典检测网络</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -467,8 +437,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/220513DefensivePessimism.html" title="避免摆烂？又丧又积极！">
-                        <span class="hidden-mobile">避免摆烂？又丧又积极！</span>
+                      <a href="/post/220705setting-qb-tr-IYUUplus.html" title="qb&amp;tr&amp;IYUUplus结合">
+                        <span class="hidden-mobile">qb&amp;tr&amp;IYUUplus结合</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

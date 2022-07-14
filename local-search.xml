@@ -4,11 +4,138 @@
   
   
   <entry>
+    <title>威联通nas和zsh</title>
+    <link href="/post/220714NASandZSH.html"/>
+    <url>/post/220714NASandZSH.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://post.smzdm.com/p/a785zrr5/">下载和设置zsh</a></p><h1 id="没必要，一个nas也就是有时候用用，bash就bash了"><a href="#没必要，一个nas也就是有时候用用，bash就bash了" class="headerlink" title="没必要，一个nas也就是有时候用用，bash就bash了"></a>没必要，一个nas也就是有时候用用，bash就bash了</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nas</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>linux硬链接工具</title>
+    <link href="/post/220714hlink.html"/>
+    <url>/post/220714hlink.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>尝试了一下<a href="https://github.com/jxxghp/nas-tools">nas-tools</a>功能很全，但是没有掌控感。日志和功能描述都不是很清晰。</p><p>转而用了hlink</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://hlink.likun.me/">hlink官网</a><br><a href="https://post.smzdm.com/p/aqxznl42/">NAS相关 篇五：硬链接神器hlink使用教程（威联通篇</a></p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>记得配置环境变量</p><p>威联通系统重启会还原环境变量，要把配环境变量每次开机自启动执行一遍<br><a href="https://blog.csdn.net/w2009211777/article/details/123853355">Linux目录之&#x2F;usr与&#x2F;opt与&#x2F;dev</a></p><h2 id="hlink使用"><a href="#hlink使用" class="headerlink" title="hlink使用"></a>hlink使用</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">hlink <span class="hljs-attribute">-e</span>=nfo,jpg,png,bmp <span class="hljs-string">&quot;/share/qBit&quot;</span> <span class="hljs-string">&quot;/share/hlink&quot;</span><br></code></pre></td></tr></table></figure><p>-e是黑名单模式<br><img src="https://s2.loli.net/2022/07/14/rtjxpYwLgQFEBNn.png" alt="运行效果"></p><h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><p><a href="https://www.cnblogs.com/goOJBK/p/15703884.html">linux设置定时任务(全面解析教程)</a><br><a href="https://einverne.github.io/post/2018/06/qnap-crontab.html">任务自启动（威联通）</a><br>添加定时任务<br><img src="https://s2.loli.net/2022/07/14/a78pQtx3HhnLrS5.png"></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">crontab <span class="hljs-regexp">/etc/</span>config<span class="hljs-regexp">/crontab &amp;&amp; /</span>etc<span class="hljs-regexp">/init.d/</span>crond.sh restart<br></code></pre></td></tr></table></figure><h2 id="自启动设置"><a href="#自启动设置" class="headerlink" title="自启动设置"></a>自启动设置</h2><p><a href="http://t.zoukankan.com/jonnyan-p-13653248.html">威联通qnap配置开机自启动项</a></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">ln -s <span class="hljs-regexp">/share/</span>CACHEDEV1_DATA<span class="hljs-regexp">/nodejs/</span>node-v16.<span class="hljs-number">16.0</span>-linux-x64<span class="hljs-regexp">/bin/</span>npm <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span><br>ln -s <span class="hljs-regexp">/share/</span>CACHEDEV1_DATA<span class="hljs-regexp">/nodejs/</span>node-v16.<span class="hljs-number">16.0</span>-linux-x64<span class="hljs-regexp">/bin/</span>node <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span><br>ln -s <span class="hljs-regexp">/share/</span>CACHEDEV1_DATA<span class="hljs-regexp">/nodejs/</span>node-v16.<span class="hljs-number">16.0</span>-linux-x64<span class="hljs-regexp">/bin/</span>hlink <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span>hlink<br>cp -r <span class="hljs-regexp">/share/</span>nodejs<span class="hljs-regexp">/hlink.config.mjs /</span>root<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nas</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>视觉组-第二节-经典检测网络</title>
+    <link href="/post/220709visual-2.html"/>
+    <url>/post/220709visual-2.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><p>计算机视觉中关于图像识别有四大类任务：</p><p>（1）<strong>分类</strong>-Classification：解决“是什么？”的问题，即给定一张图片或一段视频判断里面包含什么类别的目标。</p><p>（2）<strong>定位</strong>-Location：解决“在哪里？”的问题，即定位出这个目标的的位置。</p><p>（3）检测-Detection：解决“在哪里？是什么？”的问题，即定位出这个目标的位置并且知道目标物是什么。</p><p>（4）分割-Segmentation：分为实例的分割（Instance-level）和场景分割（Scene-level），解决“每一个像素属于哪个目标物或场景”的问题。</p><p>目标检测是一个分类、回归问题的叠加。</p><p>基于深度学习的目标检测算法主要分为两类：Two stage和One stage。</p><h1 id="双阶段目标检测"><a href="#双阶段目标检测" class="headerlink" title="双阶段目标检测"></a>双阶段目标检测</h1><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>先进行区域生成，该区域称之为region proposal（简称RP，一个有可能包含待检物体的预选框），再通过卷积神经网络进行样本分类。</p><p>特征提取 –&gt; 生成RP –&gt; 分类&#x2F;定位回归</p><h2 id="常见算法："><a href="#常见算法：" class="headerlink" title="常见算法："></a>常见算法：</h2><p>R-CNN、SPP-Net、Fast R-CNN、Faster R-CNN和R-FCN等</p><h2 id="非极大抑制（交并比概念）"><a href="#非极大抑制（交并比概念）" class="headerlink" title="非极大抑制（交并比概念）"></a>非极大抑制（交并比概念）</h2><p><a href="https://www.jianshu.com/p/d452b5615850">相关链接</a></p><p>其中有一步骤</p><p>对输入列表中所有的预测框，计算和挑<br>选出来的预测框之间的IoU，如果IoU大<br>于某一阈值，则将其从输入列表中删除</p><p>说明阈值越小，预测框越少</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="CNN卷积神经网络"><a href="#CNN卷积神经网络" class="headerlink" title="CNN卷积神经网络"></a>CNN卷积神经网络</h3><p><a href="https://blog.csdn.net/qq_25762497/article/details/51052861">介绍</a><br><a href="https://www.zhihu.com/question/49376084">卷积的更多细节</a></p><h3 id="RCNN"><a href="#RCNN" class="headerlink" title="RCNN"></a>RCNN</h3><p><a href="https://zhuanlan.zhihu.com/p/23006190">介绍</a></p><p><a href="https://zhuanlan.zhihu.com/p/39927488">理解Selective Search</a></p><h3 id="F-RCNN"><a href="#F-RCNN" class="headerlink" title="F RCNN"></a>F RCNN</h3><p><a href="https://blog.csdn.net/u014380165/article/details/72851319">介绍</a></p><h4 id="ROI-POOLing"><a href="#ROI-POOLing" class="headerlink" title="ROI POOLing"></a>ROI POOLing</h4><p><a href="https://zhuanlan.zhihu.com/p/328441287#:~:text=RoI%20Pooling%20%E6%98%AF%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%81%E6%89%8B%E6%AE%B5%EF%BC%8C%E6%9C%80%E6%97%A9%E5%9C%A8%20Faster,R-CNN%20%E4%B8%AD%E6%8F%90%E5%87%BA%EF%BC%8C%E4%BD%9C%E7%94%A8%E6%98%AF%E5%B0%86%E4%B8%80%E7%B3%BB%E5%88%97%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%90%8C%E7%9A%84%20RoI%20%E6%8A%95%E5%BD%B1%E8%87%B3%E7%89%B9%E5%BE%81%E5%9B%BE%E4%B8%8A%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%9A%E8%BF%87%E6%B1%A0%E5%8C%96%E6%93%8D%E4%BD%9C%E5%B0%86%E5%AE%83%E4%BB%AC%E5%A4%84%E7%90%86%E4%B8%BA%E4%B8%80%E8%87%B4%E5%A4%A7%E5%B0%8F%EF%BC%8C%E4%BB%8E%E8%80%8C%E6%96%B9%E4%BE%BF%E5%90%8E%E9%9D%A2%E7%9A%84%E7%BD%91%E7%BB%9C%E5%B1%82%E8%BF%9B%E8%A1%8C%E5%A4%84%E7%90%86%EF%BC%88%E5%8E%86%E5%8F%B2%E5%8E%9F%E5%9B%A0%EF%BC%8C%E4%BB%A5%E5%89%8D%E7%9A%84%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E4%B8%AD%E6%9C%80%E5%90%8E%E5%87%A0%E5%B1%82%E5%BE%80%E5%BE%80%E6%98%AF%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%EF%BC%8C%E5%9B%A0%E6%AD%A4%E9%9C%80%E8%A6%81%E5%9B%BA%E5%AE%9A%E7%9A%84%E8%BE%93%E5%85%A5%E5%B0%BA%E5%AF%B8%EF%BC%89%EF%BC%8C%E5%90%8C%E6%97%B6%E8%B5%B7%E5%88%B0%E4%BA%86%E5%8A%A0%E9%80%9F%E8%AE%A1%E7%AE%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82">介绍</a></p><h3 id="Faster-RCNN"><a href="#Faster-RCNN" class="headerlink" title="Faster RCNN"></a>Faster RCNN</h3><p><a href="https://zhuanlan.zhihu.com/p/31426458">介绍</a></p><h1 id="单阶段目标检测"><a href="#单阶段目标检测" class="headerlink" title="单阶段目标检测"></a>单阶段目标检测</h1><h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><p>不用RP，直接在网络中提取特征来预测物体分类和位置。</p><p>任务流程：特征提取–&gt; 分类&#x2F;定位回归。</p><h2 id="常见算法"><a href="#常见算法" class="headerlink" title="常见算法"></a>常见算法</h2><p>OverFeat、YOLOv1、YOLOv2、YOLOv3、SSD和RetinaNet等。</p><h3 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h3><p><a href="https://zhuanlan.zhihu.com/p/115759795">介绍</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习过程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机视觉</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>威联通nasJellyfin硬件转码+硬链接后刮削</title>
+    <link href="/post/220706Jellyfin.html"/>
+    <url>/post/220706Jellyfin.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://post.smzdm.com/p/a3gw6g47/">对应版本,打包驱动版</a></p><p><a href="https://post.smzdm.com/p/apv8gg72/">安装教程</a></p><p><a href="https://post.smzdm.com/p/a859320l/">配置介绍</a></p><h2 id="解码器赋权"><a href="#解码器赋权" class="headerlink" title="解码器赋权"></a>解码器赋权</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo chmod <span class="hljs-number">777</span> <span class="hljs-regexp">/dev/</span>dri/renderD128<br></code></pre></td></tr></table></figure><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run --name jellyfin -d \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>config:/config \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>cache:/cache \<br> --volume <span class="hljs-regexp">/share:/</span>video \<br> --net=host \<br> --restart=always \<br> --device <span class="hljs-regexp">/dev/</span>dri<span class="hljs-regexp">/renderD128:/</span>dev<span class="hljs-regexp">/dri/</span>renderD128 \<br> nyanmisaka/jellyfin<br></code></pre></td></tr></table></figure><p>哎这个镜像是真的大啊，下载的好慢啊！</p><h2 id="按照上面链接教程设置解码即可！"><a href="#按照上面链接教程设置解码即可！" class="headerlink" title="按照上面链接教程设置解码即可！"></a>按照上面链接教程设置解码即可！</h2><h1 id="刮削"><a href="#刮削" class="headerlink" title="刮削"></a>刮削</h1><p>首先建议先设置硬链接，方便同时做种刮削</p><li><a href="/post/220714hlink"  tags="">硬链接教程</li><h1 id="同步观看SYNCplay"><a href="#同步观看SYNCplay" class="headerlink" title="同步观看SYNCplay"></a>同步观看SYNCplay</h1><p>这个功能能够让两人同步观影。注意不能通过反向代理连接服务器，只可公网直连或者局域网连接。</p><p>使用方法，播放视频时右上角三个人头的图标，创建或加入，可以自行调同步方式和参数，建议最小延迟不要太小，否则会不时卡顿。</p><h1 id="电视端TODO-https-post-smzdm-com-p-a99vlpmp"><a href="#电视端TODO-https-post-smzdm-com-p-a99vlpmp" class="headerlink" title="电视端TODO:https://post.smzdm.com/p/a99vlpmp/"></a>电视端TODO:<a href="https://post.smzdm.com/p/a99vlpmp/">https://post.smzdm.com/p/a99vlpmp/</a></h1><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>看到了一个大佬的<a href="https://leishi.io/blog/posts/2021-12/home-nas-media-center/#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E7%AE%80%E4%BB%8B">自动化流程</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nas</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>qb&amp;tr&amp;IYUUplus结合</title>
+    <link href="/post/220705setting-qb-tr-IYUUplus.html"/>
+    <url>/post/220705setting-qb-tr-IYUUplus.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="主要是参考一下博客"><a href="#主要是参考一下博客" class="headerlink" title="主要是参考一下博客"></a>主要是参考一下博客</h1><p><a href="https://blog.csdn.net/shangyexin/article/details/121924875">PT工具之Docker全家桶+HTTPS详细配置教程</a></p><p><a href="https://blog.csdn.net/shangyexin/article/details/122043327">【原理篇】qBittorrent下载+转种Transmission快校版+IYUU Plus辅种教程</a></p><p><a href="https://blog.csdn.net/shangyexin/article/details/122085552?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-122085552-blog-122043327.pc_relevant_multi_platform_whitelistv2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-122085552-blog-122043327.pc_relevant_multi_platform_whitelistv2&utm_relevant_index=1">【操作篇】qBittorrent下载+转种Transmission快校版+IYUU Plus辅种教程</a></p><h1 id="我的一些心得"><a href="#我的一些心得" class="headerlink" title="我的一些心得"></a>我的一些心得</h1><ul><li>用portainer新建很傻瓜</li><li>注意在iyuu里地址可以写127.0.0.1，毕竟在本地</li><li>tr的docker对权限要求比较高，建议环境变量的puid&#x2F;pgid都设成0.即admin</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nas</tag>
+      
+      <tag>pt</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>IPV6访问NAS中Docker的服务</title>
     <link href="/post/220705tcp6-tcp4.html"/>
     <url>/post/220705tcp6-tcp4.html</url>
     
-    <content type="html"><![CDATA[<h1 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h1><p><a href="https://blog.17lai.site/posts/462f1e5c/">通过IPV6访问Qnap NAS中Docker的服务</a></p><h1 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h1><ul><li><p>包管理器要安装qnapclub上的版本</p></li><li><p>socat一般只能前台运行，所以可以借助nohup<a href="http://linux.51yip.com/search/socat">参考：文章最后</a></p></li><li><p><a href="https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html">nohup</a></p></li><li><p>在参考博客中采用的方法是命令行尾加&amp;<a href="https://www.cnblogs.com/hf8051/p/5334343.html">命令行尾&amp;作用</a></p></li><li><p>实际上，nohup和&amp;分别会被Ctrlc和关闭窗口杀掉，但二者结合就都免疫了<a href="https://wsgzao.github.io/post/nohup/">附：nohup 结合 &amp; 用法以及如何精准查找进程并 kill 后台任务实践</a></p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nohup</span> socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0.0.1:20080</span> &amp;<br></code></pre></td></tr></table></figure></li></ul><p>参考了<a href="https://ghostinto.top/archives/27.html">这篇</a>博客</p><ul><li>当然，nas上没有nohup.而且有的<a href="https://blog.csdn.net/lengye7/article/details/80270379">coreutils</a>中没有nohup，<a href="https://blog.jeyfang.com/archives/52">安装nohup：Nas-QNAP-系列02-关于自定义脚本开机运行及nohup</a><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">opkg <span class="hljs-keyword">install</span> coreutils-nohup<br></code></pre></td></tr></table></figure></li><li>又想到万一以后重启了，还得让socat自启动<a href="https://blog.csdn.net/qq_45691577/article/details/123962036">nohup后台自启动</a></li><li>emmm绕回到bash脚本了……</li><li>emmm据说威联通的rc.local会被重启抹掉……</li><li>并且威联通官方的脚本是系统级的，会在安装的app依赖前启动……</li></ul><h1 id="最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面"><a href="#最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面" class="headerlink" title="最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面"></a>最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># start socat v6tov4 no conect to Entware</span><br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">20080</span> &amp;<br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9001</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span> &amp;<br></code></pre></td></tr></table></figure><ul><li>一开始还写错了，因为这里用户还未登陆，所以命令要加上&#x2F;opt&#x2F;bin路径？？</li></ul><li><a href="/post/220705bashshell"  tags="">新开一博客记录脚本学习</li><h1 id="最后用重定向把端口号藏起来"><a href="#最后用重定向把端口号藏起来" class="headerlink" title="最后用重定向把端口号藏起来"></a>最后用重定向把端口号藏起来</h1><p><a href="https://blog.csdn.net/qq_40672635/article/details/124818111">使用Cloudflare给域名添加跳转&#x2F;301重定向</a></p><p><a href="https://www.geekyes.com/124.htm">利用url重定向, 链接不带端口, 纯域名访问web页面</a></p><p>一定在dns里随便加一个解析记录，才能走cf代理</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h1><p><a href="https://blog.17lai.site/posts/462f1e5c/">通过IPV6访问Qnap NAS中Docker的服务</a></p><h1 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h1><ul><li><p>包管理器要安装qnapclub上的版本</p></li><li><p>socat一般只能前台运行，所以可以借助nohup<a href="http://linux.51yip.com/search/socat">参考：文章最后</a></p></li><li><p><a href="https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html">nohup</a></p></li><li><p>在参考博客中采用的方法是命令行尾加&amp;<a href="https://www.cnblogs.com/hf8051/p/5334343.html">命令行尾&amp;作用</a></p></li><li><p>实际上，nohup和&amp;分别会被Ctrlc和关闭窗口杀掉，但二者结合就都免疫了<a href="https://wsgzao.github.io/post/nohup/">附：nohup 结合 &amp; 用法以及如何精准查找进程并 kill 后台任务实践</a></p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nohup</span> socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0.0.1:20080</span> &amp;<br></code></pre></td></tr></table></figure></li></ul><p>参考了<a href="https://ghostinto.top/archives/27.html">这篇</a>博客</p><ul><li>当然，nas上没有nohup.而且有的<a href="https://blog.csdn.net/lengye7/article/details/80270379">coreutils</a>中没有nohup，<a href="https://blog.jeyfang.com/archives/52">安装nohup：Nas-QNAP-系列02-关于自定义脚本开机运行及nohup</a><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">opkg <span class="hljs-keyword">install</span> coreutils-nohup<br></code></pre></td></tr></table></figure></li><li>又想到万一以后重启了，还得让socat自启动<a href="https://blog.csdn.net/qq_45691577/article/details/123962036">nohup后台自启动</a></li><li>emmm绕回到bash脚本了……</li><li>emmm据说威联通的rc.local会被重启抹掉……</li><li>并且威联通官方的脚本是系统级的，会在安装的app依赖前启动……</li></ul><li><a href="/post/220705bashshell"  tags="">脚本相关笔记</li><h2 id="最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面"><a href="#最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面" class="headerlink" title="最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面"></a>最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># start socat v6tov4 no conect to Entware</span><br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">20080</span> &amp;<br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9001</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span> &amp;<br></code></pre></td></tr></table></figure><ul><li>一开始还写错了，因为这里用户还未登陆，所以命令要加上&#x2F;opt&#x2F;bin路径？？</li></ul><li><a href="/post/220705bashshell"  tags="">新开一博客记录脚本学习</li><h2 id="最后用重定向免得输入端口号"><a href="#最后用重定向免得输入端口号" class="headerlink" title="最后用重定向免得输入端口号"></a>最后用重定向免得输入端口号</h2><p><a href="https://blog.csdn.net/qq_40672635/article/details/124818111">使用Cloudflare给域名添加跳转&#x2F;301重定向</a></p><p><a href="https://www.geekyes.com/124.htm">利用url重定向, 链接不带端口, 纯域名访问web页面</a></p><p>一定在dns里随便加一个解析记录，才能走cf代理</p><h1 id="其实不用这么麻烦"><a href="#其实不用这么麻烦" class="headerlink" title="其实不用这么麻烦"></a>其实不用这么麻烦</h1><p>利用威联通自带的反向代理就可以了，哎</p>]]></content>
     
     
     <categories>
@@ -60,6 +187,31 @@
   
   
   <entry>
+    <title>书接上文-nas系统崩溃重装</title>
+    <link href="/post/220703nassystemfix.html"/>
+    <url>/post/220703nassystemfix.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒"><a href="#其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒" class="headerlink" title="其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒"></a>其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒</h1><p>官方的解决办法就是，先尝试重连，不行。</p><p>再ssh链接之后备份硬盘，然后重装系统</p><p>里面下的电影我不想删，就留着了，但之后做种不知道好不好整。</p><p>重装完了顺便整个tr吧</p><h1 id="重装系统后流水账记录"><a href="#重装系统后流水账记录" class="headerlink" title="重装系统后流水账记录"></a>重装系统后流水账记录</h1><ol><li>新建储存卷</li><li>挂载旧的备份盘，并将文件设置为威联通共享文件夹路径</li></ol><p><img src="https://s2.loli.net/2022/07/05/L8cCab5x29fnuBD.png"><br><img src="https://s2.loli.net/2022/07/05/im7nAjJfHXhCt5O.png"><br>3. 安装有必要的软件，如verysync,qbit并再次配置好<br>4. docker：portainer;iyuu;tr;ddns-go<br>5. 计划把种子一个一个手动导进来</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Problems</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nas</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>局域网高码率推流</title>
     <link href="/post/220703rtmp.html"/>
     <url>/post/220703rtmp.html</url>
@@ -85,7 +237,7 @@
   
   
   <entry>
-    <title>一次家宽的网络题记述</title>
+    <title>一次家宽的网络问题记述</title>
     <link href="/post/220629networkProblem.html"/>
     <url>/post/220629networkProblem.html</url>
     
@@ -224,11 +376,11 @@
   
   
   <entry>
-    <title>TheWayToNAS</title>
+    <title>更新！TheWayToNAS</title>
     <link href="/post/TheWayToNAS.html"/>
     <url>/post/TheWayToNAS.html</url>
     
-    <content type="html"><![CDATA[<h1 id="前言：nas真的是需求吗"><a href="#前言：nas真的是需求吗" class="headerlink" title="前言：nas真的是需求吗"></a>前言：nas真的是需求吗</h1><li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：机器和配件购买"><a href="#第一部分：机器和配件购买" class="headerlink" title="第一部分：机器和配件购买"></a>第一部分：机器和配件购买</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li><h1 id="第二部分：安装！"><a href="#第二部分：安装！" class="headerlink" title="第二部分：安装！"></a>第二部分：安装！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言：我不需要？"><a href="#前言：我不需要？" class="headerlink" title="前言：我不需要？"></a>前言：我不需要？</h1><li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：海鲜市场淘好货！"><a href="#第一部分：海鲜市场淘好货！" class="headerlink" title="第一部分：海鲜市场淘好货！"></a>第一部分：海鲜市场淘好货！</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li><h1 id="第二部分：焕然一新！"><a href="#第二部分：焕然一新！" class="headerlink" title="第二部分：焕然一新！"></a>第二部分：焕然一新！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li><h2 id="第一次安装"><a href="#第一次安装" class="headerlink" title="第一次安装"></a>第一次安装</h2><li><a href="/post/220518install"  tags="">一些安装记录</li><h1 id="第三部分：BUG！"><a href="#第三部分：BUG！" class="headerlink" title="第三部分：BUG！"></a>第三部分：BUG！</h1><h2 id="网络环境错误"><a href="#网络环境错误" class="headerlink" title="网络环境错误"></a>网络环境错误</h2><li><a href="/post/220629networkProblem"  tags="">一次家宽的网络题记述</li><h2 id="系统错误"><a href="#系统错误" class="headerlink" title="系统错误"></a>系统错误</h2><li><a href="/post/220703nassystemfix"  tags="">一次家宽的网络题记述</li><h1 id="第四部分：浴火重生！"><a href="#第四部分：浴火重生！" class="headerlink" title="第四部分：浴火重生！"></a>第四部分：浴火重生！</h1><h2 id="一些记录补写在了前面"><a href="#一些记录补写在了前面" class="headerlink" title="一些记录补写在了前面"></a>一些记录补写在了前面</h2><li><a href="/post/220518install"  tags="">一些安装记录（at第一次安装</li><h2 id="设置qb-tr-转种"><a href="#设置qb-tr-转种" class="headerlink" title="设置qb+tr+转种"></a>设置qb+tr+转种</h2><li><a href="/post/220705setting-qb-tr-IYUUplus"  tags="">IYUU是个好东西</li><h2 id="IPV6访问NAS中Docker的服务"><a href="#IPV6访问NAS中Docker的服务" class="headerlink" title="IPV6访问NAS中Docker的服务"></a>IPV6访问NAS中Docker的服务</h2><li><a href="/post/220705tcp6-tcp4"  tags="">折腾半天发现，emm，威联通系统自带反向代理</li><h2 id="硬件转码-刮削"><a href="#硬件转码-刮削" class="headerlink" title="硬件转码+刮削"></a>硬件转码+刮削</h2><li><a href="/post/220706Jellyfin"  tags="">Jellyfin！还可以和朋友实时观看！</li><h1 id="第五部分：锦上添花！"><a href="#第五部分：锦上添花！" class="headerlink" title="第五部分：锦上添花！"></a>第五部分：锦上添花！</h1><li><a href="/post/220714NASandZSH"  tags="">bash难看？换！</li><h1 id="后记：寓教于乐"><a href="#后记：寓教于乐" class="headerlink" title="后记：寓教于乐"></a>后记：寓教于乐</h1><p>后记就直接写在这里了，nas到手快两个月了，这篇目录拖拖拉拉快写完了。其实也没有整什么好东西，就是一些基本的功能。</p><p>重装nas是一个转折点，重装过程中不得不使用的ssh终端命令，让我从畏手畏脚不敢操作中成长。在这之后我慢慢更深的接触了终端操作。这和之前在vps上的感觉是不一样的。毕竟有更多元切实的需求。</p><p>这台nas还是有一些问题，比如网卡经常掉线。威联通官方打算下一个版本更新给解决了，等待+不保有任何期待</p><p>随着功能的完善，能在线和朋友远程看同一部电影；能够几乎自动化的完成从浏览站点、下载种子、自动辅种、自动硬链接后手动刮削，最后呈现在各个客户端的海报墙上，还是很有意思的。同时，也在不断更新家中的硬件设备，电视串流解码能力不行，买了个电视盒子。家里网口不够用，买了几个交换机……</p><p>来日方长；</p><p>希望不会把它挂在海鲜市场，如果一定要卖，我希望nas市场依旧火爆，也许还能回本，甚至小赚一笔吧</p><p>结贴！</p><p>2022&#x2F;07&#x2F;15 0:48</p>]]></content>
     
     
     <categories>

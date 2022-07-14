@@ -6,7 +6,7 @@
   <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
   
   <link href="http://tt2ter.github.io/"/>
-  <updated>2022-07-06T15:57:38.040Z</updated>
+  <updated>2022-07-14T16:27:37.933Z</updated>
   <id>http://tt2ter.github.io/</id>
   
   <author>
@@ -17,13 +17,120 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>威联通nas和zsh</title>
+    <link href="http://tt2ter.github.io/post/220714NASandZSH.html"/>
+    <id>http://tt2ter.github.io/post/220714NASandZSH.html</id>
+    <published>2022-07-14T16:27:37.000Z</published>
+    <updated>2022-07-14T16:27:37.933Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://post.smzdm.com/p/a785zrr5/">下载和设置zsh</a></p><h1 id="没必要，一个nas也就是有时候用用，bash就bash了"><a href="#没必要，一个nas也就是有时候用用，bash就bash了" class="headerlink" title="没必要，一个nas也就是有时候用用，bash就bash了"></a>没必要，一个nas也就是有时候用用，bash就bash了</h1>]]></content>
+    
+    
+    <summary type="html">改终端</summary>
+    
+    
+    
+    <category term="学习教程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux硬链接工具</title>
+    <link href="http://tt2ter.github.io/post/220714hlink.html"/>
+    <id>http://tt2ter.github.io/post/220714hlink.html</id>
+    <published>2022-07-14T16:26:06.000Z</published>
+    <updated>2022-07-14T16:26:06.179Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>尝试了一下<a href="https://github.com/jxxghp/nas-tools">nas-tools</a>功能很全，但是没有掌控感。日志和功能描述都不是很清晰。</p><p>转而用了hlink</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://hlink.likun.me/">hlink官网</a><br><a href="https://post.smzdm.com/p/aqxznl42/">NAS相关 篇五：硬链接神器hlink使用教程（威联通篇</a></p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>记得配置环境变量</p><p>威联通系统重启会还原环境变量，要把配环境变量每次开机自启动执行一遍<br><a href="https://blog.csdn.net/w2009211777/article/details/123853355">Linux目录之&#x2F;usr与&#x2F;opt与&#x2F;dev</a></p><h2 id="hlink使用"><a href="#hlink使用" class="headerlink" title="hlink使用"></a>hlink使用</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">hlink <span class="hljs-attribute">-e</span>=nfo,jpg,png,bmp <span class="hljs-string">&quot;/share/qBit&quot;</span> <span class="hljs-string">&quot;/share/hlink&quot;</span><br></code></pre></td></tr></table></figure><p>-e是黑名单模式<br><img src="https://s2.loli.net/2022/07/14/rtjxpYwLgQFEBNn.png" alt="运行效果"></p><h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><p><a href="https://www.cnblogs.com/goOJBK/p/15703884.html">linux设置定时任务(全面解析教程)</a><br><a href="https://einverne.github.io/post/2018/06/qnap-crontab.html">任务自启动（威联通）</a><br>添加定时任务<br><img src="https://s2.loli.net/2022/07/14/a78pQtx3HhnLrS5.png"></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">crontab <span class="hljs-regexp">/etc/</span>config<span class="hljs-regexp">/crontab &amp;&amp; /</span>etc<span class="hljs-regexp">/init.d/</span>crond.sh restart<br></code></pre></td></tr></table></figure><h2 id="自启动设置"><a href="#自启动设置" class="headerlink" title="自启动设置"></a>自启动设置</h2><p><a href="http://t.zoukankan.com/jonnyan-p-13653248.html">威联通qnap配置开机自启动项</a></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">ln -s <span class="hljs-regexp">/share/</span>CACHEDEV1_DATA<span class="hljs-regexp">/nodejs/</span>node-v16.<span class="hljs-number">16.0</span>-linux-x64<span class="hljs-regexp">/bin/</span>npm <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span><br>ln -s <span class="hljs-regexp">/share/</span>CACHEDEV1_DATA<span class="hljs-regexp">/nodejs/</span>node-v16.<span class="hljs-number">16.0</span>-linux-x64<span class="hljs-regexp">/bin/</span>node <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span><br>ln -s <span class="hljs-regexp">/share/</span>CACHEDEV1_DATA<span class="hljs-regexp">/nodejs/</span>node-v16.<span class="hljs-number">16.0</span>-linux-x64<span class="hljs-regexp">/bin/</span>hlink <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/bin/</span>hlink<br>cp -r <span class="hljs-regexp">/share/</span>nodejs<span class="hljs-regexp">/hlink.config.mjs /</span>root<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">因为刮削和保种同时进行需要硬链接</summary>
+    
+    
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>视觉组-第二节-经典检测网络</title>
+    <link href="http://tt2ter.github.io/post/220709visual-2.html"/>
+    <id>http://tt2ter.github.io/post/220709visual-2.html</id>
+    <published>2022-07-14T16:25:42.000Z</published>
+    <updated>2022-07-14T16:25:42.324Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h1><p>计算机视觉中关于图像识别有四大类任务：</p><p>（1）<strong>分类</strong>-Classification：解决“是什么？”的问题，即给定一张图片或一段视频判断里面包含什么类别的目标。</p><p>（2）<strong>定位</strong>-Location：解决“在哪里？”的问题，即定位出这个目标的的位置。</p><p>（3）检测-Detection：解决“在哪里？是什么？”的问题，即定位出这个目标的位置并且知道目标物是什么。</p><p>（4）分割-Segmentation：分为实例的分割（Instance-level）和场景分割（Scene-level），解决“每一个像素属于哪个目标物或场景”的问题。</p><p>目标检测是一个分类、回归问题的叠加。</p><p>基于深度学习的目标检测算法主要分为两类：Two stage和One stage。</p><h1 id="双阶段目标检测"><a href="#双阶段目标检测" class="headerlink" title="双阶段目标检测"></a>双阶段目标检测</h1><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>先进行区域生成，该区域称之为region proposal（简称RP，一个有可能包含待检物体的预选框），再通过卷积神经网络进行样本分类。</p><p>特征提取 –&gt; 生成RP –&gt; 分类&#x2F;定位回归</p><h2 id="常见算法："><a href="#常见算法：" class="headerlink" title="常见算法："></a>常见算法：</h2><p>R-CNN、SPP-Net、Fast R-CNN、Faster R-CNN和R-FCN等</p><h2 id="非极大抑制（交并比概念）"><a href="#非极大抑制（交并比概念）" class="headerlink" title="非极大抑制（交并比概念）"></a>非极大抑制（交并比概念）</h2><p><a href="https://www.jianshu.com/p/d452b5615850">相关链接</a></p><p>其中有一步骤</p><p>对输入列表中所有的预测框，计算和挑<br>选出来的预测框之间的IoU，如果IoU大<br>于某一阈值，则将其从输入列表中删除</p><p>说明阈值越小，预测框越少</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="CNN卷积神经网络"><a href="#CNN卷积神经网络" class="headerlink" title="CNN卷积神经网络"></a>CNN卷积神经网络</h3><p><a href="https://blog.csdn.net/qq_25762497/article/details/51052861">介绍</a><br><a href="https://www.zhihu.com/question/49376084">卷积的更多细节</a></p><h3 id="RCNN"><a href="#RCNN" class="headerlink" title="RCNN"></a>RCNN</h3><p><a href="https://zhuanlan.zhihu.com/p/23006190">介绍</a></p><p><a href="https://zhuanlan.zhihu.com/p/39927488">理解Selective Search</a></p><h3 id="F-RCNN"><a href="#F-RCNN" class="headerlink" title="F RCNN"></a>F RCNN</h3><p><a href="https://blog.csdn.net/u014380165/article/details/72851319">介绍</a></p><h4 id="ROI-POOLing"><a href="#ROI-POOLing" class="headerlink" title="ROI POOLing"></a>ROI POOLing</h4><p><a href="https://zhuanlan.zhihu.com/p/328441287#:~:text=RoI%20Pooling%20%E6%98%AF%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%81%E6%89%8B%E6%AE%B5%EF%BC%8C%E6%9C%80%E6%97%A9%E5%9C%A8%20Faster,R-CNN%20%E4%B8%AD%E6%8F%90%E5%87%BA%EF%BC%8C%E4%BD%9C%E7%94%A8%E6%98%AF%E5%B0%86%E4%B8%80%E7%B3%BB%E5%88%97%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%90%8C%E7%9A%84%20RoI%20%E6%8A%95%E5%BD%B1%E8%87%B3%E7%89%B9%E5%BE%81%E5%9B%BE%E4%B8%8A%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%9A%E8%BF%87%E6%B1%A0%E5%8C%96%E6%93%8D%E4%BD%9C%E5%B0%86%E5%AE%83%E4%BB%AC%E5%A4%84%E7%90%86%E4%B8%BA%E4%B8%80%E8%87%B4%E5%A4%A7%E5%B0%8F%EF%BC%8C%E4%BB%8E%E8%80%8C%E6%96%B9%E4%BE%BF%E5%90%8E%E9%9D%A2%E7%9A%84%E7%BD%91%E7%BB%9C%E5%B1%82%E8%BF%9B%E8%A1%8C%E5%A4%84%E7%90%86%EF%BC%88%E5%8E%86%E5%8F%B2%E5%8E%9F%E5%9B%A0%EF%BC%8C%E4%BB%A5%E5%89%8D%E7%9A%84%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E4%B8%AD%E6%9C%80%E5%90%8E%E5%87%A0%E5%B1%82%E5%BE%80%E5%BE%80%E6%98%AF%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82%EF%BC%8C%E5%9B%A0%E6%AD%A4%E9%9C%80%E8%A6%81%E5%9B%BA%E5%AE%9A%E7%9A%84%E8%BE%93%E5%85%A5%E5%B0%BA%E5%AF%B8%EF%BC%89%EF%BC%8C%E5%90%8C%E6%97%B6%E8%B5%B7%E5%88%B0%E4%BA%86%E5%8A%A0%E9%80%9F%E8%AE%A1%E7%AE%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%82">介绍</a></p><h3 id="Faster-RCNN"><a href="#Faster-RCNN" class="headerlink" title="Faster RCNN"></a>Faster RCNN</h3><p><a href="https://zhuanlan.zhihu.com/p/31426458">介绍</a></p><h1 id="单阶段目标检测"><a href="#单阶段目标检测" class="headerlink" title="单阶段目标检测"></a>单阶段目标检测</h1><h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><p>不用RP，直接在网络中提取特征来预测物体分类和位置。</p><p>任务流程：特征提取–&gt; 分类&#x2F;定位回归。</p><h2 id="常见算法"><a href="#常见算法" class="headerlink" title="常见算法"></a>常见算法</h2><p>OverFeat、YOLOv1、YOLOv2、YOLOv3、SSD和RetinaNet等。</p><h3 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h3><p><a href="https://zhuanlan.zhihu.com/p/115759795">介绍</a></p>]]></content>
+    
+    
+    <summary type="html">飞鹰队视觉组第二节笔记</summary>
+    
+    
+    
+    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    
+    
+    <category term="计算机视觉" scheme="http://tt2ter.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>威联通nasJellyfin硬件转码+硬链接后刮削</title>
+    <link href="http://tt2ter.github.io/post/220706Jellyfin.html"/>
+    <id>http://tt2ter.github.io/post/220706Jellyfin.html</id>
+    <published>2022-07-14T16:24:32.000Z</published>
+    <updated>2022-07-14T16:24:32.960Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://post.smzdm.com/p/a3gw6g47/">对应版本,打包驱动版</a></p><p><a href="https://post.smzdm.com/p/apv8gg72/">安装教程</a></p><p><a href="https://post.smzdm.com/p/a859320l/">配置介绍</a></p><h2 id="解码器赋权"><a href="#解码器赋权" class="headerlink" title="解码器赋权"></a>解码器赋权</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo chmod <span class="hljs-number">777</span> <span class="hljs-regexp">/dev/</span>dri/renderD128<br></code></pre></td></tr></table></figure><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run --name jellyfin -d \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>config:/config \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>cache:/cache \<br> --volume <span class="hljs-regexp">/share:/</span>video \<br> --net=host \<br> --restart=always \<br> --device <span class="hljs-regexp">/dev/</span>dri<span class="hljs-regexp">/renderD128:/</span>dev<span class="hljs-regexp">/dri/</span>renderD128 \<br> nyanmisaka/jellyfin<br></code></pre></td></tr></table></figure><p>哎这个镜像是真的大啊，下载的好慢啊！</p><h2 id="按照上面链接教程设置解码即可！"><a href="#按照上面链接教程设置解码即可！" class="headerlink" title="按照上面链接教程设置解码即可！"></a>按照上面链接教程设置解码即可！</h2><h1 id="刮削"><a href="#刮削" class="headerlink" title="刮削"></a>刮削</h1><p>首先建议先设置硬链接，方便同时做种刮削</p><li><a href="/post/220714hlink"  tags="">硬链接教程</li><h1 id="同步观看SYNCplay"><a href="#同步观看SYNCplay" class="headerlink" title="同步观看SYNCplay"></a>同步观看SYNCplay</h1><p>这个功能能够让两人同步观影。注意不能通过反向代理连接服务器，只可公网直连或者局域网连接。</p><p>使用方法，播放视频时右上角三个人头的图标，创建或加入，可以自行调同步方式和参数，建议最小延迟不要太小，否则会不时卡顿。</p><h1 id="电视端TODO-https-post-smzdm-com-p-a99vlpmp"><a href="#电视端TODO-https-post-smzdm-com-p-a99vlpmp" class="headerlink" title="电视端TODO:https://post.smzdm.com/p/a99vlpmp/"></a>电视端TODO:<a href="https://post.smzdm.com/p/a99vlpmp/">https://post.smzdm.com/p/a99vlpmp/</a></h1><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>看到了一个大佬的<a href="https://leishi.io/blog/posts/2021-12/home-nas-media-center/#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E7%AE%80%E4%BB%8B">自动化流程</a></p>]]></content>
+    
+    
+    <summary type="html">影视系统</summary>
+    
+    
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>qb&amp;tr&amp;IYUUplus结合</title>
+    <link href="http://tt2ter.github.io/post/220705setting-qb-tr-IYUUplus.html"/>
+    <id>http://tt2ter.github.io/post/220705setting-qb-tr-IYUUplus.html</id>
+    <published>2022-07-09T06:21:01.000Z</published>
+    <updated>2022-07-09T06:21:01.845Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="主要是参考一下博客"><a href="#主要是参考一下博客" class="headerlink" title="主要是参考一下博客"></a>主要是参考一下博客</h1><p><a href="https://blog.csdn.net/shangyexin/article/details/121924875">PT工具之Docker全家桶+HTTPS详细配置教程</a></p><p><a href="https://blog.csdn.net/shangyexin/article/details/122043327">【原理篇】qBittorrent下载+转种Transmission快校版+IYUU Plus辅种教程</a></p><p><a href="https://blog.csdn.net/shangyexin/article/details/122085552?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-122085552-blog-122043327.pc_relevant_multi_platform_whitelistv2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-122085552-blog-122043327.pc_relevant_multi_platform_whitelistv2&utm_relevant_index=1">【操作篇】qBittorrent下载+转种Transmission快校版+IYUU Plus辅种教程</a></p><h1 id="我的一些心得"><a href="#我的一些心得" class="headerlink" title="我的一些心得"></a>我的一些心得</h1><ul><li>用portainer新建很傻瓜</li><li>注意在iyuu里地址可以写127.0.0.1，毕竟在本地</li><li>tr的docker对权限要求比较高，建议环境变量的puid&#x2F;pgid都设成0.即admin</li></ul>]]></content>
+    
+    
+    <summary type="html">在nas坏掉之后借机解决下载&amp;转种的问题</summary>
+    
+    
+    
+    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    
+    <category term="pt" scheme="http://tt2ter.github.io/tags/pt/"/>
+    
+  </entry>
+  
+  <entry>
     <title>IPV6访问NAS中Docker的服务</title>
     <link href="http://tt2ter.github.io/post/220705tcp6-tcp4.html"/>
     <id>http://tt2ter.github.io/post/220705tcp6-tcp4.html</id>
     <published>2022-07-05T10:54:31.000Z</published>
-    <updated>2022-07-06T15:57:38.040Z</updated>
+    <updated>2022-07-14T16:32:34.182Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h1><p><a href="https://blog.17lai.site/posts/462f1e5c/">通过IPV6访问Qnap NAS中Docker的服务</a></p><h1 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h1><ul><li><p>包管理器要安装qnapclub上的版本</p></li><li><p>socat一般只能前台运行，所以可以借助nohup<a href="http://linux.51yip.com/search/socat">参考：文章最后</a></p></li><li><p><a href="https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html">nohup</a></p></li><li><p>在参考博客中采用的方法是命令行尾加&amp;<a href="https://www.cnblogs.com/hf8051/p/5334343.html">命令行尾&amp;作用</a></p></li><li><p>实际上，nohup和&amp;分别会被Ctrlc和关闭窗口杀掉，但二者结合就都免疫了<a href="https://wsgzao.github.io/post/nohup/">附：nohup 结合 &amp; 用法以及如何精准查找进程并 kill 后台任务实践</a></p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nohup</span> socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0.0.1:20080</span> &amp;<br></code></pre></td></tr></table></figure></li></ul><p>参考了<a href="https://ghostinto.top/archives/27.html">这篇</a>博客</p><ul><li>当然，nas上没有nohup.而且有的<a href="https://blog.csdn.net/lengye7/article/details/80270379">coreutils</a>中没有nohup，<a href="https://blog.jeyfang.com/archives/52">安装nohup：Nas-QNAP-系列02-关于自定义脚本开机运行及nohup</a><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">opkg <span class="hljs-keyword">install</span> coreutils-nohup<br></code></pre></td></tr></table></figure></li><li>又想到万一以后重启了，还得让socat自启动<a href="https://blog.csdn.net/qq_45691577/article/details/123962036">nohup后台自启动</a></li><li>emmm绕回到bash脚本了……</li><li>emmm据说威联通的rc.local会被重启抹掉……</li><li>并且威联通官方的脚本是系统级的，会在安装的app依赖前启动……</li></ul><h1 id="最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面"><a href="#最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面" class="headerlink" title="最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面"></a>最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># start socat v6tov4 no conect to Entware</span><br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">20080</span> &amp;<br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9001</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span> &amp;<br></code></pre></td></tr></table></figure><ul><li>一开始还写错了，因为这里用户还未登陆，所以命令要加上&#x2F;opt&#x2F;bin路径？？</li></ul><li><a href="/post/220705bashshell"  tags="">新开一博客记录脚本学习</li><h1 id="最后用重定向把端口号藏起来"><a href="#最后用重定向把端口号藏起来" class="headerlink" title="最后用重定向把端口号藏起来"></a>最后用重定向把端口号藏起来</h1><p><a href="https://blog.csdn.net/qq_40672635/article/details/124818111">使用Cloudflare给域名添加跳转&#x2F;301重定向</a></p><p><a href="https://www.geekyes.com/124.htm">利用url重定向, 链接不带端口, 纯域名访问web页面</a></p><p>一定在dns里随便加一个解析记录，才能走cf代理</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h1><p><a href="https://blog.17lai.site/posts/462f1e5c/">通过IPV6访问Qnap NAS中Docker的服务</a></p><h1 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h1><ul><li><p>包管理器要安装qnapclub上的版本</p></li><li><p>socat一般只能前台运行，所以可以借助nohup<a href="http://linux.51yip.com/search/socat">参考：文章最后</a></p></li><li><p><a href="https://www.cnblogs.com/allenblogs/archive/2011/05/19/2051136.html">nohup</a></p></li><li><p>在参考博客中采用的方法是命令行尾加&amp;<a href="https://www.cnblogs.com/hf8051/p/5334343.html">命令行尾&amp;作用</a></p></li><li><p>实际上，nohup和&amp;分别会被Ctrlc和关闭窗口杀掉，但二者结合就都免疫了<a href="https://wsgzao.github.io/post/nohup/">附：nohup 结合 &amp; 用法以及如何精准查找进程并 kill 后台任务实践</a></p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nohup</span> socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0.0.1:20080</span> &amp;<br></code></pre></td></tr></table></figure></li></ul><p>参考了<a href="https://ghostinto.top/archives/27.html">这篇</a>博客</p><ul><li>当然，nas上没有nohup.而且有的<a href="https://blog.csdn.net/lengye7/article/details/80270379">coreutils</a>中没有nohup，<a href="https://blog.jeyfang.com/archives/52">安装nohup：Nas-QNAP-系列02-关于自定义脚本开机运行及nohup</a><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">opkg <span class="hljs-keyword">install</span> coreutils-nohup<br></code></pre></td></tr></table></figure></li><li>又想到万一以后重启了，还得让socat自启动<a href="https://blog.csdn.net/qq_45691577/article/details/123962036">nohup后台自启动</a></li><li>emmm绕回到bash脚本了……</li><li>emmm据说威联通的rc.local会被重启抹掉……</li><li>并且威联通官方的脚本是系统级的，会在安装的app依赖前启动……</li></ul><li><a href="/post/220705bashshell"  tags="">脚本相关笔记</li><h2 id="最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面"><a href="#最后我把命令写到了-x2F-etc-x2F-init-d-x2F-Entware-sh里面" class="headerlink" title="最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面"></a>最后我把命令写到了&#x2F;etc&#x2F;init.d&#x2F;Entware.sh里面</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># start socat v6tov4 no conect to Entware</span><br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">20081</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">20080</span> &amp;<br><span class="hljs-regexp">/opt/</span>bin<span class="hljs-regexp">/nohup /</span>opt<span class="hljs-regexp">/bin/</span>socat TCP6-LISTEN:<span class="hljs-number">9001</span>,ipv6-v6only=<span class="hljs-number">1</span>,reuseaddr,fork TCP4:<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span> &amp;<br></code></pre></td></tr></table></figure><ul><li>一开始还写错了，因为这里用户还未登陆，所以命令要加上&#x2F;opt&#x2F;bin路径？？</li></ul><li><a href="/post/220705bashshell"  tags="">新开一博客记录脚本学习</li><h2 id="最后用重定向免得输入端口号"><a href="#最后用重定向免得输入端口号" class="headerlink" title="最后用重定向免得输入端口号"></a>最后用重定向免得输入端口号</h2><p><a href="https://blog.csdn.net/qq_40672635/article/details/124818111">使用Cloudflare给域名添加跳转&#x2F;301重定向</a></p><p><a href="https://www.geekyes.com/124.htm">利用url重定向, 链接不带端口, 纯域名访问web页面</a></p><p>一定在dns里随便加一个解析记录，才能走cf代理</p><h1 id="其实不用这么麻烦"><a href="#其实不用这么麻烦" class="headerlink" title="其实不用这么麻烦"></a>其实不用这么麻烦</h1><p>利用威联通自带的反向代理就可以了，哎</p>]]></content>
     
     
     <summary type="html">在之前折腾ddns时发现bridge下的服务无法通过ipv6从外网访问到，解决</summary>
@@ -65,6 +172,27 @@
   </entry>
   
   <entry>
+    <title>书接上文-nas系统崩溃重装</title>
+    <link href="http://tt2ter.github.io/post/220703nassystemfix.html"/>
+    <id>http://tt2ter.github.io/post/220703nassystemfix.html</id>
+    <published>2022-07-03T04:11:42.000Z</published>
+    <updated>2022-07-14T16:49:51.885Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒"><a href="#其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒" class="headerlink" title="其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒"></a>其实是联系威联通客服啦，毕竟官方应该更熟悉机器，懒</h1><p>官方的解决办法就是，先尝试重连，不行。</p><p>再ssh链接之后备份硬盘，然后重装系统</p><p>里面下的电影我不想删，就留着了，但之后做种不知道好不好整。</p><p>重装完了顺便整个tr吧</p><h1 id="重装系统后流水账记录"><a href="#重装系统后流水账记录" class="headerlink" title="重装系统后流水账记录"></a>重装系统后流水账记录</h1><ol><li>新建储存卷</li><li>挂载旧的备份盘，并将文件设置为威联通共享文件夹路径</li></ol><p><img src="https://s2.loli.net/2022/07/05/L8cCab5x29fnuBD.png"><br><img src="https://s2.loli.net/2022/07/05/im7nAjJfHXhCt5O.png"><br>3. 安装有必要的软件，如verysync,qbit并再次配置好<br>4. docker：portainer;iyuu;tr;ddns-go<br>5. 计划把种子一个一个手动导进来</p>]]></content>
+    
+    
+    <summary type="html">nas的系统在安装了一个包管理器后就出毛病了，记录修复的过程</summary>
+    
+    
+    
+    <category term="Problems" scheme="http://tt2ter.github.io/categories/Problems/"/>
+    
+    
+    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    
+  </entry>
+  
+  <entry>
     <title>局域网高码率推流</title>
     <link href="http://tt2ter.github.io/post/220703rtmp.html"/>
     <id>http://tt2ter.github.io/post/220703rtmp.html</id>
@@ -86,11 +214,11 @@
   </entry>
   
   <entry>
-    <title>一次家宽的网络题记述</title>
+    <title>一次家宽的网络问题记述</title>
     <link href="http://tt2ter.github.io/post/220629networkProblem.html"/>
     <id>http://tt2ter.github.io/post/220629networkProblem.html</id>
     <published>2022-07-01T08:51:27.000Z</published>
-    <updated>2022-07-01T08:51:27.383Z</updated>
+    <updated>2022-07-14T16:29:46.048Z</updated>
     
     <content type="html"><![CDATA[<h1 id="搬回家后网络架构"><a href="#搬回家后网络架构" class="headerlink" title="搬回家后网络架构"></a>搬回家后网络架构</h1><h2 id="两种可选方案"><a href="#两种可选方案" class="headerlink" title="两种可选方案"></a>两种可选方案</h2><h3 id="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"><a href="#nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫" class="headerlink" title="nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫"></a>nas接路由，其他设备除电脑均接路由网段；电脑直接接光猫</h3><p>好处是客厅电视和手机与nas在一个网段，可以很轻松联通</p><p>坏处是机器放在客厅扰民，电脑需要连接wifi才可以登陆nas管理界面</p><h3 id="nas也接光猫"><a href="#nas也接光猫" class="headerlink" title="nas也接光猫"></a>nas也接光猫</h3><p>成本：在弱电箱增加了一个非常小的交换机（为了将储藏间墙里的网线连到光猫上</p><p>好处是nas可以放在储物间了，不扰民</p><p>坏处是客厅电视和手机没法连到nas了</p><h1 id="网络速度的问题"><a href="#网络速度的问题" class="headerlink" title="网络速度的问题"></a>网络速度的问题</h1><h2 id="百兆网到千兆网"><a href="#百兆网到千兆网" class="headerlink" title="百兆网到千兆网"></a>百兆网到千兆网</h2><p>一开始百兆的上传，导致我nas pt有上传的时候不限速相当于家里断网了，延迟极高。</p><p>后来限速效果也不显著</p><p>就升级到了千兆</p><p>千兆之后就好了很多，白天限速晚上放开</p><h1 id="第一次群体性网络问题"><a href="#第一次群体性网络问题" class="headerlink" title="第一次群体性网络问题"></a>第一次群体性网络问题</h1><p>首先是一天的上午，设置了nas的DDNS解析，上午还能用，下午睡醒了就发现上午解析好的域名打不开了。</p><p>一通折腾，一开始没有意识到是DNS的问题（后来问了问别人意识到了</p><p>在此期间我重启了一次我的电脑，重启完了发现，我的电脑同样解析不了代理服务器的地址了，包括所有纯IPV6域名也解析不了了。只有电脑有这个问题，内网其它设备都能用。电脑不论是有线连光猫还是无限&#x2F;无线连路由，都这样的问题。于是我认为是我电脑出现了问题。</p><p>尝试了给电脑换各种DNS服务器，都不管用。给路由器换也不管用。</p><p>遂放弃。</p><p>第二天上午又尝试了奇奇怪怪的方法，包括Windows网络重置，清除浏览器浏览记录等，都不管用。</p><p>下午睡醒之后，再一看，hjh，手机和nas的ipv6都掉了，一看是光猫没分配到IPV6。</p><p>自己折腾了一下还是没用，就打电话给移动，移动给后台不知道干了点啥，最后让我重启光猫。</p><p>重启之后，上述问题在半小时的系统重启，服务恢复之后都解决掉了。emm，DDNS解析也能正常使用了。</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>拖拖拉拉写了两天，本来以为就这么写完了就行了。没想到因为在找问题的时候我发现DOCKER里的端口是IPV4的，我需要给他映射在IPV6上，于是装了个包管理器，emmm，nas的管理界面就完蛋了。</p><p>表象是我的账号密码无法登陆，总显示账密错误。</p><p>尝试通过REset来重置管理员用户名密码，发现，reset完了连图形界面也看不见了。（但是qb等web端还是能连接上。</p><p>现在正在解决中……未完待续！</p>]]></content>
     
@@ -205,13 +333,13 @@
   </entry>
   
   <entry>
-    <title>TheWayToNAS</title>
+    <title>更新！TheWayToNAS</title>
     <link href="http://tt2ter.github.io/post/TheWayToNAS.html"/>
     <id>http://tt2ter.github.io/post/TheWayToNAS.html</id>
     <published>2022-05-17T13:12:54.000Z</published>
-    <updated>2022-05-17T17:58:34.407Z</updated>
+    <updated>2022-07-14T16:48:52.400Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言：nas真的是需求吗"><a href="#前言：nas真的是需求吗" class="headerlink" title="前言：nas真的是需求吗"></a>前言：nas真的是需求吗</h1><li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：机器和配件购买"><a href="#第一部分：机器和配件购买" class="headerlink" title="第一部分：机器和配件购买"></a>第一部分：机器和配件购买</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li><h1 id="第二部分：安装！"><a href="#第二部分：安装！" class="headerlink" title="第二部分：安装！"></a>第二部分：安装！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言：我不需要？"><a href="#前言：我不需要？" class="headerlink" title="前言：我不需要？"></a>前言：我不需要？</h1><li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：海鲜市场淘好货！"><a href="#第一部分：海鲜市场淘好货！" class="headerlink" title="第一部分：海鲜市场淘好货！"></a>第一部分：海鲜市场淘好货！</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li><h1 id="第二部分：焕然一新！"><a href="#第二部分：焕然一新！" class="headerlink" title="第二部分：焕然一新！"></a>第二部分：焕然一新！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li><h2 id="第一次安装"><a href="#第一次安装" class="headerlink" title="第一次安装"></a>第一次安装</h2><li><a href="/post/220518install"  tags="">一些安装记录</li><h1 id="第三部分：BUG！"><a href="#第三部分：BUG！" class="headerlink" title="第三部分：BUG！"></a>第三部分：BUG！</h1><h2 id="网络环境错误"><a href="#网络环境错误" class="headerlink" title="网络环境错误"></a>网络环境错误</h2><li><a href="/post/220629networkProblem"  tags="">一次家宽的网络题记述</li><h2 id="系统错误"><a href="#系统错误" class="headerlink" title="系统错误"></a>系统错误</h2><li><a href="/post/220703nassystemfix"  tags="">一次家宽的网络题记述</li><h1 id="第四部分：浴火重生！"><a href="#第四部分：浴火重生！" class="headerlink" title="第四部分：浴火重生！"></a>第四部分：浴火重生！</h1><h2 id="一些记录补写在了前面"><a href="#一些记录补写在了前面" class="headerlink" title="一些记录补写在了前面"></a>一些记录补写在了前面</h2><li><a href="/post/220518install"  tags="">一些安装记录（at第一次安装</li><h2 id="设置qb-tr-转种"><a href="#设置qb-tr-转种" class="headerlink" title="设置qb+tr+转种"></a>设置qb+tr+转种</h2><li><a href="/post/220705setting-qb-tr-IYUUplus"  tags="">IYUU是个好东西</li><h2 id="IPV6访问NAS中Docker的服务"><a href="#IPV6访问NAS中Docker的服务" class="headerlink" title="IPV6访问NAS中Docker的服务"></a>IPV6访问NAS中Docker的服务</h2><li><a href="/post/220705tcp6-tcp4"  tags="">折腾半天发现，emm，威联通系统自带反向代理</li><h2 id="硬件转码-刮削"><a href="#硬件转码-刮削" class="headerlink" title="硬件转码+刮削"></a>硬件转码+刮削</h2><li><a href="/post/220706Jellyfin"  tags="">Jellyfin！还可以和朋友实时观看！</li><h1 id="第五部分：锦上添花！"><a href="#第五部分：锦上添花！" class="headerlink" title="第五部分：锦上添花！"></a>第五部分：锦上添花！</h1><li><a href="/post/220714NASandZSH"  tags="">bash难看？换！</li><h1 id="后记：寓教于乐"><a href="#后记：寓教于乐" class="headerlink" title="后记：寓教于乐"></a>后记：寓教于乐</h1><p>后记就直接写在这里了，nas到手快两个月了，这篇目录拖拖拉拉快写完了。其实也没有整什么好东西，就是一些基本的功能。</p><p>重装nas是一个转折点，重装过程中不得不使用的ssh终端命令，让我从畏手畏脚不敢操作中成长。在这之后我慢慢更深的接触了终端操作。这和之前在vps上的感觉是不一样的。毕竟有更多元切实的需求。</p><p>这台nas还是有一些问题，比如网卡经常掉线。威联通官方打算下一个版本更新给解决了，等待+不保有任何期待</p><p>随着功能的完善，能在线和朋友远程看同一部电影；能够几乎自动化的完成从浏览站点、下载种子、自动辅种、自动硬链接后手动刮削，最后呈现在各个客户端的海报墙上，还是很有意思的。同时，也在不断更新家中的硬件设备，电视串流解码能力不行，买了个电视盒子。家里网口不够用，买了几个交换机……</p><p>来日方长；</p><p>希望不会把它挂在海鲜市场，如果一定要卖，我希望nas市场依旧火爆，也许还能回本，甚至小赚一笔吧</p><p>结贴！</p><p>2022&#x2F;07&#x2F;15 0:48</p>]]></content>
     
     
     <summary type="html">这是个文档当做一个目录吧，记录一下完整的折腾nas的过程</summary>
@@ -335,134 +463,6 @@
     
     
     <category term="blog" scheme="http://tt2ter.github.io/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>feed-me!</title>
-    <link href="http://tt2ter.github.io/post/220506feed-me.html"/>
-    <id>http://tt2ter.github.io/post/220506feed-me.html</id>
-    <published>2022-05-06T07:52:47.000Z</published>
-    <updated>2022-05-06T08:08:23.019Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="欢迎订阅下面的Feed，您可以及时跟踪我的更新："><a href="#欢迎订阅下面的Feed，您可以及时跟踪我的更新：" class="headerlink" title="欢迎订阅下面的Feed，您可以及时跟踪我的更新："></a>欢迎订阅下面的Feed，您可以及时跟踪我的更新：</h1><p>这里↓是我的RSS链接<a class="nav-link" href="/atom.xml"><i class="iconfont icon-rss-fill"></i></a></p><p>此外在我的博客关于界面和导航栏也能找到这个链接哦</p><p><img src="https://s2.loli.net/2022/05/06/Ug6nte4wXzlIp9C.png" alt="feed me!"></p>]]></content>
-    
-    
-    <summary type="html">今天开始开通RSS订阅啦</summary>
-    
-    
-    
-    
-    <category term="Hexo" scheme="http://tt2ter.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub</title>
-    <link href="http://tt2ter.github.io/post/220509freeipv6vps.html"/>
-    <id>http://tt2ter.github.io/post/220509freeipv6vps.html</id>
-    <published>2022-05-03T15:59:22.000Z</published>
-    <updated>2022-05-09T12:07:19.116Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub"><a href="#校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub" class="headerlink" title="校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub"></a>校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub</h1><h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文档为本人学习笔记，仅供学习使用，请勿用作违法用途。请任何看到本文档的组织或个人在30秒内立即停止使用本文档提及的技术做违反当地法律的内容，请勿将文档及相关链接发至百度贴吧等公开论坛。</p><h1 id="一些有用信息来源"><a href="#一些有用信息来源" class="headerlink" title="一些有用信息来源"></a>一些有用信息来源</h1><ul><li><a href="hax.co.id">白嫖vps（每7天更新）</a></li><li><a href="https://woiden.id/register?=iweec">白嫖vps（每7天更新）同一家据说这个用的人少，浅浅尝试了一下确实速度完全可以接受</a></li><li><a href="https://webhorizon.in/">便宜低性能高带宽vps(native ipv6+NAT ipv4)</a></li><li><a href="https://freedns.afraid.org/">白嫖子域名（不推荐）</a></li><li><a href="https://www.freenom.com/zh/index.html?lang=zh">白嫖顶级域名</a></li><li><a href="https://nic.ua/">白嫖&#x2F;便宜域名</a></li><li><a href="https://fake-it.ws/">假身份生成器</a></li><li><a href="https://github.com/vaxilu/x-ui">x-ui面板</a></li><li><a href="https://github.com/fscarmen/warp">warp连接CF WARP为服务器添加IPv4&#x2F;IPv6网络</a></li><li><a href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E">从 letsencrypt 生成免费的证书</a></li><li><a href="https://teddysun.com/444.html">vps简单性能测试脚本bench.sh</a>    <a href="https://github.com/teddysun/across">github页面</a></li><li><a href="https://github.com/XIU2/CloudflareSpeedTest">CloudflareSpeedTest</a></li><li><a href="https://github.com/emptysuns/Hi_Hysteria">yyds提速工具HiHysteria</a></li><li>本文档特别感谢煎包的支持</li></ul><h1 id="在开始前，你应该："><a href="#在开始前，你应该：" class="headerlink" title="在开始前，你应该："></a>在开始前，你应该：</h1><h2 id="0-有基本的计算机及互联网知识"><a href="#0-有基本的计算机及互联网知识" class="headerlink" title="0.有基本的计算机及互联网知识"></a>0.有基本的计算机及互联网知识</h2><p>如通过ssh连接主机，懂得管理DNS记录等</p><h2 id="1-拥有自己的顶级域名"><a href="#1-拥有自己的顶级域名" class="headerlink" title="1.拥有自己的顶级域名"></a>1.拥有自己的顶级域名</h2><ul><li><a href="https://freedns.afraid.org/">白嫖子域名（不推荐）</a></li><li><a href="https://www.freenom.com/zh/index.html?lang=zh">白嫖顶级域名(推荐)</a></li><li><a href="https://nic.ua/">白嫖&#x2F;便宜域名</a></li></ul><p>任选一个注册，可以用假身份，但邮箱要自己的</p><ul><li><a href="https://fake-it.ws/">假身份生成器</a></li></ul><p>然后将域添加到<a href="https://www.cloudflare.com/zh-cn/">cloudflare</a></p><h2 id="2-拥有一台合适的vps"><a href="#2-拥有一台合适的vps" class="headerlink" title="2.拥有一台合适的vps"></a>2.拥有一台合适的vps</h2><h3 id="a-免费练手VPS"><a href="#a-免费练手VPS" class="headerlink" title="a.免费练手VPS"></a>a.免费练手VPS</h3><p><a href="hax.co.id">白嫖vps（每7天更新）</a></p><p>需要电报账号注册，推荐先来练手</p><h3 id="b-推荐大带宽低性能小硬盘VPS"><a href="#b-推荐大带宽低性能小硬盘VPS" class="headerlink" title="b.推荐大带宽低性能小硬盘VPS"></a>b.推荐大带宽低性能小硬盘VPS</h3><p><a href="https://webhorizon.in/">便宜低性能高带宽vps(native ipv6+NAT ipv4)</a></p><p>推荐购买香港的NAT服务器7刀每年，支付需要银联卡（PayPal）</p><p>只推荐香港,</p><p>原因1，近，线路先天的好，延迟先天的低；</p><p>原因2，在写这个文档的时候我买了个这家LA的机子，一套组合拳下来慢的要死（相较于香港，只能1080P油管</p><p><img src="https://s2.loli.net/2022/05/09/1amZlzRuM7AX3VT.png" alt="这就是差距……上面是香港，下面是LA"></p><HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3><p>5月9日更新：<br>其他地区也可以买了，有提速工具！有其他地区IP需求的可以考虑<a href="#jump">点击跳转</a></p><HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3><p>服务商是印度阿三，会有一些小毛病如据说会每月定期重启一次你的vps，emmm，价格实惠 ，要啥自行车</p><p>保姆级步骤，放心食用</p><ol><li>选购</li></ol><p><img src="https://s2.loli.net/2022/05/03/bYhS9kQsOwRUKi1.png" alt="image-20220503145942061"></p><p><img src="https://s2.loli.net/2022/05/03/CvfRtMhdX4wLkne.png" alt="image-20220503150456728"></p><p><img src="https://s2.loli.net/2022/05/03/CrDq8kiHW6wajPE.png" alt="image-20220503150607806"></p><p><img src="https://s2.loli.net/2022/05/03/zSMqw7sZvdCQnT8.png"></p><p><img src="https://s2.loli.net/2022/05/03/672N5kPCm4UZJQv.png" alt="image-20220503150739980"></p><p>我因为已经有一个香港的了，所以我下面用一个洛杉矶的作为演示</p><p>example.com处写你自己的域名</p><p>最好用debian系统</p><p><img src="https://s2.loli.net/2022/05/03/vLVOe4aurmE8yqX.png" alt="example.com处写你的域名"></p><p>注册账号，可以用假信息，但邮箱要真的</p><p><img src="https://s2.loli.net/2022/05/03/wkYRTsjEguS5qWU.png" alt="image-20220503151928736"></p><p><img src="https://s2.loli.net/2022/05/03/QM3ylSfFCvKOYsm.png" alt="image-20220503152130156"></p><ol start="2"><li>支付</li></ol><p><img src="https://s2.loli.net/2022/05/03/kGISHr2COBQ7hDK.png" alt="image-20220503152228730"></p><p><img src="https://s2.loli.net/2022/05/03/4JozxZCD96IhjrK.png" alt="image-20220503152425381"></p><p><img src="https://s2.loli.net/2022/05/03/WAKadR3glmxPHth.png" alt="image-20220503153033537"></p><p>填写短信验证码后再次填写一遍相关信息，点击使用CNY付款</p><p>再次填写验证码（我也不知道为啥有两个，但实际上就是只支付了一遍，放心）</p><p>后面注册PayPal否，自行选择</p><p>返回商家</p><p><img src="https://s2.loli.net/2022/05/03/th7f2mQbcWeXJGz.png" alt="image-20220503153744704"></p><p>在order history 中可以看到订单状态为 In Review 耐心等待，阿三的工作效率比较低，可以三四小时后再查看是否开机</p><p>开机之后用ssh连接</p><p>使用过程中有问题及时提ticket！</p><h1 id="部署过程"><a href="#部署过程" class="headerlink" title="部署过程"></a>部署过程</h1><h2 id="1-首先可以先测试下vps性能（可选），优先是否使用ipv6，以及更新软件源"><a href="#1-首先可以先测试下vps性能（可选），优先是否使用ipv6，以及更新软件源" class="headerlink" title="1. 首先可以先测试下vps性能（可选），优先是否使用ipv6，以及更新软件源"></a>1. 首先可以先测试下vps性能（可选），优先是否使用ipv6，以及更新软件源</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs powershell">apt update<br>apt upgrade<br><br><span class="hljs-comment">#源码和用法见文章开头：vps简单性能测试脚本bench.sh</span><br><span class="hljs-built_in">wget</span> <span class="hljs-literal">-qO-</span> bench.sh | bash<br><br><span class="hljs-comment">#ip检测</span><br><span class="hljs-comment">#若无curl 运行 </span><br>apt install <span class="hljs-built_in">curl</span><br><span class="hljs-built_in">curl</span> ip.gs<br><span class="hljs-comment">#若返回ipv6地址则优先ipv6</span><br><span class="hljs-comment">#若非ipv6优先如何设置？TODO:</span><br><span class="hljs-built_in">curl</span> <span class="hljs-literal">-4</span> ip.gs<br><span class="hljs-comment">#如返回：curl: (7) Couldn&#x27;t connect to server则没有ipv4</span><br>ping www.youtube.com<br>ping ipv6.baidu.com<br><span class="hljs-comment">#测试国内外链接情况</span><br></code></pre></td></tr></table></figure><h2 id="2-安装并运行x-ui"><a href="#2-安装并运行x-ui" class="headerlink" title="2. 安装并运行x-ui"></a>2. 安装并运行x-ui</h2><p>   <a href="https://github.com/vaxilu/x-ui">x-ui面板</a></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">bash &lt;(curl -Ls https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/vaxilu/</span>x-ui<span class="hljs-regexp">/master/i</span>nstall.sh)<br><span class="hljs-comment">#他会显示以下内容：</span><br><span class="hljs-comment">#出于安全考虑，安装/更新完成后需要强制修改端口与账户密码</span><br><span class="hljs-comment">#确认是否继续?[y/n]:</span><br><span class="hljs-comment">#(回车默认n，最好y更改一下</span><br><span class="hljs-comment">#设置开机自启动,应对阿三每月重启（无论如何自启动都是必要的）</span><br>x-ui enable<br></code></pre></td></tr></table></figure><p>步骤如图<img src="https://s2.loli.net/2022/05/03/J1NPWku7Vs5h8fO.png" alt="image-20220503155155000"></p><p>在浏览器中输入[2a01:4f8:242:4986:face:face:13cf:1]:14567（换成你的主机地址和设置的端口号）并输入账户名密码进入面板</p><p><img src="https://s2.loli.net/2022/05/03/V5IlZRgJNAH1qpi.png" alt="image-20220503155522948"></p><h2 id="3-使用warp为服务器添加IPV4（适用于Hax等无ipv4nat服务器，其他请跳过）"><a href="#3-使用warp为服务器添加IPV4（适用于Hax等无ipv4nat服务器，其他请跳过）" class="headerlink" title="3. 使用warp为服务器添加IPV4（适用于Hax等无ipv4nat服务器，其他请跳过）"></a>3. 使用warp为服务器添加IPV4（适用于Hax等无ipv4nat服务器，其他请跳过）</h2><p><a href="https://github.com/fscarmen/warp">warp连接CF WARP为服务器添加IPv4&#x2F;IPv6网络</a></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget -N https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/fscarmen/</span>warp<span class="hljs-regexp">/main/m</span>enu.sh &amp;&amp; bash menu.sh <span class="hljs-number">6</span><br></code></pre></td></tr></table></figure><p>选择安装参数</p><p><img src="https://s2.loli.net/2022/05/03/eDAcNvQ5L3Xj6dn.png" alt="image-20220503161046719"></p><p>安装结果</p><p><img src="https://s2.loli.net/2022/05/03/8XT6uabgYrKULPJ.png" alt="image-20220503161903878"></p><p>可以</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ping</span> <span class="hljs-number">8.8.8.8</span><br></code></pre></td></tr></table></figure><p>做测试，通了就成了</p><h2 id="4-从-letsencrypt-生成免费的证书"><a href="#4-从-letsencrypt-生成免费的证书" class="headerlink" title="4. 从 letsencrypt 生成免费的证书"></a>4. <a href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E">从 letsencrypt 生成免费的证书</a></h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk">apt install socat<br><span class="hljs-regexp">//</span>具体使用方法看官方文档<br>curl  https:<span class="hljs-regexp">//g</span>et.acme.sh | sh -s email= my@example.com<br><span class="hljs-comment">#替换为你的邮箱</span><br>~<span class="hljs-regexp">/.acme.sh/</span><br>alias acme.sh=~<span class="hljs-regexp">/.acme.sh/</span>acme.sh<br></code></pre></td></tr></table></figure><p>在运行下一个命令之前，使用cloudflare解析一个子域名到你的服务器，使用AAAA解析<br>如example.yourdomain.com</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">acme<span class="hljs-selector-class">.sh</span>  <span class="hljs-attr">--issue</span> -d example<span class="hljs-selector-class">.yourdomain</span><span class="hljs-selector-class">.com</span>  <span class="hljs-attr">--standalone</span> <span class="hljs-attr">--listen-v6</span><br>#换成你的子域名<br></code></pre></td></tr></table></figure><p>成功演示（因为这是演示，一会就删，所以就不打码了）</p><p><img src="https://s2.loli.net/2022/05/03/jpxaTkK68nItqA3.png" alt="image-20220503164523932"></p><p>可以选择把证书拷到别的地方,如根目录</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">acme<span class="hljs-selector-class">.sh</span> <span class="hljs-attr">--install-cert</span> -d example<span class="hljs-selector-class">.yourdomain</span><span class="hljs-selector-class">.com</span> \<br><span class="hljs-attr">--cert-file</span>      /root/cert<span class="hljs-selector-class">.pem</span>  \<br><span class="hljs-attr">--key-file</span>       /root/key<span class="hljs-selector-class">.pem</span>  \<br>#域名改为你的域名<br></code></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2022/05/03/5QCdvW6UVhZ1Bon.png" alt="image-20220503171353387"></p><p>cert是公钥路径，key是密钥路径</p><h2 id="5-设置入站流量"><a href="#5-设置入站流量" class="headerlink" title="5. 设置入站流量"></a>5. 设置入站流量</h2><p>在x-ui面板中按图示设置</p><p>example.yourdomain.com改为你的域名，证书路径改为你的证书路径（如果你按照我的流程就不用改变)</p><p>备注随意</p><img src="https://s2.loli.net/2022/05/03/IQJktDF31E8mjbs.png" alt="image-20220503171924473" style="zoom:150%;" /><p>设置好后点击查看，复制链接</p><p>在v2rayN中选择导入</p><p><img src="https://s2.loli.net/2022/05/03/jCzZuOwPe1syr2b.png" alt="image-20220503172327717"></p><p>最终配置和下图以及你自己的配置一一对应即可</p><p><img src="https://s2.loli.net/2022/05/03/gn8cIA91lNKVPua.png" alt="image-20220503172232176"></p><h2 id="6-如果速度不达预期，使用cf加速"><a href="#6-如果速度不达预期，使用cf加速" class="headerlink" title="6. 如果速度不达预期，使用cf加速"></a>6. 如果速度不达预期，使用cf加速</h2><p>在cloudflare上设置该选项为完全</p><p><img src="https://s2.loli.net/2022/05/03/wvftEr93KD5gpUu.png" alt="image-20220503172552145"></p><p>域名解析设置cloudflare代理</p><p><img src="https://s2.loli.net/2022/05/03/CPrVZYpDyJBEOUn.png" alt="image-20220503172935479"></p><p>x-ui新建：</p><p><img src="https://s2.loli.net/2022/05/03/I2UcPJNVqXvrlC6.png" alt="image-20220503175311903"></p><p><img src="https://s2.loli.net/2022/05/03/DG5AM8chNnqUxXF.png" alt="image-20220503175504819"></p><p>其中蓝圈部分是Cloudflare CDN的IP，可以选择自己最好用的，用我上图的也行，不过最好在自己本地测试一下</p><p><a href="https://github.com/XIU2/CloudflareSpeedTest">CloudflareSpeedTest</a></p><p>使用这个测试，记得加-ipv6参数（在你的电脑上运行哦，不是vps）</p><p>筛选得到最快ip填上去</p><p>发现快了好多</p><h2 id="7-enjoy！"><a href="#7-enjoy！" class="headerlink" title="7. enjoy！"></a>7. enjoy！</h2><h1 id="如果还觉得慢：！"><a href="#如果还觉得慢：！" class="headerlink" title="如果还觉得慢：！"></a><span id="jump">如果还觉得慢：</span>！</h1><h1 id="再提速！"><a href="#再提速！" class="headerlink" title="再提速！"></a>再提速！</h1><h2 id="效果展示和前序准备"><a href="#效果展示和前序准备" class="headerlink" title="效果展示和前序准备"></a>效果展示和前序准备</h2><p><img src="https://s2.loli.net/2022/05/09/kVHxNIfL53cTjz4.png" alt="未提速时"><br><img src="https://s2.loli.net/2022/05/09/afWlgkZLPmw3KCp.png" alt="提速后！！"></p><p><em>这个提速工具理论上会明显提高VPS流量消耗，因此除非上述步骤无法满足油管4K正常浏览，请不要使用这个工具</em></p><p>在进行这步之前，请确保你完成了<strong>部署过程</strong>的步骤1和4，同时请确保在Cloudflare中的代理被关闭，如下图第一行示例（因此这个加速工具和上文提到的cf加速有一定的冲突</p><p><img src="https://s2.loli.net/2022/05/09/C7q4dVLfptQnOKw.png"></p><p><a href="https://github.com/emptysuns/Hi_Hysteria">项目地址：HiHysteria</a>可以看到项目介绍</p><h2 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h2><h3 id="0-测试服务器状态"><a href="#0-测试服务器状态" class="headerlink" title="0. 测试服务器状态"></a>0. 测试服务器状态</h3><p>用本地的windows Powershell或其他终端 ping 你的服务器IPv6地址</p><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">ping <span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span><br></code></pre></td></tr></table></figure><p>往返行程的估计时间(以毫秒为单位):</p><pre><code class="hljs">最短 = 174ms，最长 = 174ms，平均 = 174ms</code></pre><p>记住此处的平均延迟</p><p>通过前文步骤1的性能测试或主机提供商信息预测自己服务器上行下行速度</p><p>了解自己本地带宽</p><h3 id="1-安装-设置"><a href="#1-安装-设置" class="headerlink" title="1. 安装+设置"></a>1. 安装+设置</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">bash &lt;(curl -fsSL https:<span class="hljs-regexp">//gi</span>t.io/hysteria.sh)<br></code></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2022/05/09/EdHTuxveQq6ilcO.png"></p><p>此后几个选项按照如下示例填写</p><p>注意三个黄色的地方请按照自己实际情况填写</p><p>平均延迟就是步骤0中的平均延迟</p><p>客户端期望下行速度（一定要按照你的需求设置，原因见Github文档，我的建议速度如下）</p><p>   首先不能超过VPS的上行速度<br>   其次不能超过本地带宽，如千兆就是1000，百兆就是100等<br>   这是两条红线<br>   油管4k 150足以<br>   如果有高速下载需求<br>   300足以<br>   请根据自己需求设置，仅供参考！！！</p><p>客户端期望上行速度（也一定要按照你的需求设置，原因见Github文档，一般上行需求不大，没特殊要求设为下行的一半到3&#x2F;4即可</p><p><img src="https://s2.loli.net/2022/05/09/vq9IuFm6gBhGpZf.png"></p><h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><p><img src="https://s2.loli.net/2022/05/09/g3ypfzic1UImKXx.png"><br>可以使用sftp将配置文件从&#x2F;root下载到电脑本地</p><p>也可以复制粉色框内的内容粘贴到文本文档中</p><p>文档重命名为.json格式<img src="https://s2.loli.net/2022/05/09/5ms3vrTp7YQAiMw.png"></p><p>打开电脑本地的.json文件，修改这两个地方<br><img src="https://s2.loli.net/2022/05/09/mESRJsU2kwNunbg.png"></p><h4 id="下面仅仅介绍用V2rayN连接方法"><a href="#下面仅仅介绍用V2rayN连接方法" class="headerlink" title="下面仅仅介绍用V2rayN连接方法"></a>下面仅仅介绍用V2rayN连接方法</h4><p>从<a href="https://github.com/emptysuns/Hi_Hysteria/releases">https://github.com/emptysuns/Hi_Hysteria&#x2F;releases</a>上下载这个</p><p><img src="https://s2.loli.net/2022/05/09/yU3aACYuTzpb81x.png"></p><p>将里面的acl文件夹整个解压到你的V2rayN-Core安装目录下<br><img src="https://s2.loli.net/2022/05/09/saqvG8dDWY6cye9.png"></p><p>从<a href="https://github.com/HyNetwork/hysteria/releases">https://github.com/HyNetwork/hysteria/releases</a>上下载hysteria-tun-windows-6.0-amd64.exe，同样放在V2rayN-Core安装目录下（和acl一样）</p><p>添加自定义配置服务器<br><img src="https://s2.loli.net/2022/05/09/AnLf3NymtZUoXWv.png"><br>地址选你刚刚下载到本地修改好端口的.json<br><img src="https://s2.loli.net/2022/05/09/U98PK4wRZhxgXmo.png"></p><h3 id="3-enjoy"><a href="#3-enjoy" class="headerlink" title="3.enjoy!!"></a>3.enjoy!!</h3><h2 id="因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油"><a href="#因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油" class="headerlink" title="因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油"></a>因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油</h2><h1 id="一些其他问题"><a href="#一些其他问题" class="headerlink" title="一些其他问题"></a>一些其他问题</h1><p>服务器重启，表现为连不上了，不一定是墙了，也可能是</p><p>服务器dns解析出问题</p><p>连接不上代理</p><p><a href="https://www.laozuo.org/6647.html">解决方法</a></p><p>第一个方法就行</p>]]></content>
-    
-    
-    <summary type="html">ipv6代理的方式校园网免流</summary>
-    
-    
-    
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="vps" scheme="http://tt2ter.github.io/tags/vps/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>0524UPD|每日有趣文章</title>
-    <link href="http://tt2ter.github.io/post/024UPDLinks.html"/>
-    <id>http://tt2ter.github.io/post/024UPDLinks.html</id>
-    <published>2022-04-16T16:14:23.000Z</published>
-    <updated>2022-05-31T12:43:07.577Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="只记录有趣文章"><a href="#只记录有趣文章" class="headerlink" title="只记录有趣文章"></a>只记录有趣文章</h1><h2 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h2><h3 id="05月"><a href="#05月" class="headerlink" title="05月"></a>05月</h3><h4 id="24日"><a href="#24日" class="headerlink" title="24日"></a>24日</h4><ul><li>推荐个校园网环境资源站（pt站），公网可使用，校园网注册</li></ul><p><a href="https://www.tjupt.org/promotionlink.php?key=c71bc6ee0a14241a7951d139736c8fe1"><img src="https://www.tjupt.org/pic/prolink.png" alt="北洋园PT" title="北洋园PT"></a></p><h4 id="17日"><a href="#17日" class="headerlink" title="17日"></a>17日</h4><li><a href="https://csdiy.wiki/"  tags="">一本计算机的自学指南</br><a href=/post/TODOlist.html  tags="">我的TODOlist</a></li><b>中有好兄弟给我推荐这个链接，虽然我大概率不会学CS，但分享出来共同进步</b><h4 id="07日"><a href="#07日" class="headerlink" title="07日"></a>07日</h4><li><a href="https://mp.weixin.qq.com/s/RU2x8aPUx3pHvk8DRCiPbA" time_added="1651926767" tags="">被操纵的P值：科学论文中的数学胡扯丨展卷</a></li><b>联想到最近做数模和好朋友的问卷研究</b><li><a href="http://www.ruanyifeng.com/blog/2022/04/weekly-issue-202.html" time_added="1651924696" tags="inoreader,技术">科技爱好者周刊（第 202 期）：三个有启发的学习方法</a></li><li><a href="https://www.science.org/doi/10.1126/scirobotics.abm5954" time_added="1651923955" tags="">Swarm of micro flying robots in the wild</a></li><b>无人集群，看起来很惊艳，就是我的英文水平和数学水平制约了我，让我读不懂它</b><li><a href="https://daily.zhihu.com/story/9748335" time_added="1651921139" tags="b乎,inoreader,技术">怎么提高读书的效率呢？</a></li><b>输入：马上去做和减少负反馈（阻力）；输出：笔记/感受</b><h3 id="04月"><a href="#04月" class="headerlink" title="04月"></a>04月</h3><h4 id="17日-1"><a href="#17日-1" class="headerlink" title="17日"></a>17日</h4><ul><li>之前一直关注的<a href="https://www.pinballfx.com/">3D弹球游戏</a>发售了，下下来玩了玩，随后搜了搜弹球的发展和规则。<br><a href="https://zhuanlan.zhihu.com/p/53821221">XP自带的《三维弹球》，有着怎样深厚的历史背景？ - 游研社的文章 - 知乎</a></li></ul>]]></content>
-    
-    
-    <summary type="html">刷到的有趣文章</summary>
-    
-    
-    
-    <category term="share" scheme="http://tt2ter.github.io/categories/share/"/>
-    
-    <category term="Diary" scheme="http://tt2ter.github.io/categories/Diary/"/>
-    
-    
-    <category term="share" scheme="http://tt2ter.github.io/tags/share/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【网站分享】&quot;反&quot;斗软件</title>
-    <link href="http://tt2ter.github.io/post/220417apprcn.html"/>
-    <id>http://tt2ter.github.io/post/220417apprcn.html</id>
-    <published>2022-04-16T16:13:09.000Z</published>
-    <updated>2022-04-16T16:58:02.476Z</updated>
-    
-    <content type="html"><![CDATA[<p>偶然间刷到的一个网站。</p><p><a href="http://www.apprcn.com/">“反”斗软件</a></p><p>里面整合了如各大游戏启动器的限免和一些商业软件限免，商业字体字体限免。请自行探索</p>]]></content>
-    
-    
-    <summary type="html">一个带有rss订阅的软件推荐网站，内含各种商业软件限免信息</summary>
-    
-    
-    
-    <category term="share" scheme="http://tt2ter.github.io/categories/share/"/>
-    
-    
-    <category term="share" scheme="http://tt2ter.github.io/tags/share/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to Search English Words</title>
-    <link href="http://tt2ter.github.io/post/220426how-to-search-English-words.html"/>
-    <id>http://tt2ter.github.io/post/220426how-to-search-English-words.html</id>
-    <published>2022-04-05T16:35:03.000Z</published>
-    <updated>2022-05-11T01:15:34.632Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="检索单词方法"><a href="#检索单词方法" class="headerlink" title="检索单词方法"></a>检索单词方法</h1><ol><li>Googling “<your vocabulary> + camb” to get the definition in the Cambridge English Dictionary</li><li>Googling “<your vocabulary> + youglish” to see pronunciations in English from ytb.</li><li>Googling “<your vocabulary> + vs” to see the difference between words.</li><li>You can also deepen your memory through pictures.</li></ol>]]></content>
-    
-    
-    <summary type="html">一个好的查单词的方法</summary>
-    
-    
-    
-    <category term="idea" scheme="http://tt2ter.github.io/categories/idea/"/>
-    
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
-    
-    <category term="英语学习" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="English" scheme="http://tt2ter.github.io/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>0517UPD|每日小短句</title>
-    <link href="http://tt2ter.github.io/post/0517UPDAphorisms.html"/>
-    <id>http://tt2ter.github.io/post/0517UPDAphorisms.html</id>
-    <published>2022-04-05T12:26:31.000Z</published>
-    <updated>2022-05-24T15:48:09.127Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="鸡汤只用看一遍，因为他们会时不时找上你"><a href="#鸡汤只用看一遍，因为他们会时不时找上你" class="headerlink" title="鸡汤只用看一遍，因为他们会时不时找上你"></a>鸡汤只用看一遍，因为他们会时不时找上你</h1><h2 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h2><h3 id="05月"><a href="#05月" class="headerlink" title="05月"></a>05月</h3><h4 id="17日"><a href="#17日" class="headerlink" title="17日"></a>17日</h4><ul><li>当你正视焦虑和恐惧时，它就开始失去压制你的力量<h3 id="04月"><a href="#04月" class="headerlink" title="04月"></a>04月</h3><h4 id="13日"><a href="#13日" class="headerlink" title="13日"></a>13日</h4></li><li>大事讲原则，小事讲团结。</li></ul><h4 id="10日"><a href="#10日" class="headerlink" title="10日"></a>10日</h4><ul><li>你很坚定就没有风险，给了太多的退路反而是不成功的所在 —— BIT 付莹</li></ul><h4 id="5日"><a href="#5日" class="headerlink" title="5日"></a>5日</h4><ul><li>两种最好的学习方法：死记硬背、得意忘形。</li></ul><h1 id="明天会更好！"><a href="#明天会更好！" class="headerlink" title="明天会更好！"></a>明天会更好！</h1>]]></content>
-    
-    
-    <summary type="html">一些看到的带来思考的句子</summary>
-    
-    
-    
-    <category term="Diary" scheme="http://tt2ter.github.io/categories/Diary/"/>
-    
     
   </entry>
   
