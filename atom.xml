@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>马火星的迷你小屋</title>
-  <icon>http://tt2ter.github.io/icon.png</icon>
+  <icon>http://blog.1314171.xyz/icon.png</icon>
   <subtitle>可能有一些学习心得和日常</subtitle>
-  <link href="http://tt2ter.github.io/atom.xml" rel="self"/>
+  <link href="http://blog.1314171.xyz/atom.xml" rel="self"/>
   
-  <link href="http://tt2ter.github.io/"/>
+  <link href="http://blog.1314171.xyz/"/>
   <updated>2022-07-14T16:27:37.933Z</updated>
-  <id>http://tt2ter.github.io/</id>
+  <id>http://blog.1314171.xyz/</id>
   
   <author>
     <name>TT2TER</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>威联通nas和zsh</title>
-    <link href="http://tt2ter.github.io/post/220714NASandZSH.html"/>
-    <id>http://tt2ter.github.io/post/220714NASandZSH.html</id>
+    <link href="http://blog.1314171.xyz/post/220714NASandZSH.html"/>
+    <id>http://blog.1314171.xyz/post/220714NASandZSH.html</id>
     <published>2022-07-14T16:27:37.000Z</published>
     <updated>2022-07-14T16:27:37.933Z</updated>
     
@@ -30,17 +30,17 @@
     
     
     
-    <category term="学习教程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    <category term="学习教程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
   </entry>
   
   <entry>
     <title>linux硬链接工具</title>
-    <link href="http://tt2ter.github.io/post/220714hlink.html"/>
-    <id>http://tt2ter.github.io/post/220714hlink.html</id>
+    <link href="http://blog.1314171.xyz/post/220714hlink.html"/>
+    <id>http://blog.1314171.xyz/post/220714hlink.html</id>
     <published>2022-07-14T16:26:06.000Z</published>
     <updated>2022-07-14T16:26:06.179Z</updated>
     
@@ -51,17 +51,17 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
   </entry>
   
   <entry>
     <title>视觉组-第二节-经典检测网络</title>
-    <link href="http://tt2ter.github.io/post/220709visual-2.html"/>
-    <id>http://tt2ter.github.io/post/220709visual-2.html</id>
+    <link href="http://blog.1314171.xyz/post/220709visual-2.html"/>
+    <id>http://blog.1314171.xyz/post/220709visual-2.html</id>
     <published>2022-07-14T16:25:42.000Z</published>
     <updated>2022-07-14T16:25:42.324Z</updated>
     
@@ -72,17 +72,17 @@
     
     
     
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     
-    <category term="计算机视觉" scheme="http://tt2ter.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    <category term="计算机视觉" scheme="http://blog.1314171.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
   </entry>
   
   <entry>
     <title>威联通nasJellyfin硬件转码+硬链接后刮削</title>
-    <link href="http://tt2ter.github.io/post/220706Jellyfin.html"/>
-    <id>http://tt2ter.github.io/post/220706Jellyfin.html</id>
+    <link href="http://blog.1314171.xyz/post/220706Jellyfin.html"/>
+    <id>http://blog.1314171.xyz/post/220706Jellyfin.html</id>
     <published>2022-07-14T16:24:32.000Z</published>
     <updated>2022-07-15T10:32:55.135Z</updated>
     
@@ -93,17 +93,17 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
   </entry>
   
   <entry>
     <title>qb&amp;tr&amp;IYUUplus结合</title>
-    <link href="http://tt2ter.github.io/post/220705setting-qb-tr-IYUUplus.html"/>
-    <id>http://tt2ter.github.io/post/220705setting-qb-tr-IYUUplus.html</id>
+    <link href="http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus.html"/>
+    <id>http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus.html</id>
     <published>2022-07-09T06:21:01.000Z</published>
     <updated>2022-07-09T06:21:01.845Z</updated>
     
@@ -114,19 +114,19 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="pt" scheme="http://tt2ter.github.io/tags/pt/"/>
+    <category term="pt" scheme="http://blog.1314171.xyz/tags/pt/"/>
     
   </entry>
   
   <entry>
     <title>IPV6访问NAS中Docker的服务</title>
-    <link href="http://tt2ter.github.io/post/220705tcp6-tcp4.html"/>
-    <id>http://tt2ter.github.io/post/220705tcp6-tcp4.html</id>
+    <link href="http://blog.1314171.xyz/post/220705tcp6-tcp4.html"/>
+    <id>http://blog.1314171.xyz/post/220705tcp6-tcp4.html</id>
     <published>2022-07-05T10:54:31.000Z</published>
     <updated>2022-07-14T16:32:34.182Z</updated>
     
@@ -137,19 +137,19 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="network" scheme="http://tt2ter.github.io/tags/network/"/>
+    <category term="network" scheme="http://blog.1314171.xyz/tags/network/"/>
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
   </entry>
   
   <entry>
     <title>初次安装nas系统</title>
-    <link href="http://tt2ter.github.io/post/220518install.html"/>
-    <id>http://tt2ter.github.io/post/220518install.html</id>
+    <link href="http://blog.1314171.xyz/post/220518install.html"/>
+    <id>http://blog.1314171.xyz/post/220518install.html</id>
     <published>2022-07-04T12:51:10.000Z</published>
     <updated>2022-07-05T05:39:16.106Z</updated>
     
@@ -160,21 +160,21 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://tt2ter.github.io/tags/TheWayToNAS/"/>
+    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
     
   </entry>
   
   <entry>
     <title>书接上文-nas系统崩溃重装</title>
-    <link href="http://tt2ter.github.io/post/220703nassystemfix.html"/>
-    <id>http://tt2ter.github.io/post/220703nassystemfix.html</id>
+    <link href="http://blog.1314171.xyz/post/220703nassystemfix.html"/>
+    <id>http://blog.1314171.xyz/post/220703nassystemfix.html</id>
     <published>2022-07-03T04:11:42.000Z</published>
     <updated>2022-07-14T16:49:51.885Z</updated>
     
@@ -185,17 +185,17 @@
     
     
     
-    <category term="Problems" scheme="http://tt2ter.github.io/categories/Problems/"/>
+    <category term="Problems" scheme="http://blog.1314171.xyz/categories/Problems/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
   </entry>
   
   <entry>
     <title>局域网高码率推流</title>
-    <link href="http://tt2ter.github.io/post/220703rtmp.html"/>
-    <id>http://tt2ter.github.io/post/220703rtmp.html</id>
+    <link href="http://blog.1314171.xyz/post/220703rtmp.html"/>
+    <id>http://blog.1314171.xyz/post/220703rtmp.html</id>
     <published>2022-07-03T03:41:21.000Z</published>
     <updated>2022-07-03T03:41:21.407Z</updated>
     
@@ -206,17 +206,17 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Film" scheme="http://tt2ter.github.io/tags/Film/"/>
+    <category term="Film" scheme="http://blog.1314171.xyz/tags/Film/"/>
     
   </entry>
   
   <entry>
     <title>一次家宽的网络问题记述</title>
-    <link href="http://tt2ter.github.io/post/220629networkProblem.html"/>
-    <id>http://tt2ter.github.io/post/220629networkProblem.html</id>
+    <link href="http://blog.1314171.xyz/post/220629networkProblem.html"/>
+    <id>http://blog.1314171.xyz/post/220629networkProblem.html</id>
     <published>2022-07-01T08:51:27.000Z</published>
     <updated>2022-07-14T16:29:46.048Z</updated>
     
@@ -227,17 +227,17 @@
     
     
     
-    <category term="Problems" scheme="http://tt2ter.github.io/categories/Problems/"/>
+    <category term="Problems" scheme="http://blog.1314171.xyz/categories/Problems/"/>
     
     
-    <category term="network" scheme="http://tt2ter.github.io/tags/network/"/>
+    <category term="network" scheme="http://blog.1314171.xyz/tags/network/"/>
     
   </entry>
   
   <entry>
     <title>如何修复因为国内无法访问cdn.jsdelivr.net导致网页加载出错情况</title>
-    <link href="http://tt2ter.github.io/post/220531fixcdn.html"/>
-    <id>http://tt2ter.github.io/post/220531fixcdn.html</id>
+    <link href="http://blog.1314171.xyz/post/220531fixcdn.html"/>
+    <id>http://blog.1314171.xyz/post/220531fixcdn.html</id>
     <published>2022-05-31T13:10:15.000Z</published>
     <updated>2022-05-31T14:02:35.532Z</updated>
     
@@ -248,19 +248,19 @@
     
     
     
-    <category term="Problems" scheme="http://tt2ter.github.io/categories/Problems/"/>
+    <category term="Problems" scheme="http://blog.1314171.xyz/categories/Problems/"/>
     
     
-    <category term="Hexo" scheme="http://tt2ter.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="http://blog.1314171.xyz/tags/Hexo/"/>
     
-    <category term="blog" scheme="http://tt2ter.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://blog.1314171.xyz/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>nas型号选购</title>
-    <link href="http://tt2ter.github.io/post/220518nasbuy.html"/>
-    <id>http://tt2ter.github.io/post/220518nasbuy.html</id>
+    <link href="http://blog.1314171.xyz/post/220518nasbuy.html"/>
+    <id>http://blog.1314171.xyz/post/220518nasbuy.html</id>
     <published>2022-05-17T17:46:03.000Z</published>
     <updated>2022-05-17T18:00:02.217Z</updated>
     
@@ -271,21 +271,21 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://tt2ter.github.io/tags/TheWayToNAS/"/>
+    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
     
   </entry>
   
   <entry>
     <title>nas安装前资料查询工作</title>
-    <link href="http://tt2ter.github.io/post/220517PREinstallNAS.html"/>
-    <id>http://tt2ter.github.io/post/220517PREinstallNAS.html</id>
+    <link href="http://blog.1314171.xyz/post/220517PREinstallNAS.html"/>
+    <id>http://blog.1314171.xyz/post/220517PREinstallNAS.html</id>
     <published>2022-05-17T17:45:45.000Z</published>
     <updated>2022-05-17T18:00:06.504Z</updated>
     
@@ -296,21 +296,21 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://tt2ter.github.io/tags/TheWayToNAS/"/>
+    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
     
   </entry>
   
   <entry>
     <title>我想拿nas干点啥？以及我的后路</title>
-    <link href="http://tt2ter.github.io/post/220518nasPlan.html"/>
-    <id>http://tt2ter.github.io/post/220518nasPlan.html</id>
+    <link href="http://blog.1314171.xyz/post/220518nasPlan.html"/>
+    <id>http://blog.1314171.xyz/post/220518nasPlan.html</id>
     <published>2022-05-17T17:41:34.000Z</published>
     <updated>2022-05-17T17:59:56.633Z</updated>
     
@@ -321,21 +321,21 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://tt2ter.github.io/tags/TheWayToNAS/"/>
+    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
     
   </entry>
   
   <entry>
     <title>更新！TheWayToNAS</title>
-    <link href="http://tt2ter.github.io/post/TheWayToNAS.html"/>
-    <id>http://tt2ter.github.io/post/TheWayToNAS.html</id>
+    <link href="http://blog.1314171.xyz/post/TheWayToNAS.html"/>
+    <id>http://blog.1314171.xyz/post/TheWayToNAS.html</id>
     <published>2022-05-17T13:12:54.000Z</published>
     <updated>2022-07-14T16:53:41.175Z</updated>
     
@@ -346,21 +346,21 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="学习过程" scheme="http://tt2ter.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
     
     
-    <category term="nas" scheme="http://tt2ter.github.io/tags/nas/"/>
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://tt2ter.github.io/tags/TheWayToNAS/"/>
+    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
     
   </entry>
   
   <entry>
     <title>避免摆烂？又丧又积极！</title>
-    <link href="http://tt2ter.github.io/post/220513DefensivePessimism.html"/>
-    <id>http://tt2ter.github.io/post/220513DefensivePessimism.html</id>
+    <link href="http://blog.1314171.xyz/post/220513DefensivePessimism.html"/>
+    <id>http://blog.1314171.xyz/post/220513DefensivePessimism.html</id>
     <published>2022-05-17T13:09:14.000Z</published>
     <updated>2022-05-17T13:16:52.377Z</updated>
     
@@ -371,19 +371,19 @@
     
     
     
-    <category term="idea" scheme="http://tt2ter.github.io/categories/idea/"/>
+    <category term="idea" scheme="http://blog.1314171.xyz/categories/idea/"/>
     
     
-    <category term="share" scheme="http://tt2ter.github.io/tags/share/"/>
+    <category term="share" scheme="http://blog.1314171.xyz/tags/share/"/>
     
-    <category term="strategy" scheme="http://tt2ter.github.io/tags/strategy/"/>
+    <category term="strategy" scheme="http://blog.1314171.xyz/tags/strategy/"/>
     
   </entry>
   
   <entry>
     <title>通过SSH连接远程仓库</title>
-    <link href="http://tt2ter.github.io/post/220511ssh-connect-to-ssh-github.html"/>
-    <id>http://tt2ter.github.io/post/220511ssh-connect-to-ssh-github.html</id>
+    <link href="http://blog.1314171.xyz/post/220511ssh-connect-to-ssh-github.html"/>
+    <id>http://blog.1314171.xyz/post/220511ssh-connect-to-ssh-github.html</id>
     <published>2022-05-10T17:14:16.000Z</published>
     <updated>2022-05-11T02:12:40.304Z</updated>
     
@@ -394,19 +394,19 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="Problems" scheme="http://tt2ter.github.io/categories/Problems/"/>
+    <category term="Problems" scheme="http://blog.1314171.xyz/categories/Problems/"/>
     
     
-    <category term="git" scheme="http://tt2ter.github.io/tags/git/"/>
+    <category term="git" scheme="http://blog.1314171.xyz/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>FILM 索尼克2</title>
-    <link href="http://tt2ter.github.io/post/220511sonic2.html"/>
-    <id>http://tt2ter.github.io/post/220511sonic2.html</id>
+    <link href="http://blog.1314171.xyz/post/220511sonic2.html"/>
+    <id>http://blog.1314171.xyz/post/220511sonic2.html</id>
     <published>2022-05-10T16:24:14.000Z</published>
     <updated>2022-05-10T16:24:14.804Z</updated>
     
@@ -417,17 +417,17 @@
     
     
     
-    <category term="Diary" scheme="http://tt2ter.github.io/categories/Diary/"/>
+    <category term="Diary" scheme="http://blog.1314171.xyz/categories/Diary/"/>
     
     
-    <category term="Film" scheme="http://tt2ter.github.io/tags/Film/"/>
+    <category term="Film" scheme="http://blog.1314171.xyz/tags/Film/"/>
     
   </entry>
   
   <entry>
     <title>如何高效率获取信息</title>
-    <link href="http://tt2ter.github.io/post/220507get-news-efficiently.html"/>
-    <id>http://tt2ter.github.io/post/220507get-news-efficiently.html</id>
+    <link href="http://blog.1314171.xyz/post/220507get-news-efficiently.html"/>
+    <id>http://blog.1314171.xyz/post/220507get-news-efficiently.html</id>
     <published>2022-05-07T16:19:38.000Z</published>
     <updated>2022-05-07T16:26:40.636Z</updated>
     
@@ -438,17 +438,17 @@
     
     
     
-    <category term="idea" scheme="http://tt2ter.github.io/categories/idea/"/>
+    <category term="idea" scheme="http://blog.1314171.xyz/categories/idea/"/>
     
     
-    <category term="information" scheme="http://tt2ter.github.io/tags/information/"/>
+    <category term="information" scheme="http://blog.1314171.xyz/tags/information/"/>
     
   </entry>
   
   <entry>
     <title>我的博客图床</title>
-    <link href="http://tt2ter.github.io/post/220508picture-server.html"/>
-    <id>http://tt2ter.github.io/post/220508picture-server.html</id>
+    <link href="http://blog.1314171.xyz/post/220508picture-server.html"/>
+    <id>http://blog.1314171.xyz/post/220508picture-server.html</id>
     <published>2022-05-07T16:18:46.000Z</published>
     <updated>2022-05-07T16:27:23.634Z</updated>
     
@@ -459,10 +459,10 @@
     
     
     
-    <category term="教程" scheme="http://tt2ter.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="blog" scheme="http://tt2ter.github.io/tags/blog/"/>
+    <category term="blog" scheme="http://blog.1314171.xyz/tags/blog/"/>
     
   </entry>
   
