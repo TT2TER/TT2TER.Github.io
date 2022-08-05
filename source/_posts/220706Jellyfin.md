@@ -36,6 +36,25 @@ docker run --name jellyfin -d \
 首先建议先设置硬链接，方便同时做种刮削
 <li><a href="/post/220714hlink"  tags="">硬链接教程</li>
 
+## TMM刮削器安装&使用
+### 链接
+[司博图视频教程](https://www.bilibili.com/video/av73683523?msource=smzdm_937_0_184__d08e65aac0e9e73f&vd_source=81d250ace1f03d943723e87ae82d6bfe)
+教程有些古老了，不过也能用
+
+以下链接经过筛选排名不分先后互补
+[官网镇楼](https://www.tinymediamanager.org/)
+[一个比较详细的配置教程](http://www.360doc.com/content/22/0403/01/75728668_1024595485.shtml)
+[刮削配置到jellfinKodi一条龙](https://post.smzdm.com/p/a4wkqw37/?invite_code=zdm3d7ehjjinv)
+[同样比较详细，同时附上了一些常见的Bug解决](https://post.smzdm.com/p/a7dr8qml/)
+## 准备先尝试在电脑上安装
+原因：在nas上安装没有很好的前人铺路，[其实有，是个很古早的教程，还比较麻烦,flag一下以防有需要](https://zhongce.sina.com.cn/article/view/39694)
+
+## 文件访问权限不够
+映射到电脑上之后没有访问权限，更改一下登陆用户到admin
+[更改网络驱动器保存的账户密码](https://www.zhihu.com/question/315835685)
+
+
+
 # 同步观看SYNCplay
 这个功能能够让两人同步观影。注意不能通过反向代理连接服务器，只可公网直连或者局域网连接。
 
