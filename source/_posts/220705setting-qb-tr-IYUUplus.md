@@ -19,3 +19,6 @@ date: 2022-07-09 14:21:01
 * 用portainer新建很傻瓜
 * 注意在iyuu里地址可以写127.0.0.1，毕竟在本地
 * tr的docker对权限要求比较高，建议环境变量的puid/pgid都设成0.即admin
+
+---
+<li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>

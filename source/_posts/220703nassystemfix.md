@@ -24,3 +24,6 @@ date: 2022-07-03 12:11:42
 3. 安装有必要的软件，如verysync,qbit并再次配置好
 4. docker：portainer;iyuu;tr;ddns-go
 5. 计划把种子一个一个手动导进来
+
+---
+<li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>

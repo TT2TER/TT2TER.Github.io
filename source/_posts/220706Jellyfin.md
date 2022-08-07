@@ -64,3 +64,6 @@ docker run --name jellyfin -d \
 
 # 附录
 看到了一个大佬的[自动化流程](https://leishi.io/blog/posts/2021-12/home-nas-media-center/#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E7%AE%80%E4%BB%8B)
+
+---
+<li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>

@@ -94,5 +94,15 @@ DDns
 docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /share/Docker/portainer_data:/data 6053537/portainer-ce
 [汉化版](https://hub.docker.com/r/6053537/portainer-ce)
 
+***2208207更新***
+把汉化版替掉了，因为汉化不一直更新
+
+更新过程参考官方文档：[Upgrading on Docker Standalone](https://docs.portainer.io/start/upgrade/docker)
+
+注意将存储路径改对
+
+docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /share/Docker/portainer_data:/data portainer/portainer-ce:latest
+
+
 *ddns-go*
 docker run -d --name ddns-go --restart=always --net=host -v /share/Docker/ddns-go:/root jeessy/ddns-go

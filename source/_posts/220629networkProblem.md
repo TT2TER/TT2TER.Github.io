@@ -58,3 +58,7 @@ date: 2022-07-01 16:51:27
 尝试通过REset来重置管理员用户名密码，发现，reset完了连图形界面也看不见了。（但是qb等web端还是能连接上。
 
 现在正在解决中……未完待续！
+
+---
+<li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>
+<li><a href="/post/220703nassystemfix"  tags="">续集：网络好了，nas炸了！</li>
