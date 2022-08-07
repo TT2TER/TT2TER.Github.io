@@ -1,3 +1,4 @@
+http://blog.1314171.xyz/post/TheWayToNAS.html
 http://blog.1314171.xyz/post/TODOlist.html
 http://blog.1314171.xyz/post/220714NASandZSH.html
 http://blog.1314171.xyz/post/220714hlink.html
@@ -8,7 +9,6 @@ http://blog.1314171.xyz/post/220703nassystemfix.html
 http://blog.1314171.xyz/post/220629networkProblem.html
 http://blog.1314171.xyz/post/220330a-network-problem-solve.html
 http://blog.1314171.xyz/post/220518install.html
-http://blog.1314171.xyz/post/TheWayToNAS.html
 http://blog.1314171.xyz/post/220709visual-2.html
 http://blog.1314171.xyz/post/220703rtmp.html
 http://blog.1314171.xyz/404.html
