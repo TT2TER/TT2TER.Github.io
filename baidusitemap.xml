@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.1314171.xyz//post/TODOlist.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220714NASandZSH.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220714hlink.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
     <loc>http://blog.1314171.xyz//post/220706Jellyfin.html</loc>
-    <lastmod>2022-07-15</lastmod>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220705tcp6-tcp4.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220705setting-qb-tr-IYUUplus.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220703nassystemfix.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220629networkProblem.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220330a-network-problem-solve.html</loc>
+    <lastmod>2022-08-07</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.1314171.xyz//post/220518install.html</loc>
+    <lastmod>2022-08-07</lastmod>
   </url>
   <url>
     <loc>http://blog.1314171.xyz//post/TheWayToNAS.html</loc>
     <lastmod>2022-07-14</lastmod>
   </url>
   <url>
-    <loc>http://blog.1314171.xyz//post/220703nassystemfix.html</loc>
-    <lastmod>2022-07-14</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/220705tcp6-tcp4.html</loc>
-    <lastmod>2022-07-14</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/220629networkProblem.html</loc>
-    <lastmod>2022-07-14</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/220714NASandZSH.html</loc>
-    <lastmod>2022-07-14</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/220714hlink.html</loc>
-    <lastmod>2022-07-14</lastmod>
-  </url>
-  <url>
     <loc>http://blog.1314171.xyz//post/220709visual-2.html</loc>
     <lastmod>2022-07-14</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/220705setting-qb-tr-IYUUplus.html</loc>
-    <lastmod>2022-07-09</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/TODOlist.html</loc>
-    <lastmod>2022-07-06</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/220518install.html</loc>
-    <lastmod>2022-07-05</lastmod>
   </url>
   <url>
     <loc>http://blog.1314171.xyz//post/220703rtmp.html</loc>
@@ -106,10 +110,6 @@
   </url>
   <url>
     <loc>http://blog.1314171.xyz//post/220507get-news-efficiently.html</loc>
-    <lastmod>2022-05-07</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.1314171.xyz//post/220330a-network-problem-solve.html</loc>
     <lastmod>2022-05-07</lastmod>
   </url>
   <url>
