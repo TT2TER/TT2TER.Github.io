@@ -6,7 +6,7 @@
   <link href="http://blog.1314171.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.1314171.xyz/"/>
-  <updated>2022-08-07T02:27:49.837Z</updated>
+  <updated>2022-08-11T13:11:26.264Z</updated>
   <id>http://blog.1314171.xyz/</id>
   
   <author>
@@ -17,11 +17,97 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>自建rss服务器(freshrss+rsshub)</title>
+    <link href="http://blog.1314171.xyz/post/220809Docker-rss.html"/>
+    <id>http://blog.1314171.xyz/post/220809Docker-rss.html</id>
+    <published>2022-08-10T16:46:39.000Z</published>
+    <updated>2022-08-11T13:11:26.264Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="为什么选freshrss"><a href="#为什么选freshrss" class="headerlink" title="为什么选freshrss"></a>为什么选freshrss</h1><p>一开始打算使用TTRSS,但ttrss上手太麻烦，还要设置登陆的URL必须对应，而我既要公网访问又要内网来设置它，也不想研究这些具体是啥。其实TTRSS官方的文档应该写的挺清楚的，真正让我转移目标的原因是docker跑不起来，解决了一步log又爆出新的错根本跑不动。其中有一个是说Docker自己建的文件没有写入权限。这个之后再讲。还有就是奇奇怪怪的和数据库不搭配之类的。可是我用的官方的DockerCompose,还出问题，并且因为URL的事情我并不能看到图形界面来调试，最终放弃。</p><p><strong>TTRSS 的报错</strong></p><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs smali">Please fix errors indicated by the following messages:<br><br>    ICONS_DIR defined in config.php is<span class="hljs-built_in"> not </span>writable (chmod -R 777 feed-icons).<br><br>You might want to<span class="hljs-built_in"> check </span>tt-rss wiki<span class="hljs-built_in"> or </span>the forums for more information.<br><br>Please search the forums before creating<span class="hljs-built_in"> new </span>topic for your question.<br></code></pre></td></tr></table></figure><p>后来再百度关键词”docker rss”又有了freshrss这样的新选择，尝试之后发现我至少能看到图形界面了</p><p>而在图形界面部署中间又遇到了没有写入权限的问题。我依旧赋予777权限等办法轮番尝试，依旧不行。最后我反思整个过程：</p><ol><li>我之前部署的镜像也有挂载路径的需求，而且也需要写入文件，原来就没报错过。所以应该不是我操作上的问题。</li><li>已知的谷歌到的赋权方法我都试过了，没有效果。</li><li>ls -al检查发现文件的所属用户组是奇怪的数字，我本机没有这样编号的用户组。</li></ol><p>回想之前我在整相册的时候该过系统文件夹权限的设置，我意识到可能是这里出问题了</p><li><a href="/post/220807photosync"  tags="里面的教程叫我：“请首先开启高级文件夹权限，才可以单独设置每个文件夹权限”"></li>“请首先开启高级文件夹权限，才可以单独设置每个文件夹权限”<p>关闭这个选项后，万事大吉</p><p>freshrss解决权限问题就能用了，而重新试了试TTRSS发现，解决权限问题还跑不起来，累了</p><p>于是就用freshrss了</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://cloud.tencent.com/developer/article/1964176">freshrss部署教程</a></p><p>官方的部署写的不是很清楚，按这个来亲测能用，自己改一下挂载路径和端口即可</p><figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">version</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;3&quot;</span><br><br><span class="hljs-attribute">services</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-attribute">freshrss-db</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">postgres:latest</span><br>    <span class="hljs-attribute">container_name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-db</span><br>    <span class="hljs-attribute">hostname</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-db</span><br>    <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attribute">volumes</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/share/Docker/rss/postgresql/data:/var/lib/postgresql/data</span><br>    <span class="hljs-attribute">environment</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-attribute">POSTGRES_USER</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss</span><br>      <span class="hljs-attribute">POSTGRES_PASSWORD</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss</span><br>      <span class="hljs-attribute">POSTGRES_DB</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss</span><br><br>  <span class="hljs-attribute">freshrss-app</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss/freshrss:latest</span><br>    <span class="hljs-attribute">container_name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-app</span><br>    <span class="hljs-attribute">hostname</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-app</span><br>    <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attribute">ports</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">18110:80</span><br>    <span class="hljs-attribute">depends_on</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">freshrss-db</span><br>    <span class="hljs-attribute">volumes</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/share/Docker/rss/data:/var/www/FreshRSS/data</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/share/Docker/rss/extensions:/var/www/FreshRSS/extensions</span><br>    <span class="hljs-attribute">environment</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-attribute">CRON_MIN</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;*/20&#x27; #自动更新时间</span><br>      <span class="hljs-attribute">TZ</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Asia/Shanghai</span><br></code></pre></td></tr></table></figure><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>使用时发现有些源需要代理，于是有了整代理的理由。</p><p>代理因为内存占用过多且我浅试了一下连不上，决定在vps上重新部署rss服务器了</p><p>然后突然想起来我vps是纯v6的，还得设置端口转发</p><p>再一看256mb内存很吃紧了，遂放弃</p><h2 id="fever-API接口："><a href="#fever-API接口：" class="headerlink" title="fever API接口："></a>fever API接口：</h2><p>TODO:</p>]]></content>
+    
+    
+    <summary type="html">最大化利用自己的nas，正好现在用的inoreader国内被墙了</summary>
+    
+    
+    
+    
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
+    
+    <category term="docker" scheme="http://blog.1314171.xyz/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nas照片备份同步</title>
+    <link href="http://blog.1314171.xyz/post/220807photosync.html"/>
+    <id>http://blog.1314171.xyz/post/220807photosync.html</id>
+    <published>2022-08-10T16:41:45.000Z</published>
+    <updated>2022-08-10T16:41:45.843Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://post.smzdm.com/p/az3o0e4o/">冷阿菌的博客</a></p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>按照上述博客教程，在家用局域网很好的完成了同步。AI识别还是有些缓慢（453Dmini)，大的视频文件传输较慢</p><p>但我整完了才发现我爸妈没这个需求</p><p>于是就不了了之了</p><p>甚至还让我之后部署Docker遇到了新的问题</p><p>详情跳转：</p><li><a href="/post/220809Docker-rss"  tags="自建rss服务器(freshrss+rsshub)"></li>]]></content>
+    
+    
+    <summary type="html">为了更好的利用nas资源，想让自己和爸妈的手机能随时在家同步相册</summary>
+    
+    
+    
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>管理更改本地host</title>
+    <link href="http://blog.1314171.xyz/post/220715switchhost.html"/>
+    <id>http://blog.1314171.xyz/post/220715switchhost.html</id>
+    <published>2022-08-07T09:38:33.000Z</published>
+    <updated>2022-08-09T15:33:04.588Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用switch-host"><a href="#使用switch-host" class="headerlink" title="使用switch host"></a>使用switch host</h1><p><a href="https://swh.app/">官网</a></p><h2 id="可以添加远程host"><a href="#可以添加远程host" class="headerlink" title="可以添加远程host"></a>可以添加远程host</h2><p>如<a href="https://gitee.com/monkeycc/GitHub520?_from=gitee_search#%E4%B8%80%E4%BB%8B%E7%BB%8D">这是一个githubhost</a></p><h2 id="可以本地添加"><a href="#可以本地添加" class="headerlink" title="可以本地添加"></a>可以本地添加</h2><p>使用<a href="https://dnschecker.org/#A/image.tmdb.org">dnschecker</a>检查国内可用地址<br>手动添加进去</p>]]></content>
+    
+    
+    <summary type="html">如题</summary>
+    
+    
+    
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="network" scheme="http://blog.1314171.xyz/tags/network/"/>
+    
+    <category term="host" scheme="http://blog.1314171.xyz/tags/host/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>220716visual-3</title>
+    <link href="http://blog.1314171.xyz/post/220716visual-3.html"/>
+    <id>http://blog.1314171.xyz/post/220716visual-3.html</id>
+    <published>2022-08-07T09:37:56.000Z</published>
+    <updated>2022-08-07T09:37:56.703Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p><a href="https://zhuanlan.zhihu.com/p/36281721s">理解stride</a></p><h1 id="阶段性作业：手写数字识别"><a href="#阶段性作业：手写数字识别" class="headerlink" title="阶段性作业：手写数字识别"></a>阶段性作业：手写数字识别</h1><p>我的代码放在我的github中了<br><a href="https://github.com/TT2TER/Handwritten-number-recognition">欢迎star</a></p>]]></content>
+    
+    
+    <summary type="html">飞鹰队视觉组第三节笔记</summary>
+    
+    
+    
+    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
+    
+    
+    <category term="计算机视觉" scheme="http://blog.1314171.xyz/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+  </entry>
+  
+  <entry>
     <title>威联通nas和zsh</title>
     <link href="http://blog.1314171.xyz/post/220714NASandZSH.html"/>
     <id>http://blog.1314171.xyz/post/220714NASandZSH.html</id>
     <published>2022-07-14T16:27:37.000Z</published>
-    <updated>2022-08-07T02:27:49.837Z</updated>
+    <updated>2022-08-09T15:30:01.949Z</updated>
     
     <content type="html"><![CDATA[<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://post.smzdm.com/p/a785zrr5/">下载和设置zsh</a></p><h1 id="没必要，一个nas也就是有时候用用，bash就bash了"><a href="#没必要，一个nas也就是有时候用用，bash就bash了" class="headerlink" title="没必要，一个nas也就是有时候用用，bash就bash了"></a>没必要，一个nas也就是有时候用用，bash就bash了</h1><hr><li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>]]></content>
     
@@ -34,6 +120,8 @@
     
     
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
+    
+    <category term="shell" scheme="http://blog.1314171.xyz/tags/shell/"/>
     
   </entry>
   
@@ -84,7 +172,7 @@
     <link href="http://blog.1314171.xyz/post/220706Jellyfin.html"/>
     <id>http://blog.1314171.xyz/post/220706Jellyfin.html</id>
     <published>2022-07-14T16:24:32.000Z</published>
-    <updated>2022-08-07T02:27:32.318Z</updated>
+    <updated>2022-08-09T15:29:39.007Z</updated>
     
     <content type="html"><![CDATA[<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://post.smzdm.com/p/a3gw6g47/">对应版本,打包驱动版</a></p><p><a href="https://post.smzdm.com/p/apv8gg72/">安装教程</a></p><p><a href="https://post.smzdm.com/p/a859320l/">配置介绍</a></p><h2 id="解码器赋权"><a href="#解码器赋权" class="headerlink" title="解码器赋权"></a>解码器赋权</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo chmod <span class="hljs-number">777</span> <span class="hljs-regexp">/dev/</span>dri/renderD128<br></code></pre></td></tr></table></figure><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run --name jellyfin -d \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>config:/config \<br> --volume <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/Jellyfin/</span>cache:/cache \<br> --volume <span class="hljs-regexp">/share:/</span>video \<br> --net=host \<br> --restart=always \<br> --device <span class="hljs-regexp">/dev/</span>dri<span class="hljs-regexp">/renderD128:/</span>dev<span class="hljs-regexp">/dri/</span>renderD128 \<br> nyanmisaka/jellyfin<br></code></pre></td></tr></table></figure><p>哎这个镜像是真的大啊，下载的好慢啊！</p><h2 id="按照上面链接教程设置解码即可！"><a href="#按照上面链接教程设置解码即可！" class="headerlink" title="按照上面链接教程设置解码即可！"></a>按照上面链接教程设置解码即可！</h2><h1 id="刮削"><a href="#刮削" class="headerlink" title="刮削"></a>刮削</h1><p>首先建议先设置硬链接，方便同时做种刮削</p><li><a href="/post/220714hlink"  tags="">硬链接教程</li><h2 id="TMM刮削器安装-amp-使用"><a href="#TMM刮削器安装-amp-使用" class="headerlink" title="TMM刮削器安装&amp;使用"></a>TMM刮削器安装&amp;使用</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://www.bilibili.com/video/av73683523?msource=smzdm_937_0_184__d08e65aac0e9e73f&vd_source=81d250ace1f03d943723e87ae82d6bfe">司博图视频教程</a><br>教程有些古老了，不过也能用</p><p>以下链接经过筛选排名不分先后互补<br><a href="https://www.tinymediamanager.org/">官网镇楼</a><br><a href="http://www.360doc.com/content/22/0403/01/75728668_1024595485.shtml">一个比较详细的配置教程</a><br><a href="https://post.smzdm.com/p/a4wkqw37/?invite_code=zdm3d7ehjjinv">刮削配置到jellfinKodi一条龙</a><br><a href="https://post.smzdm.com/p/a7dr8qml/">同样比较详细，同时附上了一些常见的Bug解决</a></p><h2 id="准备先尝试在电脑上安装"><a href="#准备先尝试在电脑上安装" class="headerlink" title="准备先尝试在电脑上安装"></a>准备先尝试在电脑上安装</h2><p>原因：在nas上安装没有很好的前人铺路，<a href="https://zhongce.sina.com.cn/article/view/39694">其实有，是个很古早的教程，还比较麻烦,flag一下以防有需要</a></p><h2 id="文件访问权限不够"><a href="#文件访问权限不够" class="headerlink" title="文件访问权限不够"></a>文件访问权限不够</h2><p>映射到电脑上之后没有访问权限，更改一下登陆用户到admin<br><a href="https://www.zhihu.com/question/315835685">更改网络驱动器保存的账户密码</a></p><h1 id="同步观看SYNCplay"><a href="#同步观看SYNCplay" class="headerlink" title="同步观看SYNCplay"></a>同步观看SYNCplay</h1><p>这个功能能够让两人同步观影。注意不能通过反向代理连接服务器，只可公网直连或者局域网连接。</p><p>使用方法，播放视频时右上角三个人头的图标，创建或加入，可以自行调同步方式和参数，建议最小延迟不要太小，否则会不时卡顿。</p><h1 id="电视端TODO-https-post-smzdm-com-p-a99vlpmp"><a href="#电视端TODO-https-post-smzdm-com-p-a99vlpmp" class="headerlink" title="电视端TODO:https://post.smzdm.com/p/a99vlpmp/"></a>电视端TODO:<a href="https://post.smzdm.com/p/a99vlpmp/">https://post.smzdm.com/p/a99vlpmp/</a></h1><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>看到了一个大佬的<a href="https://leishi.io/blog/posts/2021-12/home-nas-media-center/#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E7%AE%80%E4%BB%8B">自动化流程</a></p><hr><li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>]]></content>
     
@@ -98,6 +186,8 @@
     
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
+    <category term="docker" scheme="http://blog.1314171.xyz/tags/docker/"/>
+    
   </entry>
   
   <entry>
@@ -105,7 +195,7 @@
     <link href="http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus.html"/>
     <id>http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus.html</id>
     <published>2022-07-09T06:21:01.000Z</published>
-    <updated>2022-08-07T02:26:02.629Z</updated>
+    <updated>2022-08-09T15:29:19.747Z</updated>
     
     <content type="html"><![CDATA[<h1 id="主要是参考一下博客"><a href="#主要是参考一下博客" class="headerlink" title="主要是参考一下博客"></a>主要是参考一下博客</h1><p><a href="https://blog.csdn.net/shangyexin/article/details/121924875">PT工具之Docker全家桶+HTTPS详细配置教程</a></p><p><a href="https://blog.csdn.net/shangyexin/article/details/122043327">【原理篇】qBittorrent下载+转种Transmission快校版+IYUU Plus辅种教程</a></p><p><a href="https://blog.csdn.net/shangyexin/article/details/122085552?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-122085552-blog-122043327.pc_relevant_multi_platform_whitelistv2&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1-122085552-blog-122043327.pc_relevant_multi_platform_whitelistv2&utm_relevant_index=1">【操作篇】qBittorrent下载+转种Transmission快校版+IYUU Plus辅种教程</a></p><h1 id="我的一些心得"><a href="#我的一些心得" class="headerlink" title="我的一些心得"></a>我的一些心得</h1><ul><li>用portainer新建很傻瓜</li><li>注意在iyuu里地址可以写127.0.0.1，毕竟在本地</li><li>tr的docker对权限要求比较高，建议环境变量的puid&#x2F;pgid都设成0.即admin</li></ul><hr><li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>]]></content>
     
@@ -120,6 +210,10 @@
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
     <category term="pt" scheme="http://blog.1314171.xyz/tags/pt/"/>
+    
+    <category term="docker" scheme="http://blog.1314171.xyz/tags/docker/"/>
+    
+    <category term="portainer" scheme="http://blog.1314171.xyz/tags/portainer/"/>
     
   </entry>
   
@@ -151,7 +245,7 @@
     <link href="http://blog.1314171.xyz/post/220518install.html"/>
     <id>http://blog.1314171.xyz/post/220518install.html</id>
     <published>2022-07-04T12:51:10.000Z</published>
-    <updated>2022-08-07T01:57:03.714Z</updated>
+    <updated>2022-08-09T15:26:56.999Z</updated>
     
     <content type="html"><![CDATA[<h1 id="过程简述"><a href="#过程简述" class="headerlink" title="过程简述"></a>过程简述</h1><h2 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h2><p>插到了ups上，dp充电头有些松动</p><h2 id="局域网连接初始化硬盘"><a href="#局域网连接初始化硬盘" class="headerlink" title="局域网连接初始化硬盘"></a>局域网连接初始化硬盘</h2><p>两个8t简单卷，初始化慢慢的</p><h2 id="第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网"><a href="#第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网" class="headerlink" title="第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网"></a>第一个问题：学校局域网有网页登陆认证，系统没有浏览器无法访问外网</h2><p>当时想到的解决方案有：</p><ol><li>用ssh登陆设置脚本认证</li><li>用pc共享网络</li><li>找个无线网卡连接无线网</li></ol><p>最后先用了方法2，先把机器装好再说，之后打算用方案1</p><h2 id="安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）"><a href="#安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）" class="headerlink" title="安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）"></a>安装软件更新，配置hdim输出界面，更新系统（linux底层安全漏洞修复）</h2><p>更新完系统重启的时候很慢，得有10分钟，不知道是因为更新还是每次重启都会这么慢。</p><p>配置hdmi界面后，有了奇奇怪怪的需求。我控制nas的输入设备是之前的旧的蓝牙键盘，我突然想到之前买键盘的时候如果买的是多模的，就可以无缝切换电脑和nas了。</p><h2 id="配置好了微力同步，同步速率很快"><a href="#配置好了微力同步，同步速率很快" class="headerlink" title="配置好了微力同步，同步速率很快"></a>配置好了微力同步，同步速率很快</h2><h2 id="安装了浏览器，能够在局域网内手动登陆校园网"><a href="#安装了浏览器，能够在局域网内手动登陆校园网" class="headerlink" title="安装了浏览器，能够在局域网内手动登陆校园网"></a>安装了浏览器，能够在局域网内手动登陆校园网</h2><h2 id="用nas的虚拟交换机让电脑也能继续用有线"><a href="#用nas的虚拟交换机让电脑也能继续用有线" class="headerlink" title="用nas的虚拟交换机让电脑也能继续用有线"></a>用nas的虚拟交换机让电脑也能继续用有线</h2><h2 id="发现学校没有公网ipv6"><a href="#发现学校没有公网ipv6" class="headerlink" title="发现学校没有公网ipv6??"></a>发现学校没有公网ipv6??</h2><h2 id="qb套件下载"><a href="#qb套件下载" class="headerlink" title="qb套件下载"></a>qb套件下载</h2><p>发现连不上tracker,放弃</p><p>换用Docker</p><h2 id="Docker折腾"><a href="#Docker折腾" class="headerlink" title="Docker折腾"></a>Docker折腾</h2><p>换的时候ssh连接密码不对，三秒重置</p><p>然后之前的虚拟交换机寄了，好多功能自动关闭了</p><p>数据应该没问题</p><p>emm重新登陆发现初始密码就是之前输的，难道是输错了？</p><p><a href="https://post.smzdm.com/p/az3k85gr/">找了一个人的教程，安装docker，他说自带的不好用（不够折腾）</a></p><p>这个人博客的命令运行不了</p><p>评论区的中文版能用</p><p><a href="https://post.smzdm.com/p/a6dw97xo/">后续Docker管理界面教程做的比较好</a></p><p>但是qb docker根本不能用好吧，要不就是连不上tracker,要不就是webui上不去，而且现有办法都不行</p><p>最后尝试transmission根本打不开，乐</p><p>然后用威联通自带的下载中心，能连，说明网络不是问题（但不支持仅ipv6)</p><p>最后下了个很旧的套件版本，凑活能用，大部分站点都能连上tracker，有的要将https改为http，另外有的根本没法连（纯ipv6下）</p><p>后来更新到4.3.9又可以了</p><h3 id="关于qb的下载问题"><a href="#关于qb的下载问题" class="headerlink" title="关于qb的下载问题"></a>关于qb的下载问题</h3><p>之前因为峰值速度和连接性的问题，qb总是卡死，有时候系统卡死，在配置了最大连接数等东西之后解决了这个问题。</p><p>配置重点是最大连接数和全局上传窗口上限符合系统承受能力，我的分别是800 500</p><p>每个的不限制</p><p>上传窗口策略是固定窗口数</p><h2 id="smb挂载"><a href="#smb挂载" class="headerlink" title="smb挂载"></a>smb挂载</h2><p>很简单，本地浏览速度可以</p><h2 id="smtp消息提醒"><a href="#smtp消息提醒" class="headerlink" title="smtp消息提醒"></a>smtp消息提醒</h2><h2 id="一些有意思的docker"><a href="#一些有意思的docker" class="headerlink" title="一些有意思的docker"></a>一些有意思的docker</h2><p>音乐服务器……<br>DDns</p><p><em>portainer</em></p><p>docker run -d –restart&#x3D;always –name&#x3D;”portainer” -p 9000:9000 -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;share&#x2F;Docker&#x2F;portainer_data:&#x2F;data 6053537&#x2F;portainer-ce<br><a href="https://hub.docker.com/r/6053537/portainer-ce">汉化版</a></p><p><em><strong>2208207更新</strong></em><br>把汉化版替掉了，因为汉化不一直更新</p><p>更新过程参考官方文档：<a href="https://docs.portainer.io/start/upgrade/docker">Upgrading on Docker Standalone</a></p><p>注意将存储路径改对</p><p>docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 –name&#x3D;portainer –restart&#x3D;always -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;share&#x2F;Docker&#x2F;portainer_data:&#x2F;data portainer&#x2F;portainer-ce:latest</p><p><em>ddns-go</em><br>docker run -d –name ddns-go –restart&#x3D;always –net&#x3D;host -v &#x2F;share&#x2F;Docker&#x2F;ddns-go:&#x2F;root jeessy&#x2F;ddns-go</p>]]></content>
     
@@ -167,7 +261,7 @@
     
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
+    <category term="docker" scheme="http://blog.1314171.xyz/tags/docker/"/>
     
   </entry>
   
@@ -197,7 +291,7 @@
     <link href="http://blog.1314171.xyz/post/220703rtmp.html"/>
     <id>http://blog.1314171.xyz/post/220703rtmp.html</id>
     <published>2022-07-03T03:41:21.000Z</published>
-    <updated>2022-07-03T03:41:21.407Z</updated>
+    <updated>2022-08-09T15:28:13.844Z</updated>
     
     <content type="html"><![CDATA[<h1 id="用到的软件"><a href="#用到的软件" class="headerlink" title="用到的软件"></a>用到的软件</h1><p>OBS</p><p><a href="https://github.com/superconvert/smart_rtmpd">一个好用的推流服务器</a></p>]]></content>
     
@@ -209,7 +303,7 @@
     <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Film" scheme="http://blog.1314171.xyz/tags/Film/"/>
+    <category term="film" scheme="http://blog.1314171.xyz/tags/film/"/>
     
   </entry>
   
@@ -262,7 +356,7 @@
     <link href="http://blog.1314171.xyz/post/220518nasbuy.html"/>
     <id>http://blog.1314171.xyz/post/220518nasbuy.html</id>
     <published>2022-05-17T17:46:03.000Z</published>
-    <updated>2022-05-17T18:00:02.217Z</updated>
+    <updated>2022-08-09T15:27:08.065Z</updated>
     
     <content type="html"><![CDATA[<h1 id="各种渠道学习配置知识，匹配需求"><a href="#各种渠道学习配置知识，匹配需求" class="headerlink" title="各种渠道学习配置知识，匹配需求"></a>各种渠道学习配置知识，匹配需求</h1><p>在四盘位和双盘位之间，我选择家庭使用更一步到位的四盘位，扩展性更强。（初始买两块）</p><p>内存方面为了性能选择8GB</p><p>两块硬盘通过各方信息综合选了西数企业盘，HC320，单盘8T，综合自己可能的存储需求（现有存储设备半年左右存满了6T）</p><p>ups nas必备（保护硬盘）</p><p>系统上群辉or威联通，威联通可玩性高一点，匹配需求，而且同价位性能高</p><p>……各种细节不再赘述</p><h1 id="选择平台"><a href="#选择平台" class="headerlink" title="选择平台"></a>选择平台</h1><p>本身电子产品要选择京东的，质保杠杠的，但奈何看中的型号（ts-453mini)官方无货以及原价太贵，并且nas也有官方保修，转向海鲜市场</p><p>找到一个非二手转卖而且去年双十一买的还在保修的机器，价格合适，也聊得来，入手</p><p>硬盘情况大体相同，店保还是比较可靠的，大陆官保比较费劲</p><h1 id="等待到货啦"><a href="#等待到货啦" class="headerlink" title="等待到货啦"></a>等待到货啦</h1><p>（因为疫情收不了快递，还是寄回家再转运的）</p><hr><li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>]]></content>
     
@@ -278,8 +372,6 @@
     
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
-    
   </entry>
   
   <entry>
@@ -287,7 +379,7 @@
     <link href="http://blog.1314171.xyz/post/220517PREinstallNAS.html"/>
     <id>http://blog.1314171.xyz/post/220517PREinstallNAS.html</id>
     <published>2022-05-17T17:45:45.000Z</published>
-    <updated>2022-05-17T18:00:06.504Z</updated>
+    <updated>2022-08-09T15:27:01.818Z</updated>
     
     <content type="html"><![CDATA[<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><p><a href="https://post.smzdm.com/p/av7or4dp/">这是个教程整合</a><br><a href="https://post.smzdm.com/p/ag8lzp8m/">这也是个整合</a></p><p><a href="https://post.smzdm.com/p/aekwd90k/">这是个优化整合，其中pt,baiduyun备份，QNAP NAS 性能优化 ★★★（必看）</a></p><h2 id="决定不组阵列"><a href="#决定不组阵列" class="headerlink" title="决定不组阵列"></a>决定不组阵列</h2><p><a href="https://www.zhihu.com/question/309305282">参考了网友的讨论</a>，加上自己对读写速度和容错没特别要求，尤其是但凡做了储存池或者Raid，基本意味着一个盘坏掉数据全无或修复成功率很低，加之占用空间，得不偿失</p><p>参考：<br><a href="https://www.zhihu.com/question/309305282/answer/1480403268">NAS的硬盘损坏率真的有这么高吗？ - 林大路的回答 - 知乎</a></p><p>其中值得参考的：</p><blockquote><ol><li>标配一个UPS，几百元都行，山特、雷迪司、施耐德都行</li><li>不要做Raid，不要做Raid，做Raid大概率要坏坏一堆</li><li>做冷热数据分区或者用系统自带的冷热数据解决方案（SSD+HHD)</li><li>对于重要数据和普通数据分开保存，重要数据自动镜像到每个硬盘保留至少一份副本。重要的数据往往都不大，不会占用多大空间。</li><li>收集的电影除了多媒体文件最好还是保留种子文件，种子文件作为重要文件对待，如第4条。</li><li>建立一条计划任务，每月做一次S.M.A.R.T信息检查。</li><li>收到告警信息及时替换硬盘，反正故障硬盘质保内免费换新，不换白不换。</li></ol></blockquote><blockquote><p>走地鸡​:存储池实在危险。想起来就怕&#x2F;郁郁葱葱回复走地鸡​:对的呀，数据分开来写入两块盘，坏一块盘，就全完了，比basic还要不靠谱</p></blockquote><p><a href="https://zhuanlan.zhihu.com/p/452053504">关于ans的文件结构，软件到硬件</a></p><h2 id="整个流程"><a href="#整个流程" class="headerlink" title="整个流程"></a>整个流程</h2><p><a href="https://www.yinxiang.com/everhub/note/0aebb0ca-bcaa-4c68-9d4b-ba66f50242c1">威联通装机过程,主要关于备份和安全登陆</a><br><a href="https://zhuanlan.zhihu.com/p/424123077">超级长文！一站式NAS入坑指南，NAS选购、硬盘选购、常见玩法教程一网打尽！ - Karl说数的文章 - 知乎</a></p><h2 id="拿到二手初始化"><a href="#拿到二手初始化" class="headerlink" title="拿到二手初始化"></a>拿到二手初始化</h2><p>如需连同先前创建的设置(包含用户、用户群组、共享文件夹等设置) 一并清除，按住RESET10秒即可(但磁盘数据将被保存)。</p><p>此处建议按10秒，将所有设置都清除，这样可以极大降低出问题的概率。</p><h2 id="系统安装位置"><a href="#系统安装位置" class="headerlink" title="系统安装位置"></a>系统安装位置</h2><p>在意系统位置的玩家，可以选择单盘启动（比如SSD）</p><h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><p><a href="https://post.smzdm.com/p/ax0xemx3/">总得分享</a></p><h2 id="看看外网访问的证书"><a href="#看看外网访问的证书" class="headerlink" title="看看外网访问的证书"></a>看看外网访问的证书</h2><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://post.smzdm.com/p/ax0x7zgw/">也许有需求</a></p><hr><li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>]]></content>
     
@@ -303,8 +395,6 @@
     
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
-    
   </entry>
   
   <entry>
@@ -312,7 +402,7 @@
     <link href="http://blog.1314171.xyz/post/220518nasPlan.html"/>
     <id>http://blog.1314171.xyz/post/220518nasPlan.html</id>
     <published>2022-05-17T17:41:34.000Z</published>
-    <updated>2022-05-17T17:59:56.633Z</updated>
+    <updated>2022-08-09T15:27:13.426Z</updated>
     
     <content type="html"><![CDATA[<h1 id="接触"><a href="#接触" class="headerlink" title="接触"></a>接触</h1><p>来到了大学认识了一个喜欢折腾的舍友煎包，他看我喜欢看电影看电视剧，给我拉进了pt圈（私有种子，与bt协议相同，但……具体百度贴吧自行检索）</p><p>在pt圈nas是很好的低功耗下载种子的机器，同时也是很好的存储，流媒体播放设备。当时舍友对我说，整个nas，自己攒一个，便宜，用开源的FreeNas系统。这是初识。但当时由于我的需求过于单一（仅有pt这一个理由使用nas），资金不够（如果买成品nas），自己知识不够显然不能折腾（自己攒nas），所以就没有行动。</p><p>此后我的发展走了两条路线，技术路线和娱乐路线，最终殊途同归……</p><h1 id="无意的发展终究引我来到了Nas的面前"><a href="#无意的发展终究引我来到了Nas的面前" class="headerlink" title="无意的发展终究引我来到了Nas的面前"></a>无意的发展终究引我来到了Nas的面前</h1><p>在这之后，我由于学习需要，开始接触GitHub，Linux系统。在接触Linux初期萌生了整个硬件设备学习Linux的想法，当时的方案是买个低功耗小主机，也就是NUC。当时看上了一款英特尔的NUC（NUC8i3bek)，因为型号停产以及原价超出预算，我寻求了海鲜市场（咸鱼）帮助。找到了标价1350的机器，因为出价太低（950），卖家直接回绝，并多问了一句我打算拿他干啥，遂告知需求。卖家认为没必要上NUC，给我指了条路，用小容量固态装到移动硬盘盒里安装Linux。这条折腾硬件初体验以100元固态和硬盘盒为结果结束了。（虽然装完系统就没再研究）。如果当时买了NUC一定没有现在Nas什么事情了。在这之后，我尝试自己整自己的工作流，利用学校千兆大内网的优势，整了平板连接电脑的远程桌面，以及文件同步（VerySync)。这是技术路线初期的发展。</p><p>同期，我的娱乐路线也不消停。有了高码率高分辨率以及HDR资源稳定来源，带来的后果就是本地储存空间不够了。于是先后入手西数移动硬盘两块，分别是2tb和5tb。显然，越来越大的储存空间需求说明我的仓鼠党潜力被激发了。同时巨大的下载量让我每月校园网流量迅速耗尽到限速。在大一下半学期开学时期限速突然严格，限速后浏览网页都卡顿，让我重新想起之前还是那个舍友提到的校园网ipv6免流，遂开始折腾服务器，见</p><li><a href="/post/220509freeipv6vps">校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub</li></a>(因为之前用的代理机场只有ipv4而且根本找不到支持ipv6的代理机场，被迫自己搭建)同时虽然上半学期也用免费的服务器学过如何搭建，但奈何免费，速度质量远不及要求，我就认为自己搭建这条路走不通。但现在需求来了，不得不硬头皮上，花钱买了服务器，用上了之前白嫖的域名。由此我真正拥有了自己的服务器。<p>在这之后，我又因为服务器和朋友搭了博客萌生了建站的想法，见</p><li><a href="/post/220326hello-myblog">我的建站过程</li></a>由此熟悉了命令行操作界面，同时在和其他同学交流中发现自己的折腾能力有了很大提高，不论是官方文档阅读，操作，解决问题方面。在五一假期写了第一篇从头到尾非常完整的技术类博客，也就是上文提到的ipv6免流，让我又对自己更有信心了。这是我技术路线的进一步发展。<p>在娱乐路线上，扫清了储存和网络（流量计量）方面的障碍，可谓是一马平川。我看着笔记本2k小屏幕和动辄几十个G的原盘发呆，萌生了买显示器的想法。一通挑选，选了（LG 27UL650）4k 加HDR400，以2000价格淘宝淘来了原价2700的显示器，屏幕大了敲代码也舒服了，随后键鼠也简单的升级了一下，同时外置了2.1声道音响。宿舍娱乐办公环境可以说极致性价比的顶配了。</p><p>到这里，娱乐需求和技术需求交汇了……</p><h1 id="再识nas"><a href="#再识nas" class="headerlink" title="再识nas"></a>再识nas</h1><p>到这里我已经有了基本的网络知识和硬件知识，有了些分享资源，备份数据的需求，舍友（又是他）给我推荐网盘本地挂载，我一瞅，太依赖网络环境，网盘没在手里也不放心。兜兜转转发现Nas竟然能满足我现有的需求，并且可能促进未来技术上的学习（毕竟手头有硬件能实践比什么都强）。</p><p>一条条捋刚刚提到的现有服务的技术问题</p><ol><li>Linux 移动硬盘还是太费劲；Nas天然的Linux系统，而且对Linux虚拟机达到硬件级别的支持</li><li>文件同步(VerySync),需要同步时电脑处在开机状态；nas功耗低而且就是为了7*24小时服务运作</li><li>pt下载，同上</li><li>存储空间小；一般4盘位nas最多兼容16*4T</li><li>分享文件，外网访问等影音需求；成型的解决方案，HDMI输出。</li></ol><p>一一都能被nas提升服务质量</p><p>同时我还有了整影音中心，个人图书馆的想法。还有希望能让家里的父母随时备份手机里的照片，并且能在电视上实时观看高码率电影和电视剧。最后，还想让以后的课余生活有个支点，能学点东西（如Docker）。nas的需求逐渐清晰。</p><h1 id="后路"><a href="#后路" class="headerlink" title="后路"></a>后路</h1><p>最后促成购买的，是几乎没有的后顾之忧，nas近些年一直在涨价，二手机保值率很高，大不了没需求海鲜市场出掉，甚至可能赚钱。硬盘舍友能接盘（其实留着自己用也不会亏）。于是，它来了。</p><hr><li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>]]></content>
     
@@ -328,8 +418,6 @@
     
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
-    
   </entry>
   
   <entry>
@@ -337,7 +425,7 @@
     <link href="http://blog.1314171.xyz/post/TheWayToNAS.html"/>
     <id>http://blog.1314171.xyz/post/TheWayToNAS.html</id>
     <published>2022-05-17T13:12:54.000Z</published>
-    <updated>2022-08-07T02:40:44.787Z</updated>
+    <updated>2022-08-09T15:33:21.157Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言：我不需要？"><a href="#前言：我不需要？" class="headerlink" title="前言：我不需要？"></a>前言：我不需要？</h1><li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：海鲜市场淘好货！"><a href="#第一部分：海鲜市场淘好货！" class="headerlink" title="第一部分：海鲜市场淘好货！"></a>第一部分：海鲜市场淘好货！</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li><h1 id="第二部分：焕然一新！"><a href="#第二部分：焕然一新！" class="headerlink" title="第二部分：焕然一新！"></a>第二部分：焕然一新！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li><h2 id="第一次安装"><a href="#第一次安装" class="headerlink" title="第一次安装"></a>第一次安装</h2><li><a href="/post/220518install"  tags="">一些安装记录</li><h1 id="第三部分：BUG！"><a href="#第三部分：BUG！" class="headerlink" title="第三部分：BUG！"></a>第三部分：BUG！</h1><h2 id="网络环境错误"><a href="#网络环境错误" class="headerlink" title="网络环境错误"></a>网络环境错误</h2><li><a href="/post/220629networkProblem"  tags="">一次家宽的网络题记述</li><h2 id="系统错误"><a href="#系统错误" class="headerlink" title="系统错误"></a>系统错误</h2><li><a href="/post/220703nassystemfix"  tags="">网络好了，nas炸了！</li><h1 id="第四部分：浴火重生！"><a href="#第四部分：浴火重生！" class="headerlink" title="第四部分：浴火重生！"></a>第四部分：浴火重生！</h1><h2 id="一些记录补写在了前面"><a href="#一些记录补写在了前面" class="headerlink" title="一些记录补写在了前面"></a>一些记录补写在了前面</h2><li><a href="/post/220518install"  tags="">一些安装记录（at第一次安装</li><h2 id="设置qb-tr-转种"><a href="#设置qb-tr-转种" class="headerlink" title="设置qb+tr+转种"></a>设置qb+tr+转种</h2><li><a href="/post/220705setting-qb-tr-IYUUplus"  tags="">IYUU是个好东西</li><h2 id="IPV6访问NAS中Docker的服务"><a href="#IPV6访问NAS中Docker的服务" class="headerlink" title="IPV6访问NAS中Docker的服务"></a>IPV6访问NAS中Docker的服务</h2><li><a href="/post/220705tcp6-tcp4"  tags="">折腾半天发现，emm，威联通系统自带反向代理</li><h2 id="硬件转码-刮削"><a href="#硬件转码-刮削" class="headerlink" title="硬件转码+刮削"></a>硬件转码+刮削</h2><li><a href="/post/220706Jellyfin"  tags="">Jellyfin！还可以和朋友实时观看！</li><h1 id="第五部分：锦上添花！"><a href="#第五部分：锦上添花！" class="headerlink" title="第五部分：锦上添花！"></a>第五部分：锦上添花！</h1><li><a href="/post/220714NASandZSH"  tags="">bash难看？换！</li><h1 id="后记：寓教于乐"><a href="#后记：寓教于乐" class="headerlink" title="后记：寓教于乐"></a>后记：寓教于乐</h1><p>后记就直接写在这里了，nas到手快两个月了，这篇目录拖拖拉拉快写完了。其实也没有整什么好东西，就是一些基本的功能。</p><p>重装nas是一个转折点，重装过程中不得不使用的ssh终端命令，让我从畏手畏脚不敢操作中成长。在这之后我慢慢更深的接触了终端操作。这和之前在vps上的感觉是不一样的。毕竟有更多元切实的需求。</p><p>这台nas还是有一些问题，比如网卡经常掉线。威联通官方打算下一个版本更新给解决了，等待+不保有任何期待</p><p>随着功能的完善，能在线和朋友远程看同一部电影；能够几乎自动化的完成从浏览站点、下载种子、自动辅种、自动硬链接后手动刮削，最后呈现在各个客户端的海报墙上，还是很有意思的。同时，也在不断更新家中的硬件设备，电视串流解码能力不行，买了个电视盒子。家里网口不够用，买了几个交换机……</p><p>来日方长；</p><p>希望不会把它挂在海鲜市场，如果一定要卖，我希望nas市场依旧火爆，也许还能回本，甚至小赚一笔吧</p><p>结贴！</p><p>2022&#x2F;07&#x2F;15 0:48</p>]]></content>
     
@@ -353,7 +441,7 @@
     
     <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
     
-    <category term="TheWayToNAS" scheme="http://blog.1314171.xyz/tags/TheWayToNAS/"/>
+    <category term="list" scheme="http://blog.1314171.xyz/tags/list/"/>
     
   </entry>
   
@@ -377,92 +465,6 @@
     <category term="share" scheme="http://blog.1314171.xyz/tags/share/"/>
     
     <category term="strategy" scheme="http://blog.1314171.xyz/tags/strategy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通过SSH连接远程仓库</title>
-    <link href="http://blog.1314171.xyz/post/220511ssh-connect-to-ssh-github.html"/>
-    <id>http://blog.1314171.xyz/post/220511ssh-connect-to-ssh-github.html</id>
-    <published>2022-05-10T17:14:16.000Z</published>
-    <updated>2022-05-11T02:12:40.304Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="报错：ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#报错：ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="报错：ssh: connect to host github.com port 22: Connection timed out"></a>报错：ssh: connect to host github.com port 22: Connection timed out</h1><p>解决<br>according to:<a href="https://gist.github.com/laispace/666dd7b27e9116faece6">this gist</a></p><p>ssh访问</p><p>需要修改~&#x2F;.ssh&#x2F;config文件, 没有的话新建一个. 同样仅为github.com设置代理:(在linux or macos下)</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">Host github.com<br>    <span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>    ProxyCommand nc -v -x <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">10808</span> %h %p<br></code></pre></td></tr></table></figure><p>但是win没有nc命令，所以</p><p>如果是在Windows下, 则需要修改用户目录下.ssh\config, 其中内容类似于:</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">Host github.com<br>    <span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>    ProxyCommand connect -S <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">10809</span> %h %p<br></code></pre></td></tr></table></figure><p>这里-S表示使用socks5代理, 如果是http代理则为-H. connect工具git自带, 在\mingw64\bin\下面.</p><h1 id="SSH原理"><a href="#SSH原理" class="headerlink" title="SSH原理"></a>SSH原理</h1><p><a href="https://www.jianshu.com/p/33461b619d53">博客链接</a></p>]]></content>
-    
-    
-    <summary type="html">git ssh 设置代理（win）</summary>
-    
-    
-    
-    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="Problems" scheme="http://blog.1314171.xyz/categories/Problems/"/>
-    
-    
-    <category term="git" scheme="http://blog.1314171.xyz/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>FILM 索尼克2</title>
-    <link href="http://blog.1314171.xyz/post/220511sonic2.html"/>
-    <id>http://blog.1314171.xyz/post/220511sonic2.html</id>
-    <published>2022-05-10T16:24:14.000Z</published>
-    <updated>2022-05-10T16:24:14.804Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="经典情节架构，还原游戏设定"><a href="#经典情节架构，还原游戏设定" class="headerlink" title="经典情节架构，还原游戏设定"></a>经典情节架构，还原游戏设定</h1><p>索尼克成长故事</p><p>略有些生硬但是作为爆米花放松足够了</p><p><img src="https://s2.loli.net/2022/05/11/WyONFu7Uc92Tewi.png" alt="中间有段惊艳的动画"><br><img src="https://s2.loli.net/2022/05/11/DEm9vLhyudZAUxf.png" alt="结尾用游戏画面回顾了整个电影"></p><HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3><p>资源可以联系我（Sonic.the.Hedgehog.2.2022.1080p.WEBRip.AAC2.0.x264-SHITBOX）</p>]]></content>
-    
-    
-    <summary type="html">我的评分：7.8 适合用几天的放松时间看完</summary>
-    
-    
-    
-    <category term="Diary" scheme="http://blog.1314171.xyz/categories/Diary/"/>
-    
-    
-    <category term="Film" scheme="http://blog.1314171.xyz/tags/Film/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何高效率获取信息</title>
-    <link href="http://blog.1314171.xyz/post/220507get-news-efficiently.html"/>
-    <id>http://blog.1314171.xyz/post/220507get-news-efficiently.html</id>
-    <published>2022-05-07T16:19:38.000Z</published>
-    <updated>2022-05-07T16:26:40.636Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="如何聚合信息"><a href="#如何聚合信息" class="headerlink" title="如何聚合信息"></a>如何聚合信息</h1><ol><li>利用RSS订阅：RSS订阅可以自动帮你拉取你感兴趣的消息源的更新</li></ol><p>消息源：各个网站提供（如我的博客就提供官方的RSS订阅源）</p><p>可使用类似<a href="https://rsshub.app/">RSShub</a>的服务生成订阅链接</p><p>RSS阅读客户端：</p><p>未采用自建的RSS服务器或本地订阅，使用<a href="https://www.inoreader.com/all_articles">Inoreader</a>免费账户订阅，150个源足够了</p><p>唯一缺点是需要翻墙，优点是多端同步</p><p>我订阅了各个媒体的新闻源（不同立场不同视角）以及其他如技术博客等</p><ol start="2"><li>每天定时查阅，如饭点查阅，快速浏览题目……</li><li>将有保存价值的分作两类保存</li></ol><p>第一类是需要做大量笔记保留的，用软件自带的分享功能保存在OneNote（无需翻墙）中，方便批注</p><p>第二类就比较随意了，可以将想要少量摘记的文章，有趣的想保存的，以后可能会用到的，想稍后再读的统统利用分享发到自己的Pocket上（无需翻墙）</p><ol start="4"><li>每晚check自己的Pocket</li></ol><p>善用tag标签和搜索</p><p>利用pocket的<a href="https://getpocket.com/export">导出功能</a>可以导出HTML文件<br><img src="https://s2.loli.net/2022/05/07/Yv3hBmTi5reZqVw.png" alt="导出的HTML可以直接插入到博客的Markdown语法中"></p><p>便于将导出的HTML直接插入到博客中，分享有用链接</p><p>每天记得清空Pocket</p><ol start="5"><li>每周check自己的OneNote并归档</li></ol><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>pocket 和 Inoreader 都有浏览器插件（官方或第三方），同时有手机端</p>]]></content>
-    
-    
-    <summary type="html">想总结一个高效的信息聚合流程</summary>
-    
-    
-    
-    <category term="idea" scheme="http://blog.1314171.xyz/categories/idea/"/>
-    
-    
-    <category term="information" scheme="http://blog.1314171.xyz/tags/information/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的博客图床</title>
-    <link href="http://blog.1314171.xyz/post/220508picture-server.html"/>
-    <id>http://blog.1314171.xyz/post/220508picture-server.html</id>
-    <published>2022-05-07T16:18:46.000Z</published>
-    <updated>2022-05-07T16:27:23.634Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="我目前博客图床解决方案"><a href="#我目前博客图床解决方案" class="headerlink" title="我目前博客图床解决方案"></a>我目前博客图床解决方案</h1><h2 id="PicGo-SM-MS"><a href="#PicGo-SM-MS" class="headerlink" title="PicGo + SM.MS"></a>PicGo + SM.MS</h2><p>先说说<a href="https://picgo.github.io/PicGo-Doc/en/guide/#picgo-is-here">PicGo</a>, 一开始选它是因为它能和Typora结合，自动将本地图片上传并将Markdown文件中链接改为图床链接，可惜没用几天Typora收费了……</p><p>但奈何PicGo太好用，就自行研究了一下</p><p>形成了如下工作流程（一些快捷键自行在对应软件设置）</p><ul><li><strong>笔电截图快捷键&#x2F;PrScr</strong> Win自带的“截图和草图”功能，可以画批注，带自动复制图片到剪贴板功能</li><li>后台开启PicGo情况下 <strong>Ctrl+Shift+P</strong> 自动将剪贴板上图片上传到默认图床（可选，推荐SM.MS）并将图床链接以Markdown语法（可选默认语法，如HTML)复制到剪贴板</li><li>在所需要的位置 <strong>Ctrl+V</strong> 打法，插入图片</li></ul><p>选用SM.MS 第一是因为它比较成熟；第二是因为国内外均可访问；第三是其他图床方案如七牛云需要自己配置服务器域名，且域名必须在国内备案，很麻烦</p><p>具体配置请参见PicGo官方文档</p>]]></content>
-    
-    
-    <summary type="html">图床解决方案</summary>
-    
-    
-    
-    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="blog" scheme="http://blog.1314171.xyz/tags/blog/"/>
     
   </entry>
   
