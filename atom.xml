@@ -18,8 +18,8 @@
   
   <entry>
     <title>自建rss服务器(freshrss+rsshub)</title>
-    <link href="http://blog.1314171.xyz/post/220809Docker-rss.html"/>
-    <id>http://blog.1314171.xyz/post/220809Docker-rss.html</id>
+    <link href="http://blog.1314171.xyz/post/220809Docker-rss"/>
+    <id>http://blog.1314171.xyz/post/220809Docker-rss</id>
     <published>2022-08-10T16:46:39.000Z</published>
     <updated>2022-08-11T13:11:26.264Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>nas照片备份同步</title>
-    <link href="http://blog.1314171.xyz/post/220807photosync.html"/>
-    <id>http://blog.1314171.xyz/post/220807photosync.html</id>
+    <link href="http://blog.1314171.xyz/post/220807photosync"/>
+    <id>http://blog.1314171.xyz/post/220807photosync</id>
     <published>2022-08-10T16:41:45.000Z</published>
     <updated>2022-08-10T16:41:45.843Z</updated>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>管理更改本地host</title>
-    <link href="http://blog.1314171.xyz/post/220715switchhost.html"/>
-    <id>http://blog.1314171.xyz/post/220715switchhost.html</id>
+    <link href="http://blog.1314171.xyz/post/220715switchhost"/>
+    <id>http://blog.1314171.xyz/post/220715switchhost</id>
     <published>2022-08-07T09:38:33.000Z</published>
     <updated>2022-08-09T15:33:04.588Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>220716visual-3</title>
-    <link href="http://blog.1314171.xyz/post/220716visual-3.html"/>
-    <id>http://blog.1314171.xyz/post/220716visual-3.html</id>
+    <link href="http://blog.1314171.xyz/post/220716visual-3"/>
+    <id>http://blog.1314171.xyz/post/220716visual-3</id>
     <published>2022-08-07T09:37:56.000Z</published>
     <updated>2022-08-07T09:37:56.703Z</updated>
     
@@ -104,8 +104,8 @@
   
   <entry>
     <title>威联通nas和zsh</title>
-    <link href="http://blog.1314171.xyz/post/220714NASandZSH.html"/>
-    <id>http://blog.1314171.xyz/post/220714NASandZSH.html</id>
+    <link href="http://blog.1314171.xyz/post/220714NASandZSH"/>
+    <id>http://blog.1314171.xyz/post/220714NASandZSH</id>
     <published>2022-07-14T16:27:37.000Z</published>
     <updated>2022-08-09T15:30:01.949Z</updated>
     
@@ -127,8 +127,8 @@
   
   <entry>
     <title>linux硬链接工具</title>
-    <link href="http://blog.1314171.xyz/post/220714hlink.html"/>
-    <id>http://blog.1314171.xyz/post/220714hlink.html</id>
+    <link href="http://blog.1314171.xyz/post/220714hlink"/>
+    <id>http://blog.1314171.xyz/post/220714hlink</id>
     <published>2022-07-14T16:26:06.000Z</published>
     <updated>2022-08-07T02:27:40.102Z</updated>
     
@@ -148,8 +148,8 @@
   
   <entry>
     <title>视觉组-第二节-经典检测网络</title>
-    <link href="http://blog.1314171.xyz/post/220709visual-2.html"/>
-    <id>http://blog.1314171.xyz/post/220709visual-2.html</id>
+    <link href="http://blog.1314171.xyz/post/220709visual-2"/>
+    <id>http://blog.1314171.xyz/post/220709visual-2</id>
     <published>2022-07-14T16:25:42.000Z</published>
     <updated>2022-07-14T16:25:42.324Z</updated>
     
@@ -169,8 +169,8 @@
   
   <entry>
     <title>威联通nasJellyfin硬件转码+硬链接后刮削</title>
-    <link href="http://blog.1314171.xyz/post/220706Jellyfin.html"/>
-    <id>http://blog.1314171.xyz/post/220706Jellyfin.html</id>
+    <link href="http://blog.1314171.xyz/post/220706Jellyfin"/>
+    <id>http://blog.1314171.xyz/post/220706Jellyfin</id>
     <published>2022-07-14T16:24:32.000Z</published>
     <updated>2022-08-09T15:29:39.007Z</updated>
     
@@ -192,8 +192,8 @@
   
   <entry>
     <title>qb&amp;tr&amp;IYUUplus结合</title>
-    <link href="http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus.html"/>
-    <id>http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus.html</id>
+    <link href="http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus"/>
+    <id>http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus</id>
     <published>2022-07-09T06:21:01.000Z</published>
     <updated>2022-08-09T15:29:19.747Z</updated>
     
@@ -219,8 +219,8 @@
   
   <entry>
     <title>IPV6访问NAS中Docker的服务</title>
-    <link href="http://blog.1314171.xyz/post/220705tcp6-tcp4.html"/>
-    <id>http://blog.1314171.xyz/post/220705tcp6-tcp4.html</id>
+    <link href="http://blog.1314171.xyz/post/220705tcp6-tcp4"/>
+    <id>http://blog.1314171.xyz/post/220705tcp6-tcp4</id>
     <published>2022-07-05T10:54:31.000Z</published>
     <updated>2022-08-07T02:27:03.821Z</updated>
     
@@ -242,8 +242,8 @@
   
   <entry>
     <title>初次安装nas系统</title>
-    <link href="http://blog.1314171.xyz/post/220518install.html"/>
-    <id>http://blog.1314171.xyz/post/220518install.html</id>
+    <link href="http://blog.1314171.xyz/post/220518install"/>
+    <id>http://blog.1314171.xyz/post/220518install</id>
     <published>2022-07-04T12:51:10.000Z</published>
     <updated>2022-08-09T15:26:56.999Z</updated>
     
@@ -267,8 +267,8 @@
   
   <entry>
     <title>书接上文-nas系统崩溃重装</title>
-    <link href="http://blog.1314171.xyz/post/220703nassystemfix.html"/>
-    <id>http://blog.1314171.xyz/post/220703nassystemfix.html</id>
+    <link href="http://blog.1314171.xyz/post/220703nassystemfix"/>
+    <id>http://blog.1314171.xyz/post/220703nassystemfix</id>
     <published>2022-07-03T04:11:42.000Z</published>
     <updated>2022-08-07T02:24:50.411Z</updated>
     
@@ -288,8 +288,8 @@
   
   <entry>
     <title>局域网高码率推流</title>
-    <link href="http://blog.1314171.xyz/post/220703rtmp.html"/>
-    <id>http://blog.1314171.xyz/post/220703rtmp.html</id>
+    <link href="http://blog.1314171.xyz/post/220703rtmp"/>
+    <id>http://blog.1314171.xyz/post/220703rtmp</id>
     <published>2022-07-03T03:41:21.000Z</published>
     <updated>2022-08-09T15:28:13.844Z</updated>
     
@@ -309,8 +309,8 @@
   
   <entry>
     <title>一次家宽的网络问题记述</title>
-    <link href="http://blog.1314171.xyz/post/220629networkProblem.html"/>
-    <id>http://blog.1314171.xyz/post/220629networkProblem.html</id>
+    <link href="http://blog.1314171.xyz/post/220629networkProblem"/>
+    <id>http://blog.1314171.xyz/post/220629networkProblem</id>
     <published>2022-07-01T08:51:27.000Z</published>
     <updated>2022-08-07T02:24:16.756Z</updated>
     
@@ -330,8 +330,8 @@
   
   <entry>
     <title>如何修复因为国内无法访问cdn.jsdelivr.net导致网页加载出错情况</title>
-    <link href="http://blog.1314171.xyz/post/220531fixcdn.html"/>
-    <id>http://blog.1314171.xyz/post/220531fixcdn.html</id>
+    <link href="http://blog.1314171.xyz/post/220531fixcdn"/>
+    <id>http://blog.1314171.xyz/post/220531fixcdn</id>
     <published>2022-05-31T13:10:15.000Z</published>
     <updated>2022-05-31T14:02:35.532Z</updated>
     
@@ -353,8 +353,8 @@
   
   <entry>
     <title>nas型号选购</title>
-    <link href="http://blog.1314171.xyz/post/220518nasbuy.html"/>
-    <id>http://blog.1314171.xyz/post/220518nasbuy.html</id>
+    <link href="http://blog.1314171.xyz/post/220518nasbuy"/>
+    <id>http://blog.1314171.xyz/post/220518nasbuy</id>
     <published>2022-05-17T17:46:03.000Z</published>
     <updated>2022-08-09T15:27:08.065Z</updated>
     
@@ -376,8 +376,8 @@
   
   <entry>
     <title>nas安装前资料查询工作</title>
-    <link href="http://blog.1314171.xyz/post/220517PREinstallNAS.html"/>
-    <id>http://blog.1314171.xyz/post/220517PREinstallNAS.html</id>
+    <link href="http://blog.1314171.xyz/post/220517PREinstallNAS"/>
+    <id>http://blog.1314171.xyz/post/220517PREinstallNAS</id>
     <published>2022-05-17T17:45:45.000Z</published>
     <updated>2022-08-09T15:27:01.818Z</updated>
     
@@ -399,8 +399,8 @@
   
   <entry>
     <title>我想拿nas干点啥？以及我的后路</title>
-    <link href="http://blog.1314171.xyz/post/220518nasPlan.html"/>
-    <id>http://blog.1314171.xyz/post/220518nasPlan.html</id>
+    <link href="http://blog.1314171.xyz/post/220518nasPlan"/>
+    <id>http://blog.1314171.xyz/post/220518nasPlan</id>
     <published>2022-05-17T17:41:34.000Z</published>
     <updated>2022-08-09T15:27:13.426Z</updated>
     
@@ -422,12 +422,12 @@
   
   <entry>
     <title>完结！TheWayToNAS</title>
-    <link href="http://blog.1314171.xyz/post/TheWayToNAS.html"/>
-    <id>http://blog.1314171.xyz/post/TheWayToNAS.html</id>
+    <link href="http://blog.1314171.xyz/post/TheWayToNAS"/>
+    <id>http://blog.1314171.xyz/post/TheWayToNAS</id>
     <published>2022-05-17T13:12:54.000Z</published>
-    <updated>2022-08-09T15:33:21.157Z</updated>
+    <updated>2022-08-18T12:53:59.362Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言：我不需要？"><a href="#前言：我不需要？" class="headerlink" title="前言：我不需要？"></a>前言：我不需要？</h1><li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：海鲜市场淘好货！"><a href="#第一部分：海鲜市场淘好货！" class="headerlink" title="第一部分：海鲜市场淘好货！"></a>第一部分：海鲜市场淘好货！</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li><h1 id="第二部分：焕然一新！"><a href="#第二部分：焕然一新！" class="headerlink" title="第二部分：焕然一新！"></a>第二部分：焕然一新！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li><h2 id="第一次安装"><a href="#第一次安装" class="headerlink" title="第一次安装"></a>第一次安装</h2><li><a href="/post/220518install"  tags="">一些安装记录</li><h1 id="第三部分：BUG！"><a href="#第三部分：BUG！" class="headerlink" title="第三部分：BUG！"></a>第三部分：BUG！</h1><h2 id="网络环境错误"><a href="#网络环境错误" class="headerlink" title="网络环境错误"></a>网络环境错误</h2><li><a href="/post/220629networkProblem"  tags="">一次家宽的网络题记述</li><h2 id="系统错误"><a href="#系统错误" class="headerlink" title="系统错误"></a>系统错误</h2><li><a href="/post/220703nassystemfix"  tags="">网络好了，nas炸了！</li><h1 id="第四部分：浴火重生！"><a href="#第四部分：浴火重生！" class="headerlink" title="第四部分：浴火重生！"></a>第四部分：浴火重生！</h1><h2 id="一些记录补写在了前面"><a href="#一些记录补写在了前面" class="headerlink" title="一些记录补写在了前面"></a>一些记录补写在了前面</h2><li><a href="/post/220518install"  tags="">一些安装记录（at第一次安装</li><h2 id="设置qb-tr-转种"><a href="#设置qb-tr-转种" class="headerlink" title="设置qb+tr+转种"></a>设置qb+tr+转种</h2><li><a href="/post/220705setting-qb-tr-IYUUplus"  tags="">IYUU是个好东西</li><h2 id="IPV6访问NAS中Docker的服务"><a href="#IPV6访问NAS中Docker的服务" class="headerlink" title="IPV6访问NAS中Docker的服务"></a>IPV6访问NAS中Docker的服务</h2><li><a href="/post/220705tcp6-tcp4"  tags="">折腾半天发现，emm，威联通系统自带反向代理</li><h2 id="硬件转码-刮削"><a href="#硬件转码-刮削" class="headerlink" title="硬件转码+刮削"></a>硬件转码+刮削</h2><li><a href="/post/220706Jellyfin"  tags="">Jellyfin！还可以和朋友实时观看！</li><h1 id="第五部分：锦上添花！"><a href="#第五部分：锦上添花！" class="headerlink" title="第五部分：锦上添花！"></a>第五部分：锦上添花！</h1><li><a href="/post/220714NASandZSH"  tags="">bash难看？换！</li><h1 id="后记：寓教于乐"><a href="#后记：寓教于乐" class="headerlink" title="后记：寓教于乐"></a>后记：寓教于乐</h1><p>后记就直接写在这里了，nas到手快两个月了，这篇目录拖拖拉拉快写完了。其实也没有整什么好东西，就是一些基本的功能。</p><p>重装nas是一个转折点，重装过程中不得不使用的ssh终端命令，让我从畏手畏脚不敢操作中成长。在这之后我慢慢更深的接触了终端操作。这和之前在vps上的感觉是不一样的。毕竟有更多元切实的需求。</p><p>这台nas还是有一些问题，比如网卡经常掉线。威联通官方打算下一个版本更新给解决了，等待+不保有任何期待</p><p>随着功能的完善，能在线和朋友远程看同一部电影；能够几乎自动化的完成从浏览站点、下载种子、自动辅种、自动硬链接后手动刮削，最后呈现在各个客户端的海报墙上，还是很有意思的。同时，也在不断更新家中的硬件设备，电视串流解码能力不行，买了个电视盒子。家里网口不够用，买了几个交换机……</p><p>来日方长；</p><p>希望不会把它挂在海鲜市场，如果一定要卖，我希望nas市场依旧火爆，也许还能回本，甚至小赚一笔吧</p><p>结贴！</p><p>2022&#x2F;07&#x2F;15 0:48</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言：我不需要？"><a href="#前言：我不需要？" class="headerlink" title="前言：我不需要？"></a>前言：我不需要？</h1><li><a href="/post/220518nasPlan.html"  tags="">我想拿nas干点啥，以及我的后路</li><h1 id="第一部分：海鲜市场淘好货！"><a href="#第一部分：海鲜市场淘好货！" class="headerlink" title="第一部分：海鲜市场淘好货！"></a>第一部分：海鲜市场淘好货！</h1><li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li><h1 id="第二部分：焕然一新！"><a href="#第二部分：焕然一新！" class="headerlink" title="第二部分：焕然一新！"></a>第二部分：焕然一新！</h1><h2 id="到手前的学习"><a href="#到手前的学习" class="headerlink" title="到手前的学习"></a>到手前的学习</h2><li><a href="/post/220517PREinstallNAS"  tags="">nas安装前资料查询工作</li><h2 id="第一次安装"><a href="#第一次安装" class="headerlink" title="第一次安装"></a>第一次安装</h2><li><a href="/post/220518install"  tags="">一些安装记录</li><h1 id="第三部分：BUG！"><a href="#第三部分：BUG！" class="headerlink" title="第三部分：BUG！"></a>第三部分：BUG！</h1><h2 id="网络环境错误"><a href="#网络环境错误" class="headerlink" title="网络环境错误"></a>网络环境错误</h2><li><a href="/post/220629networkProblem"  tags="">一次家宽的网络题记述</li><h2 id="系统错误"><a href="#系统错误" class="headerlink" title="系统错误"></a>系统错误</h2><li><a href="/post/220703nassystemfix"  tags="">网络好了，nas炸了！</li><h1 id="第四部分：浴火重生！"><a href="#第四部分：浴火重生！" class="headerlink" title="第四部分：浴火重生！"></a>第四部分：浴火重生！</h1><h2 id="一些记录补写在了前面"><a href="#一些记录补写在了前面" class="headerlink" title="一些记录补写在了前面"></a>一些记录补写在了前面</h2><li><a href="/post/220518install"  tags="">一些安装记录（at第一次安装</li><h2 id="设置qb-tr-转种"><a href="#设置qb-tr-转种" class="headerlink" title="设置qb+tr+转种"></a>设置qb+tr+转种</h2><li><a href="/post/220705setting-qb-tr-IYUUplus"  tags="">IYUU是个好东西</li><h2 id="IPV6访问NAS中Docker的服务"><a href="#IPV6访问NAS中Docker的服务" class="headerlink" title="IPV6访问NAS中Docker的服务"></a>IPV6访问NAS中Docker的服务</h2><li><a href="/post/220705tcp6-tcp4"  tags="">折腾半天发现，emm，威联通系统自带反向代理</li><h2 id="硬件转码-刮削"><a href="#硬件转码-刮削" class="headerlink" title="硬件转码+刮削"></a>硬件转码+刮削</h2><li><a href="/post/220706Jellyfin"  tags="">Jellyfin！还可以和朋友实时观看！</li><h1 id="第五部分：锦上添花！"><a href="#第五部分：锦上添花！" class="headerlink" title="第五部分：锦上添花！"></a>第五部分：锦上添花！</h1><li><a href="/post/220714NASandZSH"  tags="">bash难看？换！</li><h1 id="后记：寓教于乐"><a href="#后记：寓教于乐" class="headerlink" title="后记：寓教于乐"></a>后记：寓教于乐</h1><p>后记就直接写在这里了，nas到手快两个月了，这篇目录拖拖拉拉快写完了。其实也没有整什么好东西，就是一些基本的功能。</p><p>重装nas是一个转折点，重装过程中不得不使用的ssh终端命令，让我从畏手畏脚不敢操作中成长。在这之后我慢慢更深的接触了终端操作。这和之前在vps上的感觉是不一样的。毕竟有更多元切实的需求。</p><p>这台nas还是有一些问题，比如网卡经常掉线。威联通官方打算下一个版本更新给解决了，等待+不保有任何期待</p><p>随着功能的完善，能在线和朋友远程看同一部电影；能够几乎自动化的完成从浏览站点、下载种子、自动辅种、自动硬链接后手动刮削，最后呈现在各个客户端的海报墙上，还是很有意思的。同时，也在不断更新家中的硬件设备，电视串流解码能力不行，买了个电视盒子。家里网口不够用，买了几个交换机……</p><p>来日方长；</p><p>希望不会把它挂在海鲜市场，如果一定要卖，我希望nas市场依旧火爆，也许还能回本，甚至小赚一笔吧</p><p>结贴！</p><p>2022&#x2F;07&#x2F;15 0:48</p>]]></content>
     
     
     <summary type="html">这是个文档当做一个目录吧，记录一下完整的折腾nas的过程</summary>
@@ -447,8 +447,8 @@
   
   <entry>
     <title>避免摆烂？又丧又积极！</title>
-    <link href="http://blog.1314171.xyz/post/220513DefensivePessimism.html"/>
-    <id>http://blog.1314171.xyz/post/220513DefensivePessimism.html</id>
+    <link href="http://blog.1314171.xyz/post/220513DefensivePessimism"/>
+    <id>http://blog.1314171.xyz/post/220513DefensivePessimism</id>
     <published>2022-05-17T13:09:14.000Z</published>
     <updated>2022-05-17T13:16:52.377Z</updated>
     
