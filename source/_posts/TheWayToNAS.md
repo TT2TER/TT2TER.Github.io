@@ -12,7 +12,7 @@ sticky: 80
 ---
 
 # 前言：我不需要？
-<li><a href="/post/220518nasPlan.html"  tags="">我想拿nas干点啥，以及我的后路</li>
+<li><a href="/post/220518nasPlan"  tags="">我想拿nas干点啥，以及我的后路</li>
 
 # 第一部分：海鲜市场淘好货！
 <li><a href="/post/220518nasbuy"  tags="">我是如何选择nas的</li>
