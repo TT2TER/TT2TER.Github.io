@@ -2,7 +2,10 @@
 layout: publish
 title: 通过SSH连接远程仓库
 date: 2022-05-11 01:14:16
-tags: git
+tags: 
+- git
+- ssh
+- network
 categories: 
 - [教程]
 - [Problems]

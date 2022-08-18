@@ -1,6 +1,8 @@
 ---
 title: 威联通nasJellyfin硬件转码+硬链接后刮削
-tags: nas
+tags:
+- nas
+- docker
 categories: 教程
 excerpt: 影视系统
 date: 2022-07-15 00:24:32

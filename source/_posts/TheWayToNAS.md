@@ -1,14 +1,14 @@
 ---
-title: 更新！TheWayToNAS
+title: 完结！TheWayToNAS
 tags: 
 - nas
-- TheWayToNAS
+- list
 categories:
   - - 教程
   - - 学习过程
 excerpt: 这是个文档当做一个目录吧，记录一下完整的折腾nas的过程
 date: 2022-05-17 21:12:54
-sticky: 101
+sticky: 80
 ---
 
 # 前言：我不需要？

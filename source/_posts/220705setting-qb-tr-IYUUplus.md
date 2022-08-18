@@ -3,6 +3,8 @@ title: qb&tr&IYUUplus结合
 tags:
   - nas
   - pt
+  - docker
+  - portainer
 categories: 教程
 excerpt: 在nas坏掉之后借机解决下载&转种的问题
 date: 2022-07-09 14:21:01

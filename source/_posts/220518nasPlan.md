@@ -2,7 +2,6 @@
 title: 我想拿nas干点啥？以及我的后路
 tags: 
 - nas
-- TheWayToNAS
 categories:
   - - 教程
   - - 学习过程

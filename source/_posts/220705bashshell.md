@@ -1,6 +1,6 @@
 ---
 title: bash脚本学习（最终还是绕不过去）
-tags: bash shell
+tags: bash
 categories: 学习过程
 date: 2022-07-06 19:24:22
 excerpt:

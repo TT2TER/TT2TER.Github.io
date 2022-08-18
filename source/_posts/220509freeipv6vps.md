@@ -1,7 +1,10 @@
 ---
 title: 校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub
 date: 2022-05-03 23:59:22
-tags: vps
+tags: 
+- vps
+- proxy
+- ipv6
 categories: 教程
 excerpt: ipv6代理的方式校园网免流
 ---

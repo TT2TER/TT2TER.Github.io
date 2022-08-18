@@ -1,6 +1,8 @@
 ---
 title: 如何高效率获取信息
-tags: information
+tags: 
+- information
+- rss
 categories: idea
 excerpt: 想总结一个高效的信息聚合流程
 date: 2022-05-08 00:19:38

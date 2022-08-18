@@ -2,7 +2,7 @@
 title: 初次安装nas系统
 tags:
   - nas
-  - TheWayToNAS
+  - docker
 categories:
   - - 教程
   - - 学习过程

@@ -2,7 +2,6 @@
 title: nas安装前资料查询工作
 tags: 
 - nas
-- TheWayToNAS
 categories:
   - - 教程
   - - 学习过程

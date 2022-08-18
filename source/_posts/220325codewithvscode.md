@@ -3,6 +3,7 @@ title: code with vscode
 date: 2022-03-25 00:00:07
 tags: 
 - vscode
+- github
 categories: 
 - 教程
 excerpt: VScode配置流程+配合GitHub

@@ -1,6 +1,8 @@
 ---
 title: 威联通nas和zsh
-tags: nas
+tags: 
+- nas
+- shell
 categories: 学习教程
 excerpt: 改终端
 date: 2022-07-15 00:27:37
