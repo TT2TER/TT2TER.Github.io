@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.1314171.xyz/post/TheWayToNAS</loc>
+    <loc>http://blog.1314171.xyz/post/220818blogtovercel.html</loc>
     
     <lastmod>2022-08-18</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220326hello-myblog</loc>
+    <loc>http://blog.1314171.xyz/post/220805sitemap.html</loc>
     
     <lastmod>2022-08-18</lastmod>
     
@@ -20,7 +20,25 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220809Docker-rss</loc>
+    <loc>http://blog.1314171.xyz/post/TheWayToNAS.html</loc>
+    
+    <lastmod>2022-08-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.1314171.xyz/post/220326hello-myblog.html</loc>
+    
+    <lastmod>2022-08-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.1314171.xyz/post/220809Docker-rss.html</loc>
     
     <lastmod>2022-08-11</lastmod>
     
@@ -29,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220807photosync</loc>
+    <loc>http://blog.1314171.xyz/post/220807photosync.html</loc>
     
     <lastmod>2022-08-10</lastmod>
     
@@ -38,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/TODOlist</loc>
+    <loc>http://blog.1314171.xyz/post/TODOlist.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -47,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220715switchhost</loc>
+    <loc>http://blog.1314171.xyz/post/220715switchhost.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -56,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220714NASandZSH</loc>
+    <loc>http://blog.1314171.xyz/post/220714NASandZSH.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -65,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220706Jellyfin</loc>
+    <loc>http://blog.1314171.xyz/post/220706Jellyfin.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -74,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus</loc>
+    <loc>http://blog.1314171.xyz/post/220705setting-qb-tr-IYUUplus.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -83,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220511sonic2</loc>
+    <loc>http://blog.1314171.xyz/post/220511sonic2.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -92,7 +110,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220703rtmp</loc>
+    <loc>http://blog.1314171.xyz/post/220703rtmp.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -101,7 +119,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220518nasPlan</loc>
+    <loc>http://blog.1314171.xyz/post/220518nasPlan.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -110,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220518nasbuy</loc>
+    <loc>http://blog.1314171.xyz/post/220518nasbuy.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -119,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220517PREinstallNAS</loc>
+    <loc>http://blog.1314171.xyz/post/220517PREinstallNAS.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -128,7 +146,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220518install</loc>
+    <loc>http://blog.1314171.xyz/post/220518install.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -137,7 +155,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220511ssh-connect-to-ssh-github</loc>
+    <loc>http://blog.1314171.xyz/post/220511ssh-connect-to-ssh-github.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -146,7 +164,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220509freeipv6vps</loc>
+    <loc>http://blog.1314171.xyz/post/220509freeipv6vps.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -155,7 +173,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220507get-news-efficiently</loc>
+    <loc>http://blog.1314171.xyz/post/220507get-news-efficiently.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -164,7 +182,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220506feed-me</loc>
+    <loc>http://blog.1314171.xyz/post/220506feed-me.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -173,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220330a-network-problem-solve</loc>
+    <loc>http://blog.1314171.xyz/post/220330a-network-problem-solve.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -182,7 +200,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220325codewithvscode</loc>
+    <loc>http://blog.1314171.xyz/post/220325codewithvscode.html</loc>
     
     <lastmod>2022-08-09</lastmod>
     
@@ -191,7 +209,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220508picture-server</loc>
+    <loc>http://blog.1314171.xyz/post/220508picture-server.html</loc>
     
     <lastmod>2022-08-07</lastmod>
     
@@ -200,7 +218,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220716visual-3</loc>
+    <loc>http://blog.1314171.xyz/post/220716visual-3.html</loc>
     
     <lastmod>2022-08-07</lastmod>
     
@@ -209,7 +227,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220714hlink</loc>
+    <loc>http://blog.1314171.xyz/post/220714hlink.html</loc>
     
     <lastmod>2022-08-07</lastmod>
     
@@ -218,7 +236,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220705tcp6-tcp4</loc>
+    <loc>http://blog.1314171.xyz/post/220705tcp6-tcp4.html</loc>
     
     <lastmod>2022-08-07</lastmod>
     
@@ -227,7 +245,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220703nassystemfix</loc>
+    <loc>http://blog.1314171.xyz/post/220703nassystemfix.html</loc>
     
     <lastmod>2022-08-07</lastmod>
     
@@ -236,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220629networkProblem</loc>
+    <loc>http://blog.1314171.xyz/post/220629networkProblem.html</loc>
     
     <lastmod>2022-08-07</lastmod>
     
@@ -245,7 +263,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220709visual-2</loc>
+    <loc>http://blog.1314171.xyz/post/220709visual-2.html</loc>
     
     <lastmod>2022-07-14</lastmod>
     
@@ -254,7 +272,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/404</loc>
+    <loc>http://blog.1314171.xyz/404.html</loc>
     
     <lastmod>2022-06-02</lastmod>
     
@@ -263,7 +281,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220531fixcdn</loc>
+    <loc>http://blog.1314171.xyz/post/220531fixcdn.html</loc>
     
     <lastmod>2022-05-31</lastmod>
     
@@ -272,7 +290,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/024UPDLinks</loc>
+    <loc>http://blog.1314171.xyz/post/024UPDLinks.html</loc>
     
     <lastmod>2022-05-31</lastmod>
     
@@ -281,7 +299,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/0517UPDAphorisms</loc>
+    <loc>http://blog.1314171.xyz/post/0517UPDAphorisms.html</loc>
     
     <lastmod>2022-05-24</lastmod>
     
@@ -290,7 +308,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220513DefensivePessimism</loc>
+    <loc>http://blog.1314171.xyz/post/220513DefensivePessimism.html</loc>
     
     <lastmod>2022-05-17</lastmod>
     
@@ -299,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220426how-to-search-English-words</loc>
+    <loc>http://blog.1314171.xyz/post/220426how-to-search-English-words.html</loc>
     
     <lastmod>2022-05-11</lastmod>
     
@@ -308,7 +326,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220326Reason-to-Learn-English</loc>
+    <loc>http://blog.1314171.xyz/post/220326Reason-to-Learn-English.html</loc>
     
     <lastmod>2022-05-07</lastmod>
     
@@ -317,7 +335,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220417apprcn</loc>
+    <loc>http://blog.1314171.xyz/post/220417apprcn.html</loc>
     
     <lastmod>2022-04-16</lastmod>
     
@@ -326,7 +344,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220327About-Learning-with-a-Video</loc>
+    <loc>http://blog.1314171.xyz/post/220327About-Learning-with-a-Video.html</loc>
     
     <lastmod>2022-03-27</lastmod>
     
@@ -335,7 +353,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/post/220324firstblog</loc>
+    <loc>http://blog.1314171.xyz/post/220324firstblog.html</loc>
     
     <lastmod>2022-03-26</lastmod>
     
@@ -344,7 +362,7 @@
   </url>
   
   <url>
-    <loc>http://blog.1314171.xyz/about/</loc>
+    <loc>http://blog.1314171.xyz/about/index.html</loc>
     
     <lastmod>2022-03-26</lastmod>
     
@@ -573,6 +591,13 @@
   
   <url>
     <loc>http://blog.1314171.xyz/tags/list/</loc>
+    <lastmod>2022-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.1314171.xyz/tags/vercel/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
