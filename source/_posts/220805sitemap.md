@@ -1,9 +1,11 @@
 ---
 title: 把博客添加到搜索引擎中
 tags: blog
-categories:
 excerpt: 为了让自己写的东西有更大的贡献，尝试让搜索引擎收录我的博客
+date: 2022-08-18 23:17:51
+categories:
 ---
+
 # 参考教程
 我参考的教程[点这里](https://segmentfault.com/a/1190000037550362)
 
@@ -27,3 +29,5 @@ UA:Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider
 ```
 
 [等会尝试一下这个](https://github.com/Lete114/Hexo-SEO-AutoPush)
+
+# 220818更新，不用换方法了，博客放到vercel上就行
