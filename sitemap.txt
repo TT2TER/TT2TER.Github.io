@@ -1,3 +1,4 @@
+http://blog.1314171.xyz/post/220819docsifyDeploy.html
 http://blog.1314171.xyz/post/220818blogtovercel.html
 http://blog.1314171.xyz/post/220805sitemap.html
 http://blog.1314171.xyz/post/TheWayToNAS.html
@@ -72,6 +73,7 @@ http://blog.1314171.xyz/tags/shell/
 http://blog.1314171.xyz/tags/host/
 http://blog.1314171.xyz/tags/list/
 http://blog.1314171.xyz/tags/vercel/
+http://blog.1314171.xyz/tags/docsify/
 http://blog.1314171.xyz/categories/share/
 http://blog.1314171.xyz/categories/Diary/
 http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/

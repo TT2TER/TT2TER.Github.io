@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>搭建docsify用作未来精工wiki</title>
+    <link href="/post/220819docsifyDeploy.html"/>
+    <url>/post/220819docsifyDeploy.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>选择docsify是因为它相较于Vue更加的便捷简单，同时文档清晰（过于简洁，需要自己摸索，有一定html代码能力）有中文文档。</p><p><a href="https://docsify.js.org/#/">docsify官网</a><br><a href="https://www.cnblogs.com/xhemj/p/How-to-Use-Docsify.html">可参考的博客</a></p><h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>按照官方文档将自己的需求顺一遍就行了</p><p>要尝试</p><p>然后将源码放在github上</p><h2 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h2><li><a href="/post/220325codewithvscode"  tags="">参考我的这篇博客</li><h2 id="使用vercel部署"><a href="#使用vercel部署" class="headerlink" title="使用vercel部署"></a>使用vercel部署</h2><p><a href="https://www.readfog.com/a/1633646315981344768">参考</a></p><p>注意选择到本地初始化的docs根目录<br><img src="https://s2.loli.net/2022/08/19/QDytZbBNnLzpHRJ.png"></p><p>成功！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vercel</tag>
+      
+      <tag>docsify</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>将本博客从GithubPage迁移到vercel</title>
     <link href="/post/220818blogtovercel.html"/>
     <url>/post/220818blogtovercel.html</url>
