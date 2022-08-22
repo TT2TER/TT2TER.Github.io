@@ -6,7 +6,7 @@
   <link href="http://blog.1314171.xyz/atom.xml" rel="self"/>
   
   <link href="http://blog.1314171.xyz/"/>
-  <updated>2022-08-19T08:04:23.043Z</updated>
+  <updated>2022-08-22T17:27:23.592Z</updated>
   <id>http://blog.1314171.xyz/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>再识proxy--tuic协议</title>
+    <link href="http://blog.1314171.xyz/post/220823proxytuic.html"/>
+    <id>http://blog.1314171.xyz/post/220823proxytuic.html</id>
+    <published>2022-08-22T17:27:23.000Z</published>
+    <updated>2022-08-22T17:27:23.592Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="tuic！tuic！"><a href="#tuic！tuic！" class="headerlink" title="tuic！tuic！"></a>tuic！tuic！</h1><p>因为此前我尝试用香港的可怜的256mb内存的vps跑docker，导致香港的服务器崩溃，我一直放着没有管他。</p><p>今天有时间重启维护它，干脆重装一下系统。想到煎包之前又体验了个新的协议tuic，我便询问它和hyhi的优劣来，他说：</p><blockquote><p>延迟更低，而且支持0-RTT</p></blockquote><p>我听的云里雾里，在他的建议下我便开始了我的尝试</p><h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文档为本人学习笔记，仅供学习使用，请勿用作违法用途。请任何看到本文档的组织或个人在30秒内立即停止使用本文档提及的技术做违反当地法律的内容，请勿将文档及相关链接发至百度贴吧等公开论坛。</p><h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><ul><li><a href="https://github.com/EAimTY/tuic">tuic的github仓库</a></li><li><a href="https://lala.im/8424.html">我参考的教程:内容已有些过时</a></li></ul><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><blockquote><p>基本按照上面略有过时的教程来</p></blockquote><p>1.下载</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt -y update<br><span class="hljs-comment"># 这个-y是用来免去输入y确认的参数</span><br>apt -y install wget certbot<br><br><span class="hljs-built_in">mkdir</span> /opt/tuic &amp;&amp; <span class="hljs-built_in">cd</span> /opt/tuic<br><br>wget https://github.com/EAimTY/tuic/releases/download/0.8.5/tuic-server-0.8.5-x86_64-linux-gnu<br><span class="hljs-built_in">chmod</span> +x tuic-server-0.8.5-x86_64-linux-gnu<br><br><span class="hljs-comment"># 注意这里下载的时候请下载对应（0.8.5）的最新版本，</span><br><span class="hljs-comment"># 见https://github.com/EAimTY/tuic/releases/ 注释：马火星</span><br></code></pre></td></tr></table></figure><blockquote><p>第一遍我没有下载最新版本，下次看别的教程要注意，我也会在代码中提醒后人</p></blockquote><p>2.新建config.json(服务端配置)</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;port&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">443</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;example&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;certificate&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/opt/tuic/fullchain.pem&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;private_key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/opt/tuic/privkey.pem&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;ip&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0.0.0.0&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;congestion_controller&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bbr&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;alpn&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;h3&quot;</span><span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><p>若使用ipv6请将 <code>0.0.0.0</code> 改为 <code>::</code> (代表任意ipv6地址)<a href="https://github.com/EAimTY/tuic#how-can-i-listen-both-ipv4-and-ipv6-on-tuic-server--tuic-clients-socks5-server">参考tuic文档</a><br><img src="https://s2.loli.net/2022/08/23/MK2vbhkqZdj4zEs.png"></p><blockquote><p>这个坑是煎包之前踩过的，但他开始没告诉我，信誓旦旦的说这里有个小坑，于是我踩进去了，在走了第一遍流程之后才知道</p></blockquote><p>3.新建systemed配置</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /lib/systemd/system/tuic.service<br></code></pre></td></tr></table></figure><p>写入配置：</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Delicately-TUICed high-performance proxy built <span class="hljs-literal">on</span> top of the QUIC protocol<br><span class="hljs-attr">Documentation</span>=https://github.com/EAimTY/tuic<br><span class="hljs-attr">After</span>=network.target<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">User</span>=root<br><span class="hljs-attr">WorkingDirectory</span>=/opt/tuic<br><span class="hljs-attr">ExecStart</span>=/opt/tuic/tuic-server-<span class="hljs-number">0.8</span>.<span class="hljs-number">5</span>-x<span class="hljs-number">86_64</span>-linux-gnu -c config.json<br><span class="hljs-attr">Restart</span>=<span class="hljs-literal">on</span>-failure<br><span class="hljs-attr">RestartPreventExitStatus</span>=<span class="hljs-number">1</span><br><span class="hljs-attr">RestartSec</span>=<span class="hljs-number">5</span><br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure><blockquote><p>注意版本号</p></blockquote><p>用get.acme.sh申请证书（也可以参考上面的教程）</p><p>详见我上一篇相关<a href="https://tt2ter.github.io/post/220509freeipv6vps.html#4-%E4%BB%8E-letsencrypt-%E7%94%9F%E6%88%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%AF%81%E4%B9%A6">博客</a></p><p>转存证书记得按照如下路径转存fullchain和privkey</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">acme.sh --install-cert -d yourdomain.com<br>--fullchain-file    /opt/tuic/fullchain.pem    \<br>--key-file       /opt/tuic/privkey.pem  \<br></code></pre></td></tr></table></figure><blockquote><p>在这里我遇到了跑通前的最后一个坑，分辨清楚fullchain是谁）</p></blockquote><blockquote><p>同时在这里第一次申请证书的时候我还套了cdn，阴差阳错的给CDN主机申请了证书）</p></blockquote><p>4.启动tuic服务并设置开机自启：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> --now tuic.service<br></code></pre></td></tr></table></figure><p>相关指令还有：<code>systemctl status tuic.service</code>能展示服务状态，<code>systemctl stop/start/restart tuic.service</code>等</p><h2 id="客户端-win"><a href="#客户端-win" class="headerlink" title="客户端(win)"></a>客户端(win)</h2><p>在<a href="https://github.com/EAimTY/tuic/releases">github release</a>下载你系统对应的客户端</p><p>下载与服务端对应版本的<br>如：<a href="https://github.com/EAimTY/tuic/releases/download/0.8.5/tuic-client-0.8.5-x86_64-windows-gnu.exe">https://github.com/EAimTY/tuic/releases/download/0.8.5/tuic-client-0.8.5-x86_64-windows-gnu.exe</a></p><p>通过2rayN分流</p><p>之前提到的那篇略有过时的博客写的很清楚，<a href="https://lala.im/8424.html">请拉到该博客末尾查看</a></p><p>至此基本上遇到的坑都该提示的提示了</p><p>over</p><p><img src="https://s2.loli.net/2022/08/23/BEcutKDWHYvRi6f.png" alt="测速展示"></p><h1 id="v2rayn更新支持tuic"><a href="#v2rayn更新支持tuic" class="headerlink" title="v2rayn更新支持tuic"></a>v2rayn更新支持tuic</h1><p><a href="https://github.com/2dust/v2rayN/issues/2477">对应的issue</a></p><p>使用方法见<a href="https://github.com/2dust/v2rayN/releases/tag/5.30">官方更新日志</a></p><p>但我没整成功）sad</p>]]></content>
+    
+    
+    <summary type="html">tuic是一个基于quic协议的高性能代理</summary>
+    
+    
+    
+    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="vps" scheme="http://blog.1314171.xyz/tags/vps/"/>
+    
+    <category term="proxy" scheme="http://blog.1314171.xyz/tags/proxy/"/>
+    
+    <category term="ipv6" scheme="http://blog.1314171.xyz/tags/ipv6/"/>
+    
+    <category term="tuic" scheme="http://blog.1314171.xyz/tags/tuic/"/>
+    
+  </entry>
+  
+  <entry>
     <title>搭建docsify用作未来精工wiki</title>
     <link href="http://blog.1314171.xyz/post/220819docsifyDeploy.html"/>
     <id>http://blog.1314171.xyz/post/220819docsifyDeploy.html</id>
     <published>2022-08-19T08:04:23.000Z</published>
-    <updated>2022-08-19T08:04:23.043Z</updated>
+    <updated>2022-08-19T08:40:49.930Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>选择docsify是因为它相较于Vue更加的便捷简单，同时文档清晰（过于简洁，需要自己摸索，有一定html代码能力）有中文文档。</p><p><a href="https://docsify.js.org/#/">docsify官网</a><br><a href="https://www.cnblogs.com/xhemj/p/How-to-Use-Docsify.html">可参考的博客</a></p><h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>按照官方文档将自己的需求顺一遍就行了</p><p>要尝试</p><p>然后将源码放在github上</p><h2 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h2><li><a href="/post/220325codewithvscode"  tags="">参考我的这篇博客</li><h2 id="使用vercel部署"><a href="#使用vercel部署" class="headerlink" title="使用vercel部署"></a>使用vercel部署</h2><p><a href="https://www.readfog.com/a/1633646315981344768">参考</a></p><p>注意选择到本地初始化的docs根目录<br><img src="https://s2.loli.net/2022/08/19/QDytZbBNnLzpHRJ.png"></p><p>成功！</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>选择docsify是因为它相较于Vue更加的便捷简单，同时文档清晰（过于简洁，需要自己摸索，有一定html代码能力）有中文文档。</p><p><a href="https://docsify.js.org/#/">docsify官网</a><br><a href="https://www.cnblogs.com/xhemj/p/How-to-Use-Docsify.html">可参考的博客</a></p><h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>按照官方文档将自己的需求顺一遍就行了</p><p>要尝试</p><p>然后将源码放在github上</p><h2 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h2><li><a href="/post/220325codewithvscode"  tags="">参考我的这篇博客</li><h2 id="使用vercel部署"><a href="#使用vercel部署" class="headerlink" title="使用vercel部署"></a>使用vercel部署</h2><p><a href="https://www.readfog.com/a/1633646315981344768">参考</a></p><p>注意选择到本地初始化的docs根目录<br><img src="https://s2.loli.net/2022/08/19/QDytZbBNnLzpHRJ.png"></p><p>成功！</p><p>最后的成果：<a href="https://bitft-wiki.vercel.app/">点这里</a></p>]]></content>
     
     
     <summary type="html">暑假社会实践要做个指南，因此需要部署一个静态网页</summary>
@@ -427,29 +454,6 @@
     
     
     <summary type="html">简单的介绍一下选购nas和配件的历程</summary>
-    
-    
-    
-    <category term="教程" scheme="http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="学习过程" scheme="http://blog.1314171.xyz/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/"/>
-    
-    
-    <category term="nas" scheme="http://blog.1314171.xyz/tags/nas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nas安装前资料查询工作</title>
-    <link href="http://blog.1314171.xyz/post/220517PREinstallNAS.html"/>
-    <id>http://blog.1314171.xyz/post/220517PREinstallNAS.html</id>
-    <published>2022-05-17T17:45:45.000Z</published>
-    <updated>2022-08-09T15:27:01.818Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><p><a href="https://post.smzdm.com/p/av7or4dp/">这是个教程整合</a><br><a href="https://post.smzdm.com/p/ag8lzp8m/">这也是个整合</a></p><p><a href="https://post.smzdm.com/p/aekwd90k/">这是个优化整合，其中pt,baiduyun备份，QNAP NAS 性能优化 ★★★（必看）</a></p><h2 id="决定不组阵列"><a href="#决定不组阵列" class="headerlink" title="决定不组阵列"></a>决定不组阵列</h2><p><a href="https://www.zhihu.com/question/309305282">参考了网友的讨论</a>，加上自己对读写速度和容错没特别要求，尤其是但凡做了储存池或者Raid，基本意味着一个盘坏掉数据全无或修复成功率很低，加之占用空间，得不偿失</p><p>参考：<br><a href="https://www.zhihu.com/question/309305282/answer/1480403268">NAS的硬盘损坏率真的有这么高吗？ - 林大路的回答 - 知乎</a></p><p>其中值得参考的：</p><blockquote><ol><li>标配一个UPS，几百元都行，山特、雷迪司、施耐德都行</li><li>不要做Raid，不要做Raid，做Raid大概率要坏坏一堆</li><li>做冷热数据分区或者用系统自带的冷热数据解决方案（SSD+HHD)</li><li>对于重要数据和普通数据分开保存，重要数据自动镜像到每个硬盘保留至少一份副本。重要的数据往往都不大，不会占用多大空间。</li><li>收集的电影除了多媒体文件最好还是保留种子文件，种子文件作为重要文件对待，如第4条。</li><li>建立一条计划任务，每月做一次S.M.A.R.T信息检查。</li><li>收到告警信息及时替换硬盘，反正故障硬盘质保内免费换新，不换白不换。</li></ol></blockquote><blockquote><p>走地鸡​:存储池实在危险。想起来就怕&#x2F;郁郁葱葱回复走地鸡​:对的呀，数据分开来写入两块盘，坏一块盘，就全完了，比basic还要不靠谱</p></blockquote><p><a href="https://zhuanlan.zhihu.com/p/452053504">关于ans的文件结构，软件到硬件</a></p><h2 id="整个流程"><a href="#整个流程" class="headerlink" title="整个流程"></a>整个流程</h2><p><a href="https://www.yinxiang.com/everhub/note/0aebb0ca-bcaa-4c68-9d4b-ba66f50242c1">威联通装机过程,主要关于备份和安全登陆</a><br><a href="https://zhuanlan.zhihu.com/p/424123077">超级长文！一站式NAS入坑指南，NAS选购、硬盘选购、常见玩法教程一网打尽！ - Karl说数的文章 - 知乎</a></p><h2 id="拿到二手初始化"><a href="#拿到二手初始化" class="headerlink" title="拿到二手初始化"></a>拿到二手初始化</h2><p>如需连同先前创建的设置(包含用户、用户群组、共享文件夹等设置) 一并清除，按住RESET10秒即可(但磁盘数据将被保存)。</p><p>此处建议按10秒，将所有设置都清除，这样可以极大降低出问题的概率。</p><h2 id="系统安装位置"><a href="#系统安装位置" class="headerlink" title="系统安装位置"></a>系统安装位置</h2><p>在意系统位置的玩家，可以选择单盘启动（比如SSD）</p><h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><p><a href="https://post.smzdm.com/p/ax0xemx3/">总得分享</a></p><h2 id="看看外网访问的证书"><a href="#看看外网访问的证书" class="headerlink" title="看看外网访问的证书"></a>看看外网访问的证书</h2><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://post.smzdm.com/p/ax0x7zgw/">也许有需求</a></p><hr><li><a href="/post/TheWayToNAS">返回TheWayToNAS系列目录</li></a>]]></content>
-    
-    
-    <summary type="html">这里整理了nas到手前查询到的有用的文档和链接，和前置的思考</summary>
     
     
     

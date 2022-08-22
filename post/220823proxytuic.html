@@ -16,24 +16,28 @@
   <meta name="author" content="TT2TER">
   <meta name="keywords" content="c">
   
-    <meta name="description" content="以及Hexo欢迎页">
+    <meta name="description" content="tuic是一个基于quic协议的高性能代理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的建站过程">
-<meta property="og:url" content="http://blog.1314171.xyz/post/220326hello-myblog.html">
+<meta property="og:title" content="再识proxy--tuic协议">
+<meta property="og:url" content="http://blog.1314171.xyz/post/220823proxytuic.html">
 <meta property="og:site_name" content="马火星的迷你小屋">
-<meta property="og:description" content="以及Hexo欢迎页">
+<meta property="og:description" content="tuic是一个基于quic协议的高性能代理">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-25T17:13:51.000Z">
-<meta property="article:modified_time" content="2022-08-18T12:36:48.505Z">
+<meta property="og:image" content="https://s2.loli.net/2022/08/23/MK2vbhkqZdj4zEs.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/23/BEcutKDWHYvRi6f.png">
+<meta property="article:published_time" content="2022-08-22T17:27:23.000Z">
+<meta property="article:modified_time" content="2022-08-22T17:27:23.592Z">
 <meta property="article:author" content="TT2TER">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="font">
-<meta property="article:tag" content="image">
+<meta property="article:tag" content="vps">
+<meta property="article:tag" content="proxy">
+<meta property="article:tag" content="ipv6">
+<meta property="article:tag" content="tuic">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/08/23/MK2vbhkqZdj4zEs.png">
   
   
   
-  <title>我的建站过程 - 马火星的迷你小屋</title>
+  <title>再识proxy--tuic协议 - 马火星的迷你小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +252,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的建站过程"></span>
+            <span id="subtitle" data-typed-text="再识proxy--tuic协议"></span>
           
         </div>
 
@@ -264,8 +268,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-26 01:13" pubdate>
-          2022年3月26日 凌晨
+        <time datetime="2022-08-23 01:27" pubdate>
+          2022年8月23日 凌晨
         </time>
       </span>
     
@@ -277,7 +281,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          660 字
+          2.1k 字
         
       </span>
     
@@ -289,7 +293,7 @@
         
         
           <!-- compatible with older versions-->
-          3 分钟
+          8 分钟
         
       </span>
     
@@ -335,13 +339,13 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">我的建站过程</h1>
+            <h1 style="display: none">再识proxy--tuic协议</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：4 天前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -349,26 +353,64 @@
             
               <div class="markdown-body">
                 
-                <h1 id="我的建站过程"><a href="#我的建站过程" class="headerlink" title="我的建站过程"></a>我的建站过程</h1><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>有了个服务器，看到朋友建了一个博客，萌生想法</p>
-<h2 id="各处搜罗找到了hexo"><a href="#各处搜罗找到了hexo" class="headerlink" title="各处搜罗找到了hexo"></a>各处搜罗找到了hexo</h2><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>本意是要好看炫酷，兼顾速度<br>第一个找到的 <a target="_blank" rel="noopener" href="https://github.com/auroral-ui/hexo-theme-aurora">aurora</a> 主题在我的电脑上有点bug<br>后来看到了 <a target="_blank" rel="noopener" href="https://emc2.tk/">E&#x3D;mc²的博客</a>很帅气，便确定了建站主题<br><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">fluid</a></p>
-<h5 id="主题的首页图像"><a href="#主题的首页图像" class="headerlink" title="主题的首页图像"></a>主题的首页图像</h5><p>这是我在刷知乎的时候看到的一个网站<br><a target="_blank" rel="noopener" href="https://anvaka.github.io/city-roads/">Draw all roads in a city：可以把全球主要城市的路网导出图片，用作插图</a><br>改用北京传统的皇家配色</p>
-<p>修改主题配置，得到了博客的半成品</p>
-<p>添加域名</p>
-<p>上传源码</p>
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>字体选用了自己喜欢的，但弊端是用户要在线加载<br>导致加载会卡顿</p>
-<h2 id="一些TIPS"><a href="#一些TIPS" class="headerlink" title="一些TIPS"></a>一些TIPS</h2><h4 id="要跟着官方文档来，不要着急，善用百度谷歌"><a href="#要跟着官方文档来，不要着急，善用百度谷歌" class="headerlink" title="要跟着官方文档来，不要着急，善用百度谷歌"></a>要跟着官方文档来，不要着急，善用百度谷歌</h4><h4 id="注意图床等能否国内访问"><a href="#注意图床等能否国内访问" class="headerlink" title="注意图床等能否国内访问"></a>注意图床等能否国内访问</h4><h1 id="hexo自带欢迎页"><a href="#hexo自带欢迎页" class="headerlink" title="hexo自带欢迎页"></a>hexo自带欢迎页</h1><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="tuic！tuic！"><a href="#tuic！tuic！" class="headerlink" title="tuic！tuic！"></a>tuic！tuic！</h1><p>因为此前我尝试用香港的可怜的256mb内存的vps跑docker，导致香港的服务器崩溃，我一直放着没有管他。</p>
+<p>今天有时间重启维护它，干脆重装一下系统。想到煎包之前又体验了个新的协议tuic，我便询问它和hyhi的优劣来，他说：</p>
+<blockquote>
+<p>延迟更低，而且支持0-RTT</p>
+</blockquote>
+<p>我听的云里雾里，在他的建议下我便开始了我的尝试</p>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文档为本人学习笔记，仅供学习使用，请勿用作违法用途。请任何看到本文档的组织或个人在30秒内立即停止使用本文档提及的技术做违反当地法律的内容，请勿将文档及相关链接发至百度贴吧等公开论坛。</p>
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/EAimTY/tuic">tuic的github仓库</a></li>
+<li><a target="_blank" rel="noopener" href="https://lala.im/8424.html">我参考的教程:内容已有些过时</a></li>
+</ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><blockquote>
+<p>基本按照上面略有过时的教程来</p>
+</blockquote>
+<p>1.下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt -y update<br><span class="hljs-comment"># 这个-y是用来免去输入y确认的参数</span><br>apt -y install wget certbot<br><br><span class="hljs-built_in">mkdir</span> /opt/tuic &amp;&amp; <span class="hljs-built_in">cd</span> /opt/tuic<br><br>wget https://github.com/EAimTY/tuic/releases/download/0.8.5/tuic-server-0.8.5-x86_64-linux-gnu<br><span class="hljs-built_in">chmod</span> +x tuic-server-0.8.5-x86_64-linux-gnu<br><br><span class="hljs-comment"># 注意这里下载的时候请下载对应（0.8.5）的最新版本，</span><br><span class="hljs-comment"># 见https://github.com/EAimTY/tuic/releases/ 注释：马火星</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>第一遍我没有下载最新版本，下次看别的教程要注意，我也会在代码中提醒后人</p>
+</blockquote>
+<p>2.新建config.json(服务端配置)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;port&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">443</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;example&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;certificate&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/opt/tuic/fullchain.pem&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;private_key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/opt/tuic/privkey.pem&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;ip&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0.0.0.0&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;congestion_controller&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bbr&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;alpn&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">&quot;h3&quot;</span><span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>若使用ipv6请将 <code>0.0.0.0</code> 改为 <code>::</code> (代表任意ipv6地址)<a target="_blank" rel="noopener" href="https://github.com/EAimTY/tuic#how-can-i-listen-both-ipv4-and-ipv6-on-tuic-server--tuic-clients-socks5-server">参考tuic文档</a><br><img src="https://s2.loli.net/2022/08/23/MK2vbhkqZdj4zEs.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>这个坑是煎包之前踩过的，但他开始没告诉我，信誓旦旦的说这里有个小坑，于是我踩进去了，在走了第一遍流程之后才知道</p>
+</blockquote>
+<p>3.新建systemed配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /lib/systemd/system/tuic.service<br></code></pre></td></tr></table></figure>
+<p>写入配置：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Delicately-TUICed high-performance proxy built <span class="hljs-literal">on</span> top of the QUIC protocol<br><span class="hljs-attr">Documentation</span>=https://github.com/EAimTY/tuic<br><span class="hljs-attr">After</span>=network.target<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">User</span>=root<br><span class="hljs-attr">WorkingDirectory</span>=/opt/tuic<br><span class="hljs-attr">ExecStart</span>=/opt/tuic/tuic-server-<span class="hljs-number">0.8</span>.<span class="hljs-number">5</span>-x<span class="hljs-number">86_64</span>-linux-gnu -c config.json<br><span class="hljs-attr">Restart</span>=<span class="hljs-literal">on</span>-failure<br><span class="hljs-attr">RestartPreventExitStatus</span>=<span class="hljs-number">1</span><br><span class="hljs-attr">RestartSec</span>=<span class="hljs-number">5</span><br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>注意版本号</p>
+</blockquote>
+<p>用get.acme.sh申请证书（也可以参考上面的教程）</p>
+<p>详见我上一篇相关<a target="_blank" rel="noopener" href="https://tt2ter.github.io/post/220509freeipv6vps.html#4-%E4%BB%8E-letsencrypt-%E7%94%9F%E6%88%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%AF%81%E4%B9%A6">博客</a></p>
+<p>转存证书记得按照如下路径转存fullchain和privkey</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">acme.sh --install-cert -d yourdomain.com<br>--fullchain-file    /opt/tuic/fullchain.pem    \<br>--key-file       /opt/tuic/privkey.pem  \<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>在这里我遇到了跑通前的最后一个坑，分辨清楚fullchain是谁）</p>
+</blockquote>
+<blockquote>
+<p>同时在这里第一次申请证书的时候我还套了cdn，阴差阳错的给CDN主机申请了证书）</p>
+</blockquote>
+<p>4.启动tuic服务并设置开机自启：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> --now tuic.service<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>相关指令还有：<code>systemctl status tuic.service</code>能展示服务状态，<code>systemctl stop/start/restart tuic.service</code>等</p>
+<h2 id="客户端-win"><a href="#客户端-win" class="headerlink" title="客户端(win)"></a>客户端(win)</h2><p>在<a target="_blank" rel="noopener" href="https://github.com/EAimTY/tuic/releases">github release</a>下载你系统对应的客户端</p>
+<p>下载与服务端对应版本的<br>如：<a target="_blank" rel="noopener" href="https://github.com/EAimTY/tuic/releases/download/0.8.5/tuic-client-0.8.5-x86_64-windows-gnu.exe">https://github.com/EAimTY/tuic/releases/download/0.8.5/tuic-client-0.8.5-x86_64-windows-gnu.exe</a></p>
+<p>通过2rayN分流</p>
+<p>之前提到的那篇略有过时的博客写的很清楚，<a target="_blank" rel="noopener" href="https://lala.im/8424.html">请拉到该博客末尾查看</a></p>
+<p>至此基本上遇到的坑都该提示的提示了</p>
+<p>over</p>
+<p><img src="https://s2.loli.net/2022/08/23/BEcutKDWHYvRi6f.png" srcset="/img/loading.gif" lazyload alt="测速展示"></p>
+<h1 id="v2rayn更新支持tuic"><a href="#v2rayn更新支持tuic" class="headerlink" title="v2rayn更新支持tuic"></a>v2rayn更新支持tuic</h1><p><a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/issues/2477">对应的issue</a></p>
+<p>使用方法见<a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN/releases/tag/5.30">官方更新日志</a></p>
+<p>但我没整成功）sad</p>
 
                 
               </div>
@@ -387,7 +429,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B/" class="category-chain-item">学习过程</a>
+  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
   
   
 
@@ -402,11 +444,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/">#Hexo</a>
+        <a href="/tags/vps/">#vps</a>
       
-        <a href="/tags/font/">#font</a>
+        <a href="/tags/proxy/">#proxy</a>
       
-        <a href="/tags/image/">#image</a>
+        <a href="/tags/ipv6/">#ipv6</a>
+      
+        <a href="/tags/tuic/">#tuic</a>
       
     </div>
   
@@ -418,8 +462,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的建站过程</div>
-      <div>http://blog.1314171.xyz/post/220326hello-myblog.html</div>
+      <div>再识proxy--tuic协议</div>
+      <div>http://blog.1314171.xyz/post/220823proxytuic.html</div>
     </div>
     <div class="license-meta">
       
@@ -431,7 +475,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月26日</div>
+          <div>2022年8月23日</div>
         </div>
       
       
@@ -467,18 +511,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/220327About-Learning-with-a-Video.html" title="About-Learning-with-a-Video">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">About-Learning-with-a-Video</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/220326Reason-to-Learn-English.html" title="Reason-to-Learn-English">
-                        <span class="hidden-mobile">Reason-to-Learn-English</span>
+                      <a href="/post/220819docsifyDeploy.html" title="搭建docsify用作未来精工wiki">
+                        <span class="hidden-mobile">搭建docsify用作未来精工wiki</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

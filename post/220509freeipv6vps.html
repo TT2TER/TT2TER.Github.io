@@ -62,11 +62,13 @@
 <meta property="og:image" content="https://s2.loli.net/2022/05/09/AnLf3NymtZUoXWv.png">
 <meta property="og:image" content="https://s2.loli.net/2022/05/09/U98PK4wRZhxgXmo.png">
 <meta property="article:published_time" content="2022-05-03T15:59:22.000Z">
-<meta property="article:modified_time" content="2022-08-09T15:24:30.243Z">
+<meta property="article:modified_time" content="2022-08-22T16:48:25.776Z">
 <meta property="article:author" content="TT2TER">
 <meta property="article:tag" content="vps">
 <meta property="article:tag" content="proxy">
 <meta property="article:tag" content="ipv6">
+<meta property="article:tag" content="Trojan">
+<meta property="article:tag" content="HiHysteria">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/05/09/1amZlzRuM7AX3VT.png">
   
@@ -316,7 +318,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          3.8k 字
+          4.1k 字
         
       </span>
     
@@ -328,7 +330,7 @@
         
         
           <!-- compatible with older versions-->
-          13 分钟
+          14 分钟
         
       </span>
     
@@ -380,7 +382,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：10 天前
+                    本文最后更新于：40 分钟前
                   
                 
               </p>
@@ -388,7 +390,13 @@
             
               <div class="markdown-body">
                 
-                <h1 id="校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub"><a href="#校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub" class="headerlink" title="校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub"></a>校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub</h1><h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文档为本人学习笔记，仅供学习使用，请勿用作违法用途。请任何看到本文档的组织或个人在30秒内立即停止使用本文档提及的技术做违反当地法律的内容，请勿将文档及相关链接发至百度贴吧等公开论坛。</p>
+                <h1 id="校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub"><a href="#校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub" class="headerlink" title="校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub"></a>校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub</h1><blockquote>
+<p>220823更新</p>
+</blockquote>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文档为本人学习笔记，仅供学习使用，请勿用作违法用途。请任何看到本文档的组织或个人在30秒内立即停止使用本文档提及的技术做违反当地法律的内容，请勿将文档及相关链接发至百度贴吧等公开论坛。</p>
+<h1 id="其他协议请关注最新博客："><a href="#其他协议请关注最新博客：" class="headerlink" title="其他协议请关注最新博客："></a>其他协议请关注最新博客：</h1><li><a href="/post/220823proxytuic"  tags="">点击这里跳转到最新写的博客：再识proxy--tuic协议</li>
+
+
 <h1 id="一些有用信息来源"><a href="#一些有用信息来源" class="headerlink" title="一些有用信息来源"></a>一些有用信息来源</h1><ul>
 <li><a href="hax.co.id">白嫖vps（每7天更新）</a></li>
 <li><a target="_blank" rel="noopener" href="https://woiden.id/register?=iweec">白嫖vps（每7天更新）同一家据说这个用的人少，浅浅尝试了一下确实速度完全可以接受</a></li>
@@ -416,20 +424,25 @@
 <li><a target="_blank" rel="noopener" href="https://fake-it.ws/">假身份生成器</a></li>
 </ul>
 <p>然后将域添加到<a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/">cloudflare</a></p>
+<blockquote>
+<p>注意添加的时候套cdn会改变外界链接服务器的地址，会影响证书签发以及一些代理的转发。参考：</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/NullPointerMaker/af8e7f24933f451c33aca6f8a779f54d">为什么Trojan不支持cdn</a></p>
 <h2 id="2-拥有一台合适的vps"><a href="#2-拥有一台合适的vps" class="headerlink" title="2.拥有一台合适的vps"></a>2.拥有一台合适的vps</h2><h3 id="a-免费练手VPS"><a href="#a-免费练手VPS" class="headerlink" title="a.免费练手VPS"></a>a.免费练手VPS</h3><p><a href="hax.co.id">白嫖vps（每7天更新）</a></p>
 <p>需要电报账号注册，推荐先来练手</p>
 <h3 id="b-推荐大带宽低性能小硬盘VPS"><a href="#b-推荐大带宽低性能小硬盘VPS" class="headerlink" title="b.推荐大带宽低性能小硬盘VPS"></a>b.推荐大带宽低性能小硬盘VPS</h3><p><a target="_blank" rel="noopener" href="https://webhorizon.in/">便宜低性能高带宽vps(native ipv6+NAT ipv4)</a></p>
 <p>推荐购买香港的NAT服务器7刀每年，支付需要银联卡（PayPal）</p>
 <p>只推荐香港,</p>
 <p>原因1，近，线路先天的好，延迟先天的低；</p>
-<p>原因2，在写这个文档的时候我买了个这家LA的机子，一套组合拳下来慢的要死（相较于香港，只能1080P油管</p>
+<p><del>原因2，在写这个文档的时候我买了个这家LA的机子，一套组合拳下来慢的要死（相较于香港(下图上面的），只能1080P油管</del></p>
 <p><img src="https://s2.loli.net/2022/05/09/1amZlzRuM7AX3VT.png" srcset="/img/loading.gif" lazyload alt="这就是差距……上面是香港，下面是LA"></p>
 <HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
 
-<p>5月9日更新：<br>其他地区也可以买了，有提速工具！有其他地区IP需求的可以考虑<a href="#jump">点击跳转</a></p>
+<h3 id="22年5月9日更新："><a href="#22年5月9日更新：" class="headerlink" title="22年5月9日更新："></a>22年5月9日更新：</h3><p>其他地区也可以买了，有提速工具！有其他地区IP需求的可以考虑<a href="#jump">点击跳转</a></p>
+<h3 id="22年8月23日更新："><a href="#22年8月23日更新：" class="headerlink" title="22年8月23日更新："></a>22年8月23日更新：</h3><p>又有了新的协议tuic，也不错<a href="#jump2">点击跳转</a></p>
 <HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
 
-<p>服务商是印度阿三，会有一些小毛病如据说会每月定期重启一次你的vps，emmm，价格实惠 ，要啥自行车</p>
+<p>服务商是印度阿三，会有一些小毛病<del>如据说会每月定期重启一次你的vps</del>(这个毛病只遇到过一回），emmm，价格实惠 ，要啥自行车</p>
 <p>保姆级步骤，放心食用</p>
 <ol>
 <li>选购</li>
@@ -487,10 +500,12 @@
 <p>成功演示（因为这是演示，一会就删，所以就不打码了）</p>
 <p><img src="https://s2.loli.net/2022/05/03/jpxaTkK68nItqA3.png" srcset="/img/loading.gif" lazyload alt="image-20220503164523932"></p>
 <p>可以选择把证书拷到别的地方,如根目录</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">acme<span class="hljs-selector-class">.sh</span> <span class="hljs-attr">--install-cert</span> -d example<span class="hljs-selector-class">.yourdomain</span><span class="hljs-selector-class">.com</span> \<br><span class="hljs-attr">--cert-file</span>      /root/cert<span class="hljs-selector-class">.pem</span>  \<br><span class="hljs-attr">--key-file</span>       /root/key<span class="hljs-selector-class">.pem</span>  \<br>#域名改为你的域名<br></code></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gradle">acme.sh --install-cert -d example.yourdomain.com \<br>--cert-<span class="hljs-keyword">file</span>      <span class="hljs-regexp">/root/</span>cert.pem  \<br>--key-<span class="hljs-keyword">file</span>       <span class="hljs-regexp">/root/</span>key.pem  \<br>--fullchain-<span class="hljs-keyword">file</span> <span class="hljs-regexp">/root/</span>fullchain.pem\<br>#域名改为你的域名<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://s2.loli.net/2022/05/03/5QCdvW6UVhZ1Bon.png" srcset="/img/loading.gif" lazyload alt="image-20220503171353387"></p>
-<p>cert是公钥路径，key是密钥路径</p>
+<p>cert是公钥路径，key是密钥路径，注意分辨什么是fullchain:</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51577576/article/details/122048011">证书相关知识</a></p>
+<p><a target="_blank" rel="noopener" href="https://community.letsencrypt.org/t/why-fullchain-cer-contain-three-certificates/175776">letsencrypt说明</a></p>
 <h2 id="5-设置入站流量"><a href="#5-设置入站流量" class="headerlink" title="5. 设置入站流量"></a>5. 设置入站流量</h2><p>在x-ui面板中按图示设置</p>
 <p>example.yourdomain.com改为你的域名，证书路径改为你的证书路径（如果你按照我的流程就不用改变)</p>
 <p>备注随意</p>
@@ -515,8 +530,7 @@
 <p>发现快了好多</p>
 <h2 id="7-enjoy！"><a href="#7-enjoy！" class="headerlink" title="7. enjoy！"></a>7. enjoy！</h2><h1 id="如果还觉得慢：！"><a href="#如果还觉得慢：！" class="headerlink" title="如果还觉得慢：！"></a><span id="jump">如果还觉得慢：</span>！</h1><h1 id="再提速！"><a href="#再提速！" class="headerlink" title="再提速！"></a>再提速！</h1><h2 id="效果展示和前序准备"><a href="#效果展示和前序准备" class="headerlink" title="效果展示和前序准备"></a>效果展示和前序准备</h2><p><img src="https://s2.loli.net/2022/05/09/kVHxNIfL53cTjz4.png" srcset="/img/loading.gif" lazyload alt="未提速时"><br><img src="https://s2.loli.net/2022/05/09/afWlgkZLPmw3KCp.png" srcset="/img/loading.gif" lazyload alt="提速后！！"></p>
 <p><em>这个提速工具理论上会明显提高VPS流量消耗，因此除非上述步骤无法满足油管4K正常浏览，请不要使用这个工具</em></p>
-<p>在进行这步之前，请确保你完成了<strong>部署过程</strong>的步骤1和4，同时请确保在Cloudflare中的代理被关闭，如下图第一行示例（因此这个加速工具和上文提到的cf加速有一定的冲突</p>
-<p><img src="https://s2.loli.net/2022/05/09/C7q4dVLfptQnOKw.png" srcset="/img/loading.gif" lazyload></p>
+<p>在进行这步之前，请确保你完成了<strong>部署过程</strong>的步骤1和4，同时请确保在Cloudflare中的代理被关闭，如下图第一行示例（因此这个加速工具和上文提到的cf加速有一定的冲突<br>（原因请google:套cdn）<br><img src="https://s2.loli.net/2022/05/09/C7q4dVLfptQnOKw.png" srcset="/img/loading.gif" lazyload></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/emptysuns/Hi_Hysteria">项目地址：HiHysteria</a>可以看到项目介绍</p>
 <h2 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h2><h3 id="0-测试服务器状态"><a href="#0-测试服务器状态" class="headerlink" title="0. 测试服务器状态"></a>0. 测试服务器状态</h3><p>用本地的windows Powershell或其他终端 ping 你的服务器IPv6地址</p>
 <figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">ping <span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span>:<span class="hljs-keyword">x</span><br></code></pre></td></tr></table></figure>
@@ -534,6 +548,11 @@
 <p>客户端期望下行速度（一定要按照你的需求设置，原因见Github文档，我的建议速度如下）</p>
 <p>   首先不能超过VPS的上行速度<br>   其次不能超过本地带宽，如千兆就是1000，百兆就是100等<br>   这是两条红线<br>   油管4k 150足以<br>   如果有高速下载需求<br>   300足以<br>   请根据自己需求设置，仅供参考！！！</p>
 <p>客户端期望上行速度（也一定要按照你的需求设置，原因见Github文档，一般上行需求不大，没特殊要求设为下行的一半到3&#x2F;4即可</p>
+<blockquote>
+<p>注意！</p>
+</blockquote>
+<p>下图有一处有问题，请自行更正！！</p>
+<p>红色字使用“步骤4”的证书第一个fullchain注意要对应fullchain.pem的路径</p>
 <p><img src="https://s2.loli.net/2022/05/09/vq9IuFm6gBhGpZf.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><p><img src="https://s2.loli.net/2022/05/09/g3ypfzic1UImKXx.png" srcset="/img/loading.gif" lazyload><br>可以使用sftp将配置文件从&#x2F;root下载到电脑本地</p>
 <p>也可以复制粉色框内的内容粘贴到文本文档中</p>
@@ -544,7 +563,10 @@
 <p>将里面的acl文件夹整个解压到你的V2rayN-Core安装目录下<br><img src="https://s2.loli.net/2022/05/09/saqvG8dDWY6cye9.png" srcset="/img/loading.gif" lazyload></p>
 <p>从<a target="_blank" rel="noopener" href="https://github.com/HyNetwork/hysteria/releases">https://github.com/HyNetwork/hysteria/releases</a>上下载hysteria-tun-windows-6.0-amd64.exe，同样放在V2rayN-Core安装目录下（和acl一样）</p>
 <p>添加自定义配置服务器<br><img src="https://s2.loli.net/2022/05/09/AnLf3NymtZUoXWv.png" srcset="/img/loading.gif" lazyload><br>地址选你刚刚下载到本地修改好端口的.json<br><img src="https://s2.loli.net/2022/05/09/U98PK4wRZhxgXmo.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="3-enjoy"><a href="#3-enjoy" class="headerlink" title="3.enjoy!!"></a>3.enjoy!!</h3><h2 id="因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油"><a href="#因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油" class="headerlink" title="因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油"></a>因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油</h2><h1 id="一些其他问题"><a href="#一些其他问题" class="headerlink" title="一些其他问题"></a>一些其他问题</h1><p>服务器重启，表现为连不上了，不一定是墙了，也可能是</p>
+<h3 id="3-enjoy"><a href="#3-enjoy" class="headerlink" title="3.enjoy!!"></a>3.enjoy!!</h3><h2 id="因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油"><a href="#因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油" class="headerlink" title="因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油"></a>因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油</h2><h1 id="又一个好用的协议：tuic-！"><a href="#又一个好用的协议：tuic-！" class="headerlink" title="又一个好用的协议：tuic ！"></a><span id="jump">又一个好用的协议：tuic </span>！</h1><li><a href="/post/220823proxytuic"  tags="">点击这里跳转到最新写的博客：再识proxy--tuic协议</li>
+
+
+<h1 id="一些其他问题"><a href="#一些其他问题" class="headerlink" title="一些其他问题"></a>一些其他问题</h1><p>服务器重启，表现为连不上了，不一定是墙了，也可能是</p>
 <p>服务器dns解析出问题</p>
 <p>连接不上代理</p>
 <p><a target="_blank" rel="noopener" href="https://www.laozuo.org/6647.html">解决方法</a></p>
@@ -588,6 +610,10 @@
       
         <a href="/tags/ipv6/">#ipv6</a>
       
+        <a href="/tags/Trojan/">#Trojan</a>
+      
+        <a href="/tags/HiHysteria/">#HiHysteria</a>
+      
     </div>
   
 </div>
@@ -621,9 +647,15 @@
           
             
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
               <span class="hint--top hint--rounded" aria-label="BY - 署名">
                 <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                <i class="iconfont icon-sa"></i>
               </span>
               </a>
             
