@@ -48,6 +48,10 @@ chmod +x tuic-server-0.8.5-x86_64-linux-gnu
 >第一遍我没有下载最新版本，下次看别的教程要注意，我也会在代码中提醒后人
 
 2.新建config.json(服务端配置)
+```bash
+vim config.json
+```
+填入：
 ```json
 {
     "port": 443,
@@ -91,7 +95,7 @@ WantedBy=multi-user.target
 
 用get.acme.sh申请证书（也可以参考上面的教程）
 
-详见我上一篇相关[博客](https://tt2ter.github.io/post/220509freeipv6vps.html#4-%E4%BB%8E-letsencrypt-%E7%94%9F%E6%88%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%AF%81%E4%B9%A6)
+详见我上一篇相关[博客](https://blog.1314171.xyz/post/220509freeipv6vps.html#4-%E4%BB%8E-letsencrypt-%E7%94%9F%E6%88%90%E5%85%8D%E8%B4%B9%E7%9A%84%E8%AF%81%E4%B9%A6)
 
 转存证书记得按照如下路径转存fullchain和privkey
 
