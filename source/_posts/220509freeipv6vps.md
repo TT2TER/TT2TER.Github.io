@@ -5,14 +5,21 @@ tags:
 - vps
 - proxy
 - ipv6
+- Trojan
+- HiHysteria
 categories: 教程
 excerpt: ipv6代理的方式校园网免流
 ---
 # 校园网通过IPV6代理实现免流且顺利浏览谷歌学术和GitHub
-
+> 220823更新
 # 声明
 
 本文档为本人学习笔记，仅供学习使用，请勿用作违法用途。请任何看到本文档的组织或个人在30秒内立即停止使用本文档提及的技术做违反当地法律的内容，请勿将文档及相关链接发至百度贴吧等公开论坛。
+
+# 其他协议请关注最新博客：
+
+<li><a href="/post/220823proxytuic"  tags="">点击这里跳转到最新写的博客：再识proxy--tuic协议</li>
+
 
 # 一些有用信息来源
 
@@ -50,6 +57,12 @@ excerpt: ipv6代理的方式校园网免流
 * [假身份生成器](https://fake-it.ws/)
 
 然后将域添加到[cloudflare](https://www.cloudflare.com/zh-cn/)
+
+> 注意添加的时候套cdn会改变外界链接服务器的地址，会影响证书签发以及一些代理的转发。参考：
+
+[为什么Trojan不支持cdn](https://gist.github.com/NullPointerMaker/af8e7f24933f451c33aca6f8a779f54d)
+
+
 ## 2.拥有一台合适的vps
 ### a.免费练手VPS
 [白嫖vps（每7天更新）](hax.co.id)
@@ -65,18 +78,21 @@ excerpt: ipv6代理的方式校园网免流
 
 原因1，近，线路先天的好，延迟先天的低；
 
-原因2，在写这个文档的时候我买了个这家LA的机子，一套组合拳下来慢的要死（相较于香港，只能1080P油管
+~~原因2，在写这个文档的时候我买了个这家LA的机子，一套组合拳下来慢的要死（相较于香港(下图上面的），只能1080P油管~~
 
 ![这就是差距……上面是香港，下面是LA](https://s2.loli.net/2022/05/09/1amZlzRuM7AX3VT.png)
 
 <HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
 
-5月9日更新：
+### 22年5月9日更新：
 其他地区也可以买了，有提速工具！有其他地区IP需求的可以考虑[点击跳转](#jump)
+
+### 22年8月23日更新：
+又有了新的协议tuic，也不错[点击跳转](#jump2)
 
 <HR style="border:3 double #987cb9" width="80%" color=#987cb9 SIZE=3>
 
-服务商是印度阿三，会有一些小毛病如据说会每月定期重启一次你的vps，emmm，价格实惠 ，要啥自行车
+服务商是印度阿三，会有一些小毛病~~如据说会每月定期重启一次你的vps~~(这个毛病只遇到过一回），emmm，价格实惠 ，要啥自行车
 
 保姆级步骤，放心食用
 
@@ -223,12 +239,17 @@ acme.sh  --issue -d example.yourdomain.com  --standalone --listen-v6
 acme.sh --install-cert -d example.yourdomain.com \
 --cert-file      /root/cert.pem  \
 --key-file       /root/key.pem  \
+--fullchain-file /root/fullchain.pem\
 #域名改为你的域名
 ```
 
 ![image-20220503171353387](https://s2.loli.net/2022/05/03/5QCdvW6UVhZ1Bon.png)
 
-cert是公钥路径，key是密钥路径
+cert是公钥路径，key是密钥路径，注意分辨什么是fullchain:
+
+[证书相关知识](https://blog.csdn.net/qq_51577576/article/details/122048011)
+
+[letsencrypt说明](https://community.letsencrypt.org/t/why-fullchain-cer-contain-three-certificates/175776)
 
 
 ## 5. 设置入站流量
@@ -289,7 +310,7 @@ x-ui新建：
 *这个提速工具理论上会明显提高VPS流量消耗，因此除非上述步骤无法满足油管4K正常浏览，请不要使用这个工具*
 
 在进行这步之前，请确保你完成了**部署过程**的步骤1和4，同时请确保在Cloudflare中的代理被关闭，如下图第一行示例（因此这个加速工具和上文提到的cf加速有一定的冲突
-
+（原因请google:套cdn）
 ![](https://s2.loli.net/2022/05/09/C7q4dVLfptQnOKw.png)
 
 [项目地址：HiHysteria](https://github.com/emptysuns/Hi_Hysteria)可以看到项目介绍
@@ -336,6 +357,12 @@ bash <(curl -fsSL https://git.io/hysteria.sh)
 
 客户端期望上行速度（也一定要按照你的需求设置，原因见Github文档，一般上行需求不大，没特殊要求设为下行的一半到3/4即可
 
+>注意！
+
+下图有一处有问题，请自行更正！！
+
+红色字使用“步骤4”的证书第一个fullchain注意要对应fullchain.pem的路径
+
 ![](https://s2.loli.net/2022/05/09/vq9IuFm6gBhGpZf.png)
 
 ### 2.使用
@@ -367,6 +394,11 @@ bash <(curl -fsSL https://git.io/hysteria.sh)
 ### 3.enjoy!!
 
 ## 因为这个脚本在开发阶段，bug较多，发生错误请自行解决，加油
+
+# <span id="jump">又一个好用的协议：tuic </span>！
+
+<li><a href="/post/220823proxytuic"  tags="">点击这里跳转到最新写的博客：再识proxy--tuic协议</li>
+
 
 # 一些其他问题
 
