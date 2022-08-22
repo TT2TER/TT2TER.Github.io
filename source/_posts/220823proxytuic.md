@@ -127,7 +127,7 @@ systemctl enable --now tuic.service
 over
 
 
-![测速展示](https://s2.loli.net/2022/08/23/BEcutKDWHYvRi6f.png)
+![测速展示（本地北京移动千兆下行百兆上行）](https://s2.loli.net/2022/08/23/xjb2ocJkZ7NwtQp.png)
 
 # v2rayn更新支持tuic
 [对应的issue](https://github.com/2dust/v2rayN/issues/2477)
