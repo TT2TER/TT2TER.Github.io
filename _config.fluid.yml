@@ -68,7 +68,7 @@ code:
 
       # 是否根据 style 改变代码背景色（如果 style 是深色背景别忘了开启此项）
       # If true, the code background will change color based on the style (If style has a dark background, don't forget to true)
-      bg_color: false
+      bg_color: true
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -114,7 +114,7 @@ fun_features:
     # Options: hover | always | touch
     visible: hover
     # Option：§ | # | ❡
-    icon: § #TODO:检查是否有效
+    icon: §
 
   # 加载进度条
   # Progress bar when loading
@@ -597,7 +597,7 @@ post:
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
   updated:
-    enable: true
+    enable: false
 
     # 描述文字
     # Descriptive text before date
@@ -952,7 +952,7 @@ page404:
   enable: true
   banner_img: /img/Beijing.png
   banner_img_height: 85
-  banner_mask_alpha: 0.3
+  banner_mask_alpha: 1
   subtitle: "Page not found"
 
 
