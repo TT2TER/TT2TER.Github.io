@@ -30,7 +30,7 @@ date: 2022-09-03 22:51:45
 <li><a href="/post/220903picture-server">尝试新的图床解决方案</li>
 
 补个截图：
-![](https://fastly.jsdelivr.net/gh/TT2TER/image1st@main/img/20220904001131.png)
+![](https://gcore.jsdelivr.net/gh/TT2TER/image1st@main/img/20220904001131.png)
 
 
 

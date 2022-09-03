@@ -5,7 +5,8 @@ categories: 教程
 excerpt: sm.ms经常寄，尝试github+jsdelivr
 date: 2022-09-04 00:06:11
 ---
-
+# 再前言
+感觉这又是一个暂时性的解决办法，jsdelivr永远被墙！
 # 前言
 我之前的图床解决方案
 
@@ -19,7 +20,7 @@ date: 2022-09-04 00:06:11
 1. 可以不用勾选readme
 2. token 还要选上user(我也不知道为啥而且我也没测不选能不能用，另一个教程选了，我怕麻烦也选了)
 3. token设置在github的settings -> developer settings里
-4. 特别注意cdn.jsdelivr.net国内被dns污染了，所以要把它换成fastly.jsdelivr.net
+4. 特别注意cdn.jsdelivr.net国内被dns污染了，所以要把它换成gcore.jsdelivr.net
 
 [教程](https://zhuanlan.zhihu.com/p/489236769)
 
@@ -31,6 +32,6 @@ date: 2022-09-04 00:06:11
 
 # 效果测试：
 
-![](https://fastly.jsdelivr.net/gh/TT2TER/image1st@main/img/20220904000123.png)
+![](https://gcore.jsdelivr.net/gh/TT2TER/image1st@main/img/20220904000123.png)
 
 图片内容为`# 效果测试：`几个字
