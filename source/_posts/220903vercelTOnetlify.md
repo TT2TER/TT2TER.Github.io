@@ -43,7 +43,7 @@ date: 2022-09-03 22:51:45
 直接在域名解析CNAME到你的`yourproject.netlify.app`就行
 
 # 补一手很漂亮的部署日志
-```
+```log
 9:22:08 PM: Build ready to start
 9:22:12 PM: build-image version: d7b3dbfb0846505993c9a131894d1858074c90b4 (focal)
 9:22:12 PM: build-image tag: v4.10.1
