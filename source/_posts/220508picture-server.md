@@ -23,4 +23,6 @@ date: 2022-05-08 00:18:46
 
 # 稳定性考虑准备换到对象储存
 [参考链接](https://www.antmoe.com/posts/de414de5/)
-TODO:
+
+# 对象储存可能被攻击导致计费，用github仓库套jsdelivr加速
+<li><a href="/post/220903picture-server"  tags="">sm.ms经常寄，尝试github+jsdelivr</li>
