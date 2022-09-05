@@ -3,6 +3,7 @@ title: 用仅ipv6vps自建图床并支持ipv4访问
 tags:
   - vps
   - blog
+  - vscode
 categories: 教程
 excerpt: 之前图床都不好用了，为了可持续发展，决定自建图床
 date: 2022-09-05 23:33:30
@@ -251,6 +252,14 @@ curl localhost:80/api/v1/tokens -X POST -d 'email=example@example.com&password=y
 
 ## 发现能用webdav等存储
 还未尝试，TODO:
+
+## 其他问题，http图床链接在vscode中无法加载预览解决
+
+参看如下两篇就明白了
+
+[markdown预览](https://blog.csdn.net/wejack/article/details/122309967?spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EOPENSEARCH%7ERate-5-122309967-blog-105007956.pc_relevant_aa_2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EOPENSEARCH%7ERate-5-122309967-blog-105007956.pc_relevant_aa_2&utm_relevant_index=6)
+
+[加载http链接](https://blog.csdn.net/qq_41821678/article/details/105007956)
 
 >本篇博客所有图片均上传在新部署的图床上
 
