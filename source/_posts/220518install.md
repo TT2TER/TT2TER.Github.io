@@ -97,12 +97,23 @@ docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docke
 ***2208207更新***
 把汉化版替掉了，因为汉化不一直更新
 
-更新过程参考官方文档：[Upgrading on Docker Standalone](https://docs.portainer.io/start/upgrade/docker)
+更新过程参考官方文档：[Upgrading on Docker Standalone](https://docs.portainer.io/start/upgrade/docker)(官方版更新也是这个流程)
 
 注意将存储路径改对
 
+```bash
 docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /share/Docker/portainer_data:/data portainer/portainer-ce:latest
-
+```
 
 *ddns-go*
+```bash
 docker run -d --name ddns-go --restart=always --net=host -v /share/Docker/ddns-go:/root jeessy/ddns-go
+```
+
+## 关于docker的更新
+只需要在portainer container details中recreate的同时选择拉取最新镜像即可
+
+![recreate](http://euserver.1314171.xyz/i/2022/09/08/6319bd193a3f9.png)
+![最新镜像拉取打开](http://euserver.1314171.xyz/i/2022/09/08/6319bd3ebf669.png)
+
+注意请保证配置文件等数据不在镜像内部内存中，否则会覆盖掉配置

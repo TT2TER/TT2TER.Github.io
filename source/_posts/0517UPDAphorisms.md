@@ -2,7 +2,6 @@
 title: 0517UPD|每日小短句
 categories: Diary
 excerpt: 一些看到的带来思考的句子
-sticky: 100
 date: 2022-04-05 20:26:31
 tags:
 ---
