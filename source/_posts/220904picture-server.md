@@ -29,34 +29,26 @@ date: 2022-09-05 23:33:30
 [server-factory](https://my.server-factory.com/)
 
 仅ipv6主机仅需6欧，nat主机9欧一年，而且支持Alipay（支付宝）
-
-![测速图片](http://euserver.1314171.xyz/i/2022/09/04/6314b7e0857c2.jpg)
+![测速图片](http://euserver.1314171.xyz/i/2022/09/08/6319f8f453f3b.jpg)
 
 要什么自行车，冲他
-
-![购买这个就行](http://euserver.1314171.xyz/i/2022/09/04/6314bbebe66a4.jpg)
+![购买这个就行](http://euserver.1314171.xyz/i/2022/09/08/6319f8d4f01d0.jpg)
 
 买这个仅Ipv6就行，解决ipv4访问用cf cdn套一层代理
 
-![cfcdn](http://euserver.1314171.xyz/i/2022/09/04/6314bd2213ee5.jpg)
-
-确保上图的小云朵打开即可
+确保用c代理，小云朵打开即可
 
 ## 申请证书
 之前用脚本在vps上申请证书的时候不能套上述小云朵，否则会失败或者替cf申请证书……
 
-这次尝试直接套小云朵嫖cf证书：
-
-[参考](https://mailberry.com.cn/2022/07/cloudflare-15-years-ssl/)
+这次尝试直接套小云朵嫖cf证书
 
 TODO:暂时还不知道申请到的证书放在哪里……
 
 # 选择图床
 大概有三个很好的选择，[兰空图床](https://www.lsky.pro/)、[imgurl](https://github.com/helloxz/imgurl)和[chevereto](https://chevereto.com/)
 
-最后选择兰空的原因是：imgurl社区开源版本上次更新已经过去三年了，[chevereto](https://github.com/chevereto/vps)令人望而生畏的英文文档，以及，我以为兰空有中文文档很好搭建，官方宣传：
-
-![半小时搭好](http://euserver.1314171.xyz/i/2022/09/05/6314cef72c325.jpg)
+最后选择兰空的原因是：imgurl社区开源版本上次更新已经过去三年了，[chevereto](https://github.com/chevereto/vps)令人望而生畏的英文文档，以及，我以为兰空有中文文档很好搭建，官方宣传：半小时搭好)
 
 
 # 安装
@@ -103,7 +95,7 @@ systemctl status nginx
 在浏览器内输入您的IP地址或域名并打开
 
 显示：
-![](http://euserver.1314171.xyz/i/2022/09/05/63160f5736ffb.png)
+![](http://euserver.1314171.xyz/i/2022/09/08/6319f88d6c9cb.jpg)
 说明Nginx已经正常工作
 
 ## 安装PHP
@@ -203,7 +195,7 @@ vim /etc/nginx/sites-available/default
 4. 转到location / 块，找到try_files项，将 =404 改为 /index.php?$query_string（即设置伪静态）；
 5. 转到location ~ \.php$块，去除行前#号，选择With php-fpm方法，将路径中的PHP版本修改为对应安装版本。修改完的效果应如图所示：
 
-![](http://euserver.1314171.xyz/i/2022/09/05/6316140c963a8.png)
+![](http://euserver.1314171.xyz/i/2022/09/08/6319f86f07b3e.png)
 
 执行以下命令打开Nginx配置文档：
 
@@ -232,10 +224,7 @@ systemctl restart nginx
 ## 初始化图床
 配置好域名以后，访问站点首页，程序会自动跳转至安装页面，环境检测通过以后即可通过引导进行安装。
 
-数据库名称/路径留空即可
-
-![成功](http://euserver.1314171.xyz/i/2022/09/05/6314cff0d2cff.jpg)
-
+`数据库名称/路径`留空即可
 
 ## 接入api和picgo协同
 [参考这个博客设置请求](https://www.shejibiji.com/archives/8411)
@@ -249,9 +238,7 @@ curl localhost:80/api/v1/tokens -X POST -d 'email=example@example.com&password=y
 ```
 
 可以正常返回
-
-![成功！这就是我用picgo上传的图片](http://euserver.1314171.xyz/i/2022/09/04/6314ca6aef5df.png)
-
+![成功！这就是我用picgo上传的图片](http://euserver.1314171.xyz/i/2022/09/08/6319f75d3ad36.png)
 ## 发现能用webdav等存储
 还未尝试，TODO:
 

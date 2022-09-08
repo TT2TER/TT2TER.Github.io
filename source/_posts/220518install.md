@@ -113,7 +113,6 @@ docker run -d --name ddns-go --restart=always --net=host -v /share/Docker/ddns-g
 ## 关于docker的更新
 只需要在portainer container details中recreate的同时选择拉取最新镜像即可
 
-![recreate](http://euserver.1314171.xyz/i/2022/09/08/6319bd193a3f9.png)
-![最新镜像拉取打开](http://euserver.1314171.xyz/i/2022/09/08/6319bd3ebf669.png)
+![最新镜像拉取打开](http://euserver.1314171.xyz/i/2022/09/08/6319f957d0582.png)
 
 注意请保证配置文件等数据不在镜像内部内存中，否则会覆盖掉配置
