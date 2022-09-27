@@ -188,7 +188,11 @@ chown -R www-data /home/www/lsky
 ```bash
 vim /etc/nginx/sites-available/default
 ```
+将内容复制到
+`/etc/nginx/cinf.d`下新建一文件命名为：`lsky.conf`
+
 修改其中
+0. 去除掉80端口后的 default……
 1. 转到server块，找到root项，将其后的路径指向Lsky Pro安装路径的public文件夹；
 2. 找到index项，在其后添加index.php；
 3. 找到server_name项，将其后的内容改为您的IP或域名；
