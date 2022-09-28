@@ -41,8 +41,8 @@ date: 2022-09-28 01:49:51
 i. git http代理（永久）
 ```git
 #开启
-git config --global http.proxy "socks5://127.0.0.1:yourport"
-git config --global https.proxy "socks5://127.0.0.1:yourport"
+git config --global http.proxy "http://127.0.0.1:yourport"
+git config --global https.proxy "http://127.0.0.1:yourport"
 git config -l --globle #查看是否配置成功
 #如需要关闭：
 git config --global --unset http.proxy
