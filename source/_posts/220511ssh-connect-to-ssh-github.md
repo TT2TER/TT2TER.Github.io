@@ -33,10 +33,16 @@ Host github.com
 ```
 Host github.com
     User git
-    ProxyCommand connect -S 127.0.0.1:10809 %h %p
+    ProxyCommand connect -S 127.0.0.1:10808 %h %p
 ```
 
 这里-S表示使用socks5代理, 如果是http代理则为-H. connect工具git自带, 在\mingw64\bin\下面.
+
+如我本人使用http代理，则配置
+```bash
+ProxyCommand connect -H 127.0.0.1:10809 %h %p
+```
+注意对应端口为http端口
 
 # SSH原理
 [博客链接](https://www.jianshu.com/p/33461b619d53)
