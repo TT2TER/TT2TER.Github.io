@@ -11,7 +11,7 @@ date: 2022-09-28 01:49:51
 
 # 前排提示，因为图床暂未配置证书，故请暂时关闭https保护以加载本文http图片资源（部分浏览器无法关闭）
 如火狐可以在左上角小锁选项中选择暂时解除保护
-![](http://euserver.1314171.xyz/i/2022/09/28/633337411418d.png)
+![](https://euserver.1314171.xyz/i/2022/09/28/633337411418d.png)
 
 # 选择的web-ui
 选择了一个看起来优化不错的ui
@@ -55,10 +55,10 @@ ii. git ssh代理（永久）
 iii. anaconda代理（永久）
 
 打开图形界面（navigator)
-![](http://euserver.1314171.xyz/i/2022/09/28/633332fc05410.png)
+![](https://euserver.1314171.xyz/i/2022/09/28/633332fc05410.png)
 
 点击prefer……
-![](http://euserver.1314171.xyz/i/2022/09/28/6333335e6cd0a.png)
+![](https://euserver.1314171.xyz/i/2022/09/28/6333335e6cd0a.png)
 
 选择下方绿色选项：`config conda`
 
@@ -89,7 +89,7 @@ proxy_servers:
 
 iv. cmd代理（仅限该终端）
 如果你用的clash，可以点击这个terminal图标
-![](http://euserver.1314171.xyz/i/2022/09/28/6333343deb9c8.png)
+![](https://euserver.1314171.xyz/i/2022/09/28/6333343deb9c8.png)
 直接选择打开配置好代理的cmd终端
 
 或者新建终端键入
@@ -105,7 +105,7 @@ e:#你的，如d:
 cd stable-diffusion-ui
 ```
 如图
-![](http://euserver.1314171.xyz/i/2022/09/28/6333357693588.png)
+![](https://euserver.1314171.xyz/i/2022/09/28/6333357693588.png)
 
 7. 键入完整目录，注意用引号括住
 ```bash

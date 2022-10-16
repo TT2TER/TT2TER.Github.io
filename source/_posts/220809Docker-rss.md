@@ -46,17 +46,6 @@ freshrss解决权限问题就能用了，而重新试了试TTRSS发现，解决�
 version: "3"
 
 services:
-  freshrss-db:
-    image: postgres:latest
-    container_name: freshrss-db
-    hostname: freshrss-db
-    restart: always
-    volumes:
-      - /share/Docker/rss/postgresql/data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: freshrss
-      POSTGRES_PASSWORD: freshrss
-      POSTGRES_DB: freshrss
 
   freshrss-app:
     image: freshrss/freshrss:latest
@@ -85,5 +74,14 @@ services:
 
 再一看256mb内存很吃紧了，遂放弃
 
+## 20221016更新
+
+因为有了个1G的服务器，因此可以把rss部署了
+
+因为需求比较浅，所以用SQlite就行，docker-compose中数据库部分可以删掉了
+
+然后用nginx反代和cf的代理（ipv4支持）
+
+加上证书
 ## fever API接口：
 TODO:

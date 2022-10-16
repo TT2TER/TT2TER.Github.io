@@ -29,10 +29,10 @@ date: 2022-09-05 23:33:30
 [server-factory](https://my.server-factory.com/)
 
 仅ipv6主机仅需6欧，nat主机9欧一年，而且支持Alipay（支付宝）
-![测速图片](http://euserver.1314171.xyz/i/2022/09/08/6319f8f453f3b.jpg)
+![测速图片](https://euserver.1314171.xyz/i/2022/09/08/6319f8f453f3b.jpg)
 
 要什么自行车，冲他
-![购买这个就行](http://euserver.1314171.xyz/i/2022/09/08/6319f8d4f01d0.jpg)
+![购买这个就行](https://euserver.1314171.xyz/i/2022/09/08/6319f8d4f01d0.jpg)
 
 买这个仅Ipv6就行，解决ipv4访问用cf cdn套一层代理
 
@@ -43,7 +43,10 @@ date: 2022-09-05 23:33:30
 
 这次尝试直接套小云朵嫖cf证书
 
-TODO:暂时还不知道申请到的证书放在哪里……
+### 221001更新
+![](http://euserver.1314171.xyz/i/2022/10/01/63384fdfbdd4d.png)
+![](https://euserver.1314171.xyz/i/2022/10/01/6338539cb8b2f.png)
+https://65536.io/2020/03/607.html
 
 # 选择图床
 大概有三个很好的选择，[兰空图床](https://www.lsky.pro/)、[imgurl](https://github.com/helloxz/imgurl)和[chevereto](https://chevereto.com/)
@@ -95,7 +98,7 @@ systemctl status nginx
 在浏览器内输入您的IP地址或域名并打开
 
 显示：
-![](http://euserver.1314171.xyz/i/2022/09/08/6319f88d6c9cb.jpg)
+![](https://euserver.1314171.xyz/i/2022/09/08/6319f88d6c9cb.jpg)
 说明Nginx已经正常工作
 
 ## 安装PHP
@@ -199,7 +202,7 @@ vim /etc/nginx/sites-available/default
 4. 转到location / 块，找到try_files项，将 =404 改为 /index.php?$query_string（即设置伪静态）；
 5. 转到location ~ \.php$块，去除行前#号，选择With php-fpm方法，将路径中的PHP版本修改为对应安装版本。修改完的效果应如图所示：
 
-![](http://euserver.1314171.xyz/i/2022/09/08/6319f86f07b3e.png)
+![](https://euserver.1314171.xyz/i/2022/09/08/6319f86f07b3e.png)
 
 执行以下命令打开Nginx配置文档：
 
@@ -242,7 +245,7 @@ curl localhost:80/api/v1/tokens -X POST -d 'email=example@example.com&password=y
 ```
 
 可以正常返回
-![成功！这就是我用picgo上传的图片](http://euserver.1314171.xyz/i/2022/09/08/6319f75d3ad36.png)
+![成功！这就是我用picgo上传的图片](https://euserver.1314171.xyz/i/2022/09/08/6319f75d3ad36.png)
 ## 发现能用webdav等存储
 还未尝试，TODO:
 
