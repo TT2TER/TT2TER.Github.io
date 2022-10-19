@@ -9,10 +9,10 @@ excerpt: 因为英语写作要介绍个专业技术，最近这个AI画图技术
 date: 2022-09-28 01:49:51
 ---
 
-# 前排提示，因为图床暂未配置证书，故请暂时关闭https保护以加载本文http图片资源（部分浏览器无法关闭）
-如火狐可以在左上角小锁选项中选择暂时解除保护
-![](https://euserver.1314171.xyz/i/2022/09/28/633337411418d.png)
+~~因为图床暂未配置证书，故请暂时关闭https保护以加载本文http图片资源（部分浏览器无法关闭）。如火狐可以在左上角小锁选项中选择暂时解除保护~~
+![](https://pic.1314171.xyz/i/2022/10/19/634fe1d1ad3a7.png)
 
+221019更新，图床已支持https证书
 # 选择的web-ui
 选择了一个看起来优化不错的ui
 
@@ -55,10 +55,10 @@ ii. git ssh代理（永久）
 iii. anaconda代理（永久）
 
 打开图形界面（navigator)
-![](https://euserver.1314171.xyz/i/2022/09/28/633332fc05410.png)
+![](https://pic.1314171.xyz/i/2022/10/19/634fe1ebcf5b6.png)
 
 点击prefer……
-![](https://euserver.1314171.xyz/i/2022/09/28/6333335e6cd0a.png)
+![](https://pic.1314171.xyz/i/2022/10/19/634fe1ff760aa.png)
 
 选择下方绿色选项：`config conda`
 
@@ -89,7 +89,7 @@ proxy_servers:
 
 iv. cmd代理（仅限该终端）
 如果你用的clash，可以点击这个terminal图标
-![](https://euserver.1314171.xyz/i/2022/09/28/6333343deb9c8.png)
+![](https://pic.1314171.xyz/i/2022/10/19/634fe2196b108.png)
 直接选择打开配置好代理的cmd终端
 
 或者新建终端键入
@@ -105,7 +105,7 @@ e:#你的，如d:
 cd stable-diffusion-ui
 ```
 如图
-![](https://euserver.1314171.xyz/i/2022/09/28/6333357693588.png)
+![](https://pic.1314171.xyz/i/2022/10/19/634fe23367fad.png)
 
 7. 键入完整目录，注意用引号括住
 ```bash

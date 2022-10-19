@@ -8,9 +8,7 @@ categories: 教程
 excerpt: 之前图床都不好用了，为了可持续发展，决定自建图床
 date: 2022-09-05 23:33:30
 ---
-# 前排提示，因为图床暂未配置证书，故请暂时关闭https保护以加载http图片资源
-
-加密在整了TODO:
+221019更新，图床已支持https且仅支持https
 
 # 换图床的原因
 之前sm.ms图床已经不太能用而且有审核，已经无故挂了我三张图片了
@@ -24,19 +22,19 @@ date: 2022-09-05 23:33:30
 简单搜索之后发现方案可行，基本上随便一搜就20欧10G千兆带宽
 
 # 选择主机商
-舍友推荐了个便宜的主机商：
-
+~~舍友推荐了个便宜的主机商：~~
+## 221019更新：请考虑别的主机，该机型已无库存
 [server-factory](https://my.server-factory.com/)
 
 仅ipv6主机仅需6欧，nat主机9欧一年，而且支持Alipay（支付宝）
-![测速图片](https://euserver.1314171.xyz/i/2022/09/08/6319f8f453f3b.jpg)
+![测速图片](https://pic.1314171.xyz/i/2022/10/19/634fe03aafd19.jpg)
 
 要什么自行车，冲他
-![购买这个就行](https://euserver.1314171.xyz/i/2022/09/08/6319f8d4f01d0.jpg)
+![购买这个就行](https://pic.1314171.xyz/i/2022/10/19/634fe0e22b95f.jpg)
 
-买这个仅Ipv6就行，解决ipv4访问用cf cdn套一层代理
+~~买这个仅Ipv6就行~~，解决ipv4访问用cf cdn套一层代理
 
-确保用c代理，小云朵打开即可
+确保用cf代理，小云朵打开即可
 
 ## 申请证书
 之前用脚本在vps上申请证书的时候不能套上述小云朵，否则会失败或者替cf申请证书……
@@ -44,14 +42,17 @@ date: 2022-09-05 23:33:30
 这次尝试直接套小云朵嫖cf证书
 
 ### 221001更新
-![](http://euserver.1314171.xyz/i/2022/10/01/63384fdfbdd4d.png)
-![](https://euserver.1314171.xyz/i/2022/10/01/6338539cb8b2f.png)
-https://65536.io/2020/03/607.html
+![](https://pic.1314171.xyz/i/2022/10/19/634fdfd8c3390.png)
+
+如果要加证书在获取token时就如下图所示
+![](https://pic.1314171.xyz/i/2022/10/19/634fde242e29d.png)
+
+申请cf证书请参考：[博客](https://65536.io/2020/03/607.html)
 
 # 选择图床
 大概有三个很好的选择，[兰空图床](https://www.lsky.pro/)、[imgurl](https://github.com/helloxz/imgurl)和[chevereto](https://chevereto.com/)
 
-最后选择兰空的原因是：imgurl社区开源版本上次更新已经过去三年了，[chevereto](https://github.com/chevereto/vps)令人望而生畏的英文文档，以及，我以为兰空有中文文档很好搭建，官方宣传：半小时搭好)
+最后选择兰空的原因是：imgurl社区开源版本上次更新已经过去三年了，[chevereto](https://github.com/chevereto/vps)令人望而生畏的英文文档(而且只有付费版了，还不便宜，以及，我以为兰空有中文文档很好搭建，官方宣传：半小时搭好，文档写的不好，但照着我这个教程10分钟ko)
 
 
 # 安装
@@ -98,7 +99,7 @@ systemctl status nginx
 在浏览器内输入您的IP地址或域名并打开
 
 显示：
-![](https://euserver.1314171.xyz/i/2022/09/08/6319f88d6c9cb.jpg)
+![](https://pic.1314171.xyz/i/2022/10/19/634fe15f4b80c.jpg)
 说明Nginx已经正常工作
 
 ## 安装PHP
@@ -202,7 +203,7 @@ vim /etc/nginx/sites-available/default
 4. 转到location / 块，找到try_files项，将 =404 改为 /index.php?$query_string（即设置伪静态）；
 5. 转到location ~ \.php$块，去除行前#号，选择With php-fpm方法，将路径中的PHP版本修改为对应安装版本。修改完的效果应如图所示：
 
-![](https://euserver.1314171.xyz/i/2022/09/08/6319f86f07b3e.png)
+![](https://pic.1314171.xyz/i/2022/10/19/634fe138d9bc5.png)
 
 执行以下命令打开Nginx配置文档：
 
@@ -245,7 +246,7 @@ curl localhost:80/api/v1/tokens -X POST -d 'email=example@example.com&password=y
 ```
 
 可以正常返回
-![成功！这就是我用picgo上传的图片](https://euserver.1314171.xyz/i/2022/09/08/6319f75d3ad36.png)
+![成功！这就是我用picgo上传的图片](https://pic.1314171.xyz/i/2022/10/19/634fe105c8f1c.png)
 ## 发现能用webdav等存储
 还未尝试，TODO:
 
