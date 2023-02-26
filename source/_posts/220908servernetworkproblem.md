@@ -1,12 +1,14 @@
 ---
 title: 图床服务器出错过程和解决
 tags:
-- vps
-- network
-- sync
-categories: 
+  - vps
+  - network
+  - sync
 excerpt: 因为装探针无法连接到github导致的一系列问题
+date: 2023-02-26 19:31:12
+categories:
 ---
+
 # 起因
 安装探针，一开始想装到nas上，但nas环境，网络（家宽，端口屏蔽）docker服务不好访问，转而想装到服务器上
 
