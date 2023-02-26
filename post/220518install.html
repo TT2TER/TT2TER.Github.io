@@ -23,12 +23,14 @@
 <meta property="og:site_name" content="马火星的迷你小屋">
 <meta property="og:description" content="nas初始化安装过程记录">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.1314171.xyz/i/2022/10/19/634fe19df1b4f.png">
 <meta property="article:published_time" content="2022-07-04T12:51:10.000Z">
-<meta property="article:modified_time" content="2022-08-09T15:26:56.999Z">
+<meta property="article:modified_time" content="2022-10-19T11:38:20.068Z">
 <meta property="article:author" content="TT2TER">
 <meta property="article:tag" content="nas">
 <meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic.1314171.xyz/i/2022/10/19/634fe19df1b4f.png">
   
   
   
@@ -336,15 +338,6 @@
             <!-- SEO header -->
             <h1 style="display: none">初次安装nas系统</h1>
             
-              <p class="note note-info">
-                
-                  
-                    <!-- compatible with older versions-->
-                    本文最后更新于：13 天前
-                  
-                
-              </p>
-            
             
               <div class="markdown-body">
                 
@@ -383,10 +376,16 @@
 <p><em>portainer</em></p>
 <p>docker run -d –restart&#x3D;always –name&#x3D;”portainer” -p 9000:9000 -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;share&#x2F;Docker&#x2F;portainer_data:&#x2F;data 6053537&#x2F;portainer-ce<br><a target="_blank" rel="noopener" href="https://hub.docker.com/r/6053537/portainer-ce">汉化版</a></p>
 <p><em><strong>2208207更新</strong></em><br>把汉化版替掉了，因为汉化不一直更新</p>
-<p>更新过程参考官方文档：<a target="_blank" rel="noopener" href="https://docs.portainer.io/start/upgrade/docker">Upgrading on Docker Standalone</a></p>
+<p>更新过程参考官方文档：<a target="_blank" rel="noopener" href="https://docs.portainer.io/start/upgrade/docker">Upgrading on Docker Standalone</a>(官方版更新也是这个流程)</p>
 <p>注意将存储路径改对</p>
-<p>docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 –name&#x3D;portainer –restart&#x3D;always -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;share&#x2F;Docker&#x2F;portainer_data:&#x2F;data portainer&#x2F;portainer-ce:latest</p>
-<p><em>ddns-go</em><br>docker run -d –name ddns-go –restart&#x3D;always –net&#x3D;host -v &#x2F;share&#x2F;Docker&#x2F;ddns-go:&#x2F;root jeessy&#x2F;ddns-go</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /share/Docker/portainer_data:/data portainer/portainer-ce:latest<br></code></pre></td></tr></table></figure>
+
+<p><em>ddns-go</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -d --name ddns-go --restart=always --net=host -v /share/Docker/ddns-go:/root jeessy/ddns-go<br></code></pre></td></tr></table></figure>
+
+<h2 id="关于docker的更新"><a href="#关于docker的更新" class="headerlink" title="关于docker的更新"></a>关于docker的更新</h2><p>只需要在portainer container details中recreate的同时选择拉取最新镜像即可</p>
+<p><img src="https://pic.1314171.xyz/i/2022/10/19/634fe19df1b4f.png" srcset="/img/loading.gif" lazyload alt="最新镜像拉取打开"></p>
+<p>注意请保证配置文件等数据不在镜像内部内存中，否则会覆盖掉配置</p>
 
                 
               </div>

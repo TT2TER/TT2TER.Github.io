@@ -24,7 +24,7 @@
 <meta property="og:description" content="最大化利用自己的nas，正好现在用的inoreader国内被墙了">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-10T16:46:39.000Z">
-<meta property="article:modified_time" content="2022-08-11T13:11:26.264Z">
+<meta property="article:modified_time" content="2022-10-16T03:55:40.471Z">
 <meta property="article:author" content="TT2TER">
 <meta property="article:tag" content="nas">
 <meta property="article:tag" content="docker">
@@ -276,7 +276,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.7k 字
+          1.5k 字
         
       </span>
     
@@ -336,15 +336,6 @@
             <!-- SEO header -->
             <h1 style="display: none">自建rss服务器(freshrss+rsshub)</h1>
             
-              <p class="note note-info">
-                
-                  
-                    <!-- compatible with older versions-->
-                    本文最后更新于：11 天前
-                  
-                
-              </p>
-            
             
               <div class="markdown-body">
                 
@@ -367,12 +358,16 @@
 <p>于是就用freshrss了</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1964176">freshrss部署教程</a></p>
 <p>官方的部署写的不是很清楚，按这个来亲测能用，自己改一下挂载路径和端口即可</p>
-<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">version</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;3&quot;</span><br><br><span class="hljs-attribute">services</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-attribute">freshrss-db</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">postgres:latest</span><br>    <span class="hljs-attribute">container_name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-db</span><br>    <span class="hljs-attribute">hostname</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-db</span><br>    <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attribute">volumes</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/share/Docker/rss/postgresql/data:/var/lib/postgresql/data</span><br>    <span class="hljs-attribute">environment</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-attribute">POSTGRES_USER</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss</span><br>      <span class="hljs-attribute">POSTGRES_PASSWORD</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss</span><br>      <span class="hljs-attribute">POSTGRES_DB</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss</span><br><br>  <span class="hljs-attribute">freshrss-app</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss/freshrss:latest</span><br>    <span class="hljs-attribute">container_name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-app</span><br>    <span class="hljs-attribute">hostname</span><span class="hljs-punctuation">:</span> <span class="hljs-string">freshrss-app</span><br>    <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attribute">ports</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">18110:80</span><br>    <span class="hljs-attribute">depends_on</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">freshrss-db</span><br>    <span class="hljs-attribute">volumes</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/share/Docker/rss/data:/var/www/FreshRSS/data</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/share/Docker/rss/extensions:/var/www/FreshRSS/extensions</span><br>    <span class="hljs-attribute">environment</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-attribute">CRON_MIN</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;*/20&#x27; #自动更新时间</span><br>      <span class="hljs-attribute">TZ</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Asia/Shanghai</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs awk">version: <span class="hljs-string">&quot;3&quot;</span><br><br>services:<br><br>  freshrss-app:<br>    image: freshrss/freshrss:latest<br>    container_name: freshrss-app<br>    hostname: freshrss-app<br>    restart: always<br>    ports:<br>      - <span class="hljs-number">18110</span>:<span class="hljs-number">80</span><br>    depends_on:<br>      - freshrss-db<br>    volumes:<br>      - <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/rss/</span>data:<span class="hljs-regexp">/var/</span>www<span class="hljs-regexp">/FreshRSS/</span>data<br>      - <span class="hljs-regexp">/share/</span>Docker<span class="hljs-regexp">/rss/</span>extensions:<span class="hljs-regexp">/var/</span>www<span class="hljs-regexp">/FreshRSS/</span>extensions<br>    environment:<br>      CRON_MIN: <span class="hljs-string">&#x27;*/20&#x27;</span> <span class="hljs-comment">#自动更新时间</span><br>      TZ: Asia/Shanghai<br></code></pre></td></tr></table></figure>
 
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>使用时发现有些源需要代理，于是有了整代理的理由。</p>
 <p>代理因为内存占用过多且我浅试了一下连不上，决定在vps上重新部署rss服务器了</p>
 <p>然后突然想起来我vps是纯v6的，还得设置端口转发</p>
 <p>再一看256mb内存很吃紧了，遂放弃</p>
+<h2 id="20221016更新"><a href="#20221016更新" class="headerlink" title="20221016更新"></a>20221016更新</h2><p>因为有了个1G的服务器，因此可以把rss部署了</p>
+<p>因为需求比较浅，所以用SQlite就行，docker-compose中数据库部分可以删掉了</p>
+<p>然后用nginx反代和cf的代理（ipv4支持）</p>
+<p>加上证书</p>
 <h2 id="fever-API接口："><a href="#fever-API接口：" class="headerlink" title="fever API接口："></a>fever API接口：</h2><p>TODO:</p>
 
                 
