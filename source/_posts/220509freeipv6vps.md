@@ -191,7 +191,8 @@ x-ui enable
 [warp连接CF WARP为服务器添加IPv4/IPv6网络](https://github.com/fscarmen/warp)
 
 ```
-wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh 6
+#为仅ipv6服务器添加 warp ipv4网络
+wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh 4
 ```
 
 选择安装参数
