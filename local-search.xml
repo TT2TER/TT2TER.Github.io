@@ -809,6 +809,31 @@
   
   
   <entry>
+    <title>bash脚本学习（最终还是绕不过去）</title>
+    <link href="/post/220705bashshell.html"/>
+    <url>/post/220705bashshell.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="主要参考资料"><a href="#主要参考资料" class="headerlink" title="主要参考资料"></a>主要参考资料</h1><p><a href="https://wangdoc.com/bash/index.html">阮一峰大佬写的</a></p><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><ul><li>发现我nas的shell是sh不是bash，不过好像没啥区别</li><li>脚本的Shebang</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><br></code></pre></td></tr></table></figure><ul><li>使用命令，赋予脚本执行权限</li><li>写绝对路径</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习过程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>bash</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>IPV6访问NAS中Docker的服务</title>
     <link href="/post/220705tcp6-tcp4.html"/>
     <url>/post/220705tcp6-tcp4.html</url>

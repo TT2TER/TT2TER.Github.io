@@ -1,3 +1,4 @@
+http://blog.1314171.xyz/post/220705bashshell.html
 http://blog.1314171.xyz/post/230908dockerproxywithclash.html
 http://blog.1314171.xyz/post/220509freeipv6vps.html
 http://blog.1314171.xyz/post/2023week8.html
@@ -109,6 +110,7 @@ http://blog.1314171.xyz/tags/Audio2Lrc/
 http://blog.1314171.xyz/tags/whisper/
 http://blog.1314171.xyz/tags/clash/
 http://blog.1314171.xyz/tags/Docker/
+http://blog.1314171.xyz/tags/bash/
 http://blog.1314171.xyz/categories/share/
 http://blog.1314171.xyz/categories/Diary/
 http://blog.1314171.xyz/categories/%E6%95%99%E7%A8%8B/

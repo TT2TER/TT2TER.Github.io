@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.1314171.xyz//post/220705bashshell.html</loc>
+    <lastmod>2023-09-21</lastmod>
+  </url>
+  <url>
     <loc>http://blog.1314171.xyz//post/230908dockerproxywithclash.html</loc>
     <lastmod>2023-09-21</lastmod>
   </url>
