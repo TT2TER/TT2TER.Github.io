@@ -27,7 +27,7 @@
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-aurora": "^2.5.2",
-    "hexo-theme-fluid": "^1.9.4",
+    "hexo-theme-fluid": "^1.9.6",
     "hexo-theme-landscape": "^1.0.0",
     "nvm": "^0.0.4"
   }
