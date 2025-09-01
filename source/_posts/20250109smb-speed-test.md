@@ -183,3 +183,8 @@ sudo systemctl enable iptables-setup.service
 sudo systemctl start iptables-setup.service
 sudo systemctl status iptables-setup.service
 ```
+
+# 补充
+Ubuntu好像默认FORWARD链是ACCEPT的，所以不需要配置FORWARD规则
+
+另外，使用校园网有线连接时，转发速度也会有所提升，达到了8mb/s
