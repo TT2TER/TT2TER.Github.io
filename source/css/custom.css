@@ -3,3 +3,14 @@
     src: local("Sarasa Mono SC"),
          url("sarasa-mono-sc-regular.ttf");
   }
+
+/* Shared academic homepage icon in navigation and profile links. */
+.academic-cap {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.12em;
+  background-color: currentColor;
+  -webkit-mask: url("/img/graduation-cap.svg") center / contain no-repeat;
+  mask: url("/img/graduation-cap.svg") center / contain no-repeat;
+}
