@@ -345,6 +345,7 @@ navbar:
       ]
   }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+    - { key: "科研主页", link: "https://mayu.my/", icon: "iconfont icon-user-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: '', link: '/atom.xml', icon: 'iconfont icon-rss-fill' }
 
